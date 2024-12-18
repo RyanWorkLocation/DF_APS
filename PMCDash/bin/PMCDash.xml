@@ -1,0 +1,4680 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PMCDash</name>
+    </assembly>
+    <members>
+        <member name="M:PMCDash.Controllers.AccountController.Login(PMCDash.Models.AuthRequestcs)">
+            <summary>
+            登入使用者
+            </summary>
+            <param name="authRequest">帳號密碼請洽PMC</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.AccountController.ValidateUser">
+            <summary>
+            驗證Token是否還在效期內
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.AccountController.UserRoleInfo">
+            <summary>
+            取得登入者帳號、名稱、群組代號、群組名稱、群組設備
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.AnalysisController.IdleReason">
+            <summary>
+            取得【單日待機時間區塊圖】圖表資訊 (O)*
+            </summary>
+            <returns>"type":1(人員)、2(機台)</returns>
+        </member>
+        <member name="M:PMCDash.Controllers.AnalysisController.IdleReport(PMCDash.Controllers.DeviceIdeleAnalysisRequest)">
+            <summary>
+            取得【單日待機時間區塊圖】待機資料 (O)*
+            </summary>
+            <param name="request">{"device": "2M301","date": "2022-02-16"}</param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:PMCDash.Controllers.AnalysisController.Gantt(PMCDash.Controllers.DeviceIdeleAnalysisRequest)">
+            <summary>
+            取得【單日待機時間區塊圖】機台狀態資料 (O)*
+            </summary>
+            <param name="request">{"device": "2M301","date": "2022-02-16"}</param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:PMCDash.Controllers.AnalysisController.IdleTimeSpandChartInfo">
+            <summary>
+            取得【區間待機原因長條圖】圖表資訊 (O)*
+            </summary>
+            <returns>"type":1(人員)、2(機台)</returns>
+        </member>
+        <member name="M:PMCDash.Controllers.AnalysisController.IdleTimeSpandChart(PMCDash.Controllers.DeviceIdeleRangeRequest)">
+            <summary>
+            取得【區間待機原因長條圖】機台狀態資料 (O)*
+            </summary>
+            <param name="request">{"device": "2M301","stDate": "2022-02-14 00:00:00","etDate": "2022-02-25 00:00:00"}</param>
+            <returns>
+            </returns>
+        </member>
+        <member name="P:PMCDash.Controllers.DeviceIdeleAnalysisRequest.Device">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.DeviceIdeleAnalysisRequest.Date">
+            <summary>
+            待機原因查詢-日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.DeviceIdeleRangeRequest.Device">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.DeviceIdeleRangeRequest.stDate">
+            <summary>
+            待機原因查詢-起始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.DeviceIdeleRangeRequest.etDate">
+            <summary>
+            待機原因查詢-結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.IdleChart.idleReasonId">
+            <summary>
+            待機編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.IdleChart.idleTypeId">
+            <summary>
+            待機原因種類【1:人員:PERSONAL 、2:機台:MACHINE】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.IdleChart.count">
+            <summary>
+            待機次數
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.IdleChart.SpandTime">
+            <summary>
+            待機時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.idleData.idleTypeId">
+            <summary>
+            待機種類【1:人員、2:機台】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.idleData.idleReasonId">
+            <summary>
+            待機原因編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.idleData.idleStartTime">
+            <summary>
+            待機開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.idleData.idleEndTime">
+            <summary>
+            待機結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.IdleChartInfo.IdleType">
+            <summary>
+            待機種類標籤
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.IdleChartInfo.machinestatus">
+            <summary>
+            機台狀態標籤
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.IdleChartInfo.PersonIdles">
+            <summary>
+            人員待機原因標籤
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.IdleChartInfo.MachineIdles">
+            <summary>
+            機台待機原因標籤
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.analysisIdleType.code">
+            <summary>
+            待機種類代號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.analysisIdleType.DisplayName">
+            <summary>
+            待機種類名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.analysisMachineStatus.code">
+            <summary>
+            機台狀態代號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.analysisMachineStatus.DisplayName">
+            <summary>
+            機台狀態
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.PersonIdle.code">
+            <summary>
+            人員待機代號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.PersonIdle.DisplayName">
+            <summary>
+            人員待機原因
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.MachineIdle.code">
+            <summary>
+            機台待機原因代號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.MachineIdle.DisplayName">
+            <summary>
+            機台待機原因
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.TimeSpandChartInfo.PersonIdles">
+            <summary>
+            人員待機原因標籤
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.TimeSpandChartInfo.MachineIdles">
+            <summary>
+            機台待機原因標籤
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.DeviceGroup.Id">
+            <summary>
+            群組ID
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.DeviceGroup.Range">
+            <summary>
+            群組順序
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.DeviceGroup.Number">
+            <summary>
+            群組編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.DeviceGroup.Name">
+            <summary>
+            群組名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.DeviceGroup.Description">
+            <summary>
+            群組描述
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.BaseQueryData.Page">
+            <summary>
+            頁面
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.BaseQueryData.PageSize">
+            <summary>
+            筆數
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.BaseQueryData.SortField">
+            <summary>
+            排序欄位
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.BaseQueryData.SortOrder">
+            <summary>
+            排序方式 1 or -1
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.BaseQueryData.All">
+            <summary>
+            搜尋全部
+            </summary>
+        </member>
+        <member name="M:PMCDash.Controllers.DistributionController.Get">
+            <summary>
+            取得各廠機台狀態分布比例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.DistributionController.GetPrductionLines(System.String)">
+            <summary>
+            取得各產線狀態分布
+            </summary>
+            <param name="factory">廠區代號</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.DistributionController.GetAllStatusDistribution">
+            <summary>
+            取得全廠機台狀態分布比例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.InformationController.Get">
+            <summary>
+            取回所有工廠清單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.InformationController.GetProduction(System.String)">
+            <summary>
+            取得特定產線名稱
+            </summary>
+            <param name="factory">廠區名稱 EX:FA-01</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.InformationController.GetMachine(PMCDash.Models.RequestProductionLine)">
+            <summary>
+            取得產線中所有的機台名稱
+            </summary>
+            <param name="prl">輸入廠區名稱與產線名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.LocationController.Post(PMCDash.Models.RequestProductionLine)">
+            <summary>
+            取回圖檔與座標描述
+            </summary>
+            <param name="request">輸入需要哪個廠區或產線瀏覽圖(產線可空白廠區不行)</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.OEEController.Post(PMCDash.Models.RequestProductionLine)">
+            <summary>
+            取得當天工廠OE
+            </summary>
+            <param name="rquset">廠區名稱(EX:FA-01、all(此為整公司)) 產線名稱(可忽略(Empty)若指定特定產線再填入)</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.OEEController.Get(System.Int32)">
+            <summary>
+            取固定天數的整廠OEE
+            </summary>       
+            <param name="days">整數值(EX:7、15....)</param> 
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.OEEController.GetYieldRateDetails">
+            <summary>
+            取回良品率細節列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.OEEController.GetOeeofWeek(PMCDash.Models.RequestFactory)">
+            <summary>
+            取回機台一周稼動率統計
+            </summary>
+            <param name="device">請輸入 Factroy ProductionLine Device Name</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.OrderController.GetDefine">
+            <summary>
+            定義各個狀態意義
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.OrderController.Get2">
+            <summary>
+            訂單首頁畫面資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.OrderController.GetTimeDiff(System.String,System.String,System.String)">
+            <summary>
+            計算兩個日期相差天數或月數
+            </summary>
+            <param name="strFrom">開始時間</param>
+            <param name="strTo">結束時間</param>
+            <param name="strType">日:D/月:M</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.OrderController.EndOrder(System.String)">
+            <summary>
+            結單API
+            </summary>
+            <param name="ordernum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.OrderController.GetWorkOrdersOfOrder(System.String)">
+            <summary>
+            用訂單編號找尋所有工單內容
+            </summary>
+            <param name="orderNum">訂單編號</param>
+            <returns>
+            1219111327
+            </returns>
+        </member>
+        <member name="M:PMCDash.Controllers.OrderController.CreateWorkOrderInfo(System.String,System.String)">
+            <summary>
+            生產狀態-製程資料
+            </summary>
+            <param name="orderNum">訂單編號</param>
+            <param name="workorderNum">工單編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.OrderController.Delayday(System.String,System.String)">
+            <summary>
+            計算延遲天數(time2-time1)
+            </summary>
+            <param name="time1"></param>
+            <param name="time2"></param>
+            <returns></returns>         
+        </member>
+        <member name="M:PMCDash.Controllers.OrderController.DashboardSeq(System.String)">
+            <summary>
+            取得表頭順序 (O)*
+            </summary>
+            <returns>2:訂單列表、3:工單列表</returns>
+        </member>
+        <member name="M:PMCDash.Controllers.OrderController.DashboardSeqUpdate(System.Collections.Generic.List{PMCDash.Models.DashboardUpdate})">
+            <summary>
+            更新表頭順序 (O)*
+            </summary>
+            <param name="DashboardSeq">請輸入欲更改欄位之中文名稱與順序</param>
+            <returns></returns>
+        </member>
+        <member name="P:PMCDash.Controllers.OrderOverView.EstimatedDate">
+            <summary>
+            排程估計交期
+            </summary>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.ProductionOverviewController.OrderOverview(System.String,System.String,System.String)">
+            <summary>
+            取得所有訂單之Overview
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.ProductionOverviewController.WorkOrderOverview(System.String,System.String,System.String,System.String)">
+            <summary>
+            以訂單ID搜尋所有工單
+            </summary>
+            <param name="OrderID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.ProductionOverviewController.OPOverview(System.String,System.String,System.String,System.String)">
+            <summary>
+            以工單ID搜尋所有製程
+            </summary>
+            <param name="WorkOrderID"></param>
+            <param name="CPK"></param>
+            <param name="WillDelay"></param>
+            <param name="AlreadyDelay"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.ProductionOverviewController.Get_OrderProcessRateList">
+            <summary>
+            取得訂單進度列表
+            </summary>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.ProductionOverviewController.Get_PartOfOP_SPCAnalysisDetail">
+            <summary>
+            取得單一物料製程能力分分析資料
+            </summary>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.ProductionOverviewController.Get_PartOfOP_CPKHistory">
+            <summary>
+            取得單一物料製程能力CPK歷史資料
+            </summary>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.ProductionOverviewController.Get_PartOfOP_CPKLeavel">
+            <summary>
+            取得最新CPK評價
+            </summary>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.QCWorkReportController.QCWorkTaskList(System.String)">
+            <summary>
+            取得檢驗工作任務清單列表
+            </summary>
+            <returns>IsQC:N/A(不需檢驗)、False(未檢驗、未檢驗完成)、True(已檢驗完成)</returns>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.QCWorkReportController.QCWorkTaskDetail_V1(System.String,System.String)">
+            <summary>
+            取得檢驗工作任務清單詳細資訊
+            </summary>
+            <param name="OrderID">EX: 1219111091</param>
+            <param name="OPId">EX: 40</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.QCWorkReportController.checkQCResult(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            判斷檢驗結果
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.QCWorkReportController.getToolDiff(System.String)">
+            <summary>
+            取得量具誤差值
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.QCWorkReportController.UpdateQCPoint(PMCDash.Models.WorkQCReportRequest)">
+            <summary>
+            填寫QCPoint
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.QCWorkReportController.NewQCPointValue(System.String)">
+            <summary>
+            取得最新無線量測數據
+            </summary>
+            <param name="MeasureDeviceID">輸入量具編號名稱 Ex: 03</param>
+            <returns></returns>
+        </member>
+        <member name="P:PMCDash.Controllers.Part2.QCWorkReportController.Measuredata.U_WAVE_T_ID">
+            <summary>
+            量具發射器ID
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.Part2.QCWorkReportController.Measuredata.measurement_data">
+            <summary>
+            量測數值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.Part2.QCWorkReportController.Measuredata.unit">
+            <summary>
+            量測單位
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.Part2.QCWorkReportController.Measuredata._time">
+            <summary>
+            量測時間
+            </summary>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.WorkIidleResonReportController.Workidlereoprtlist">
+            <summary>
+            取得待機紀錄清單
+            </summary>
+        </member>
+        <member name="M:PMCDash.Controllers.Part2.WorkIidleResonReportController.Idlereasonlist(System.String)">
+            <summary>
+            取得人員/機台待機原因清單
+            </summary>
+            <returns>"type":1(人員)、2(機台)</returns>
+        </member>
+        <member name="P:PMCDash.Controllers.Part2.WorkIidleResonReportController.idlereason.id">
+            <summary>
+            待機原因標號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.Part2.WorkIidleResonReportController.idlereason.type">
+            <summary>
+            待機原因種類【1:人員、2:機台】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.Part2.WorkIidleResonReportController.idlereason.typeName">
+            <summary>
+            待機原因名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.Part2.WorkIidleResonReportController.idlereason.name">
+            <summary>
+            待機原因名稱
+            </summary>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.MachineList_v2">
+            <summary>
+            列出所有機台
+            </summary>
+            <param></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.OrderList(System.String,System.String)">
+            <summary>
+            取得機台所有工單製程
+            </summary>
+            <param name="MachineName"></param>
+            <param name="Event"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.OrderListByALL(System.String)">
+            <summary>
+            檢視全部機台工單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.OrderListByALLSearch(System.String,System.String)">
+            <summary>
+            搜尋功能
+            </summary>
+            <param name="Event"></param>
+            <param name="OrderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.ValidateMachine(System.String)">
+            <summary>
+            確認使用者是否有訪問該機台的權限
+            </summary>
+            <param name="MachineName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.ValidOrder(System.String,System.String)">
+            <summary>
+            判斷是否有讀取供單權限
+            </summary>
+            <param name="OrderID"></param>
+            <param name="OPID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.ValidQCOrder">
+            <summary>
+            判斷是否有QC權限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.OPDetail(System.String,System.String)">
+            <summary>
+            製程詳細資料
+            </summary>
+            <param name="OrderID"></param>
+            <param name="OPId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.QCList(System.String,System.String)">
+            <summary>
+            該製程所有QC
+            </summary>
+            <param name="OrderID"></param>
+            <param name="OPId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.checkQCResult(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            判斷檢驗結果
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.WorkStartReport(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            開始加工
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.WorkPassReport(PMCDash.Models.WorkPassReportRequest)">
+            <summary>
+            暫停加工
+            </summary>
+            <param name="request">{"orderID": "1219111329","opId": "30","device": "2M302","qtyTol": 2,"reason": [{"qcReason": "外徑過小","qtyNum": 1}]}</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.Idlereasonlist(System.Int32)">
+            <summary>
+            取得人員/機台待機原因清單
+            </summary>
+            <param name="Category">人員:1、機台:2</param>
+            <returns>"type":1(人員)、2(機台)</returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.StartIdleReport(PMCDash.Models.StartIdleReportRequest)">
+            <summary>
+            回報待機開始時間
+            </summary>
+            <param name="request">{"orderId": "1219111329","opid": "30","device": "2M302","reasonCode": "80"}</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.EndIdleReport(PMCDash.Models.EndIdleReportRequest)">
+            <summary>
+            回報待機結束時間
+            </summary>
+            <param name="request">{"orderId": "1219111329","opid": "30","device": "2M302","reasonCode": "80"}</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.WorkReSatrtReport(System.String,System.String,System.String)">
+            <summary>
+            繼續開始加工
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.UpdateQCPoint(PMCDash.Models.WorkQCReportRequest)">
+            <summary>
+            填寫QCPoint
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.NewQCPointValue(System.String)">
+            <summary>
+            取得最新無線量測數據
+            </summary>
+            <param name="MeasureDeviceID">輸入量具編號名稱 Ex: 03</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.ReflashQCPoint(System.String,System.String)">
+            <summary>
+            更新量測結果
+            </summary>
+            <param name="OrderID"></param>
+            <param name="OPId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.WorkDoneReport(PMCDash.Models.RequestReportInfo)">
+            <summary>
+            結束加工
+            </summary>
+            <param name="request">{"orderID": "1219111325","opId": 50,"qtyTol": 18,"reason": []}</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.UpdateWIP(System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            UpdateWIP
+            </summary>
+            <param name="QtyTol"></param>
+            <param name="OrderId"></param>
+            <param name="OPId"></param>
+            <param name="QtyBadCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.DefectiveList">
+            <summary>
+            不良品原因列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PMCDash.Controllers.WorkReportController.DefectiveItem.Id">
+            <summary>
+            不良原因編號'
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.WorkReportController.DefectiveItem.DefectiveName">
+            <summary>
+            不良原因名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.WorkReportController.DefectiveItem.Remark">
+            <summary>
+            不良原因備註
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.WorkReportController.DefectiveItem.FilePath">
+            <summary>
+            檔案路徑
+            </summary>
+        </member>
+        <member name="M:PMCDash.Controllers.WorkReportController.measuredvalue(PMCDash.Models.measurervalueQuery)">
+            <summary>
+            讀取量測設備取得數值
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ProductController.Get">
+            <summary>
+             統計製程管理(物料製程總表)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ProductController.GetCPKDetails(PMCDash.DTO.MaterialDto)">
+            <summary>
+            透過物料編號、製程編號、資料筆數，取回品檢項目CPK分析資料
+            </summary>
+            <param name="request">物料編號、製程編號、資料筆數(目前可使用30、60、90)</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.DashboardData">
+            <summary>
+            取得工單列表資料 (O)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.DashboardPreview(System.String)">
+            <summary>
+            取得工單列表資料(預覽模式) (O)*
+            </summary>
+            <param name="mode">【0:原始排程、1:交期優先-推薦權重、2:交期優先-自訂權重、3:機台優先、4:插單優先、5:手動排程、6:設備故障排程重排、7:設備故障排程延後工單右移】</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.DashboardSeq">
+            <summary>
+            取得 Dashboard 表頭順序 (O)*
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.DashboardSeqUpdate(System.Collections.Generic.List{PMCDash.Models.DashboardUpdate})">
+            <summary>
+            更新 Dashboard 順序 (O)*
+            </summary>
+            <param name="DashboardSeq">請輸入欲更改欄位之中文名稱與順序</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.OPdetail(PMCDash.Models.ScheduleOneOrderRequest)">
+            <summary>
+            顯示一張工單製程詳細資訊 (O)
+            </summary>
+            <param name="request">工單編號、製程編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.Delayday(System.String,System.String)">
+            <summary>
+            計算延遲天數(今日-預交日)
+            </summary>
+            <param name="time1"></param>
+            <param name="time2"></param>
+            <returns></returns>         
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.Costtime(System.String,System.String)">
+            <summary>
+            計算花費時數(用於OPdetail->hour)
+            </summary>
+            <param name="time1"></param>
+            <param name="time2"></param>
+            <returns></returns>         
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.ListWorkCondition">
+            <summary>
+            工單延遲與提早訊息 (O)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.WorkingHours">
+            <summary>
+            工作上班時間資訊 (O)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.ScheduleItems">
+            <summary>
+            甘特圖排程模式標籤 (O)*
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.BasicChartWorkCondition">
+            <summary>
+            工單製程目前狀態(甘特圖基本狀態) (O)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.BasicChartPreview(System.String)">
+            <summary>
+            工單製程甘特圖基本狀態預覽 (O)*
+            </summary>
+            <param name="mode">【0:原始排程、1:交期優先-推薦權重、2:交期優先-自訂權重、3:機台優先、4:插單優先、5:手動排程、6:設備故障排程重排、7:設備故障排程延後工單右移】</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.ProgressChartWorkCondition">
+            <summary>
+            工單製程目前狀態(甘特圖進度) (O)
+            </summary>
+            <returns>進度狀態(2:延遲 1:正常)</returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.ProgressChartPreview(System.String)">
+            <summary>
+            工單製程甘特圖進度預覽 (O)*
+            </summary>
+            <param name="mode">【0:原始排程、1:交期優先-推薦權重、2:交期優先-自訂權重、3:機台優先、4:插單優先、5:手動排程、6:設備故障排程重排、7:設備故障排程延後工單右移】</param>
+            <returns>
+            測試問題:目前測試交期優先推薦權重有發現資料庫temp01和wip工單不吻合，導致資料不合理(已解決)
+            </returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.EditPredictDate(PMCDash.Models.ScheduleEditPredictDateRequest)">
+            <summary>
+            修改生管預交日 (O)
+            </summary>
+            <param name="request">工單編號、製程編號、要更改的時間</param>
+            <returns>
+            測資:
+            {
+              "orderID": "1219111325",
+              "opid": "30",
+              "assignDate_PM": "2022-01-01 00:00:00"
+            }
+            </returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.EditImportantOrder(PMCDash.Models.ScheduleEditImportantOrderRequest)">
+            <summary>
+            標註重要工單 (O)
+            </summary>
+            <param name="request">工單編號、製程編號、是否重要(true、false)</param>
+            <returns>
+            測資:
+            {
+              "orderID": "1219111325",
+              "opid": "30",
+              "important": true
+            }
+            </returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.Cancel(PMCDash.Models.CancelScheduleRequest)">
+            <summary>
+            捨棄排程 (O)*
+            </summary>
+            <param name="request">排程模式【1:交期優先-推薦權重、2:交期優先-自訂權重、3:機台優先、4:插單優先、5:手動排程、6:設備故障排程重排、7:設備故障排程延後工單右移】</param>
+            <returns>測資:{"mode": "3"} </returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.ScheduleCode">
+            <summary>
+            所有排程結果代碼 (!!!)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.GenerateInitialSolutionforDueDayFirst(PMCDash.Models.ScheduleDateRangeRequest)">
+            <summary>
+            交期優先排程法 (O)*
+            </summary>
+            <returns>
+            {
+              "startTime": "2021-05-01 00:00:00",
+              "endTime": "2022-02-01 00:00:00",
+              "mode": "C",
+              "selectOrders": [
+                {
+                  "orderID": "1219111460",
+                  "opid": "30"
+                }
+              ],
+              "weights": 
+              {
+                "orderFillRate": "40",
+                "utilizationRate": "30",
+                "movingDistance": "10",
+                "loadBalance": "20"
+              }
+            }
+            </returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.ScheduleWeight">
+            <summary>
+            取得排程權重資料 (O)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.Comparison">
+            <summary>
+            數據比較(O)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.ScheduledMethodSelected(PMCDash.Models.ScheduleMethodSelectionRequest)">
+            <summary>
+            確定選擇運算方式 (O)*
+            </summary>
+            <param name="request">排程結果代號(0:原始排程、1:交期優先-推薦權重、2:交期優先-自訂權重、3:機台優先、4:插單優先、5:手動排程、6:設備故障排程重排、7:設備故障排程延後工單右移)</param>                                                              
+            <returns>
+            測資:
+            {
+                "mode": "1"
+            }
+            </returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.GenerateInitialSolutionForDeviceFirst(PMCDash.Models.ScheduleOrdersRequest)">
+            <summary>
+            機台優先排程法 (O)
+            </summary>
+            <returns>{"selectOrders": [ { "orderID": "1219111460", "opid": "30" } ]}</returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.DispatchWork(System.Collections.Generic.List{PMCDash.Models.DispatchWorkScheduleRequest})">
+            <summary>
+            插單優先排程法 (O)*
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.MachineList(PMCDash.Models.ScheduleOneOrderRequest)">
+            <summary>
+            派單時 選擇該製程可選之機台列表 (O)
+            </summary>
+            <returns>
+            測資:
+            { "orderID": "1219111325",  "opid": "30"}
+            </returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.FixedInfo(System.String)">
+            <summary>
+            取得報修機台資訊 (O)
+            </summary>
+            <param name="Device"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.BreakdownGanttChart(PMCDash.Models.MachineBreakdownRequest)">
+            <summary>
+            設備故障排程法 (O)*
+            </summary>
+            <param name="request">{  "machine": "2M301",  "mode": "A",  "startTime": "2021-01-02 10:00:00",  "endTime": "2021-01-02 13:00:00"}</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.BasicChartBreakdownPreview">
+            <summary>
+            機台報修延後排程甘特圖預覽
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.BasicChartBreakdown">
+            <summary>
+            機台報修延後排程甘特圖
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.ManualSchedule(PMCDash.Models.ManualScheduleRequest)">
+            <summary>
+            手動排程 (O)*
+            </summary>
+            <param name="request">工單編號、製程編號、機台編號、開始時間</param>
+            <returns>
+            {
+              "orderID": "1219111327",
+              "opid": "30",
+              "machine": "2M301",
+              "startTime": "2021-12-04 16:19:00"
+            }
+            </returns>
+            <summary>
+            手動排程 (O)*
+            </summary>
+            <param name="request">工單編號、製程編號、機台編號、開始時間</param>
+            <returns>
+            {
+              "orderID": "1219111327",
+              "opid": "30",
+              "machine": "2M301",
+              "startTime": "2021-12-04 16:19:00"
+            }
+            </returns>
+        </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.MachieStatus">
+            <summary>
+            取得機台狀態
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PMCDash.Controllers.MachineState.machineName">
+            <summary>
+            機台名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.MachineState.status">
+            <summary>
+            機台狀態【NORMAL:正常 ALARM:異常 OFF:關機】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.MachineState.displayName">
+            <summary>
+            機台顯示名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.FixedInfo.Device">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.FixedInfo.STartTime">
+            <summary>
+            開始維修時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.FixedInfo.EndTime">
+            <summary>
+            完成維修時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.ScheduleCode.mode">
+            <summary>
+            排程結果代號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.ScheduleCode.ScheduleMethod">
+            <summary>
+            排程結果名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.CommuterTime.StartTime">
+            <summary>
+            上班時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Controllers.CommuterTime.CloseTime">
+            <summary>
+            下班時間
+            </summary>
+        </member>
+        <member name="M:PMCDash.Controllers.StatisticsController.GetStaticsByFactory">
+            <summary>
+            取得各廠狀態統計資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.StatisticsController.GetStaticsByProductionLine(System.String)">
+            <summary>
+            取得特定廠區中的產線統計資料
+            </summary>
+            <param name="factory">廠區名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.StatisticsController.GetMachineStatus(PMCDash.Models.RequestFactory)">
+            <summary>
+            取的特定產線中的機台狀態統計資料
+            </summary>       
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.StatisticsController.GetAlarm(PMCDash.Models.RequestFactory)">
+            <summary>
+            取得TOP 10 異常訊息累計資料
+            </summary>
+            <param name="request">廠區名稱 EX: FA-05、all(整廠) 產線名稱 EX: 空白、PR-01</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Controllers.StatisticsController.GetStop(PMCDash.Models.RequestFactory)">
+            <summary>
+            取得停機次數統計
+            </summary>
+            <param name="request">廠區名稱 EX: FA-05、all(整廠) 產線名稱 EX: 空白、PR-01</param>
+            <returns></returns>
+        </member>
+        <member name="P:PMCDash.DTO.MaterialDto.No">
+            <summary>
+            物料編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.MaterialDto.ProcessNo">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.MaterialDto.Count">
+            <summary>
+            數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.OrderNo">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.OPNo">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.OPName">
+            <summary>
+            製程名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.ProductNo">
+            <summary>
+            產品名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.Machine">
+            <summary>
+            分發機台
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.RequireCount">
+            <summary>
+            工單數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.CurrentCount">
+            <summary>
+            當前數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.StarTime">
+            <summary>
+            開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.EndTime">
+            <summary>
+            結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.DueDate">
+            <summary>
+            預交日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.DeleyTime">
+            <summary>
+            延遲時數
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.PlanningDueDate">
+            <summary>
+            生管預交日
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.ProgressBarRate">
+            <summary>
+            生產進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.Group">
+            <summary>
+            負責群組
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.Operator">
+            <summary>
+            負責人(操作人員)
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.WorkOrderStatus">
+            <summary>
+            工單狀態
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.CADFilePath">
+            <summary>
+            設計圖製路徑
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.OrderDueDate">
+            <summary>
+            訂單交付日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.DTO.WorkOrderDetailDto.Remark">
+            <summary>
+            備註
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestReportWorkOrder.WorkOrderNo">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestReportWorkOrder.OPNo">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestReportWorkOrder.ReportMode">
+            <summary>
+            報工模式
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQCMeasureDeviceStatus.DeviceID">
+            <summary>
+            檢驗設備ID
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQCMeasureDeviceStatus.Top1MeasureDataTime">
+            <summary>
+            最新量測資料時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQCMeasureDeviceStatus.Status">
+            <summary>
+            檢驗設備連線狀態
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQCMeasureDeviceStatus.MeasureItem">
+            <summary>
+            量測項目
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQCMeasureDeviceStatus.MeasureValue">
+            <summary>
+            量測數值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQCMeasureDeviceStatus.MeasureTime">
+            <summary>
+            量測時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQCMeasureDeviceStatus.Unit">
+            <summary>
+            量測單位
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQCMeasureData.WorkOrderNo">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQCMeasureData.OPNo">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQCMeasureData.QC_OperatorName">
+            <summary>
+            檢驗人員
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQCMeasureData.QCPlaceItem">
+            <summary>
+            檢驗部位數值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQCMeasureData.Remark">
+            <summary>
+            備註
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestWorkOrder.WorkOrderNo">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestWorkOrder.OPNo">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestWorkOrder.ReportMode">
+            <summary>
+            報工模式
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestFactory.FactoryName">
+            <summary>
+            廠區名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestFactory.ProductionName">
+            <summary>
+            產線名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestFactory.DeviceName">
+            <summary>
+            機台名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestProductionLine.FactoryName">
+            <summary>
+            廠區名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestProductionLine.ProductionName">
+            <summary>
+            產線名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQualityControlWorkList.FactoryName">
+            <summary>
+            廠區名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQualityControlWorkList.ProductionName">
+            <summary>
+            產線名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestQualityControlWorkList.DeviceName">
+            <summary>
+            機台名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ActionResponse`1.Message">
+            <summary>
+            # http-200
+            200: 有時候是"N/A"也可以說沒消息就空白?
+            # http-40x
+            40x: 基本上都會有錯誤訊息的拉~
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ActionResponse`1.Data">
+            <summary>
+            # http-200
+            200: 有回傳資料就看是什麼樣的內容
+            # http-40x
+            40x: 基本上會沒有Data指定為null ? 
+            </summary>
+        </member>
+        <member name="M:PMCDash.Models.Address.#ctor(System.String)">
+            <summary>
+            地址組成：
+            1.郵遞區號: 3~5碼數字
+            2.縣市： xx 縣/市
+            3.鄉鎮市區：xx 鄉/鎮/市/區
+            4.其他：鄉鎮市區以後的部分
+            規則：開頭一定要是3或5個數字的郵遞區號，如果不是，解析不會出錯，但ZipCode為空
+            地址一定要有XX縣/市 + XX鄉/鎮/市/區 + 其他
+            </summary>
+            <param name="address"></param>
+        </member>
+        <member name="P:PMCDash.Models.Address.City">
+            <summary>
+            縣市
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Address.District">
+            <summary>
+            鄉鎮市區
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Address.IsParseSuccessed">
+            <summary>
+            是否符合pattern規範
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Address.OrginalAddress">
+            <summary>
+            原始傳入的地址
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Address.Others">
+            <summary>
+            鄉鎮市區之後的地址
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Address.ZipCode">
+            <summary>
+            郵遞區號
+            </summary>
+        </member>
+        <member name="M:PMCDash.Models.Address.ToString">
+            <summary>
+            組成完整的地址
+            </summary>
+            <returns>完整的地址</returns>
+        </member>
+        <member name="P:PMCDash.Models.FunctionAccess.FunctionName">
+            <summary>
+            可使用功能
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.FunctionAccess.ViewRight">
+            <summary>
+            檢視權限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.FunctionAccess.ModifyRight">
+            <summary>
+            修改權限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.FunctionAccess.DeleteRight">
+            <summary>
+            刪除權限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.FunctionAccess.AuditRight">
+            <summary>
+            審核權限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.FunctionAccess.Used">
+            <summary>
+            啟用
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.Local">
+            <summary>
+            本地端連線字串
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.Remote">
+            <summary>
+            外網連線字串
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.APSDB">
+            <summary>
+            排程報工資料庫名稱
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.MRPDB">
+            <summary>
+            ERP/MRP串接資料中介區資料庫名稱
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.MeasureDB">
+            <summary>
+            無線量測資料庫名稱
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.SkyMarsDB">
+            <summary>
+            SkyMars資料庫名稱
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.AccuntDB">
+            <summary>
+            系統帳號資料庫名稱
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.ERPurl">
+            <summary>
+            ERP的URL
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.iteration">
+            <summary>
+            跌代次數
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.chromosomesCount">
+            <summary>
+            染色體數
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.AdminCode">
+            <summary>
+            管理者權限code
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.Debug">
+            <summary>
+            Debug Mode
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.Customer">
+            <summary>
+            客製化版:0為標準版、1為客製化版
+            </summary>
+        </member>
+        <member name="F:PMCDash.Models.ConnectStr.DateTimeNow">
+            <summary>
+            SSSSSSSSSSSSSSS
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Machine.MachineName">
+            <summary>
+            機台名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Machine.MachingGroup">
+            <summary>
+            機台所屬群組
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Machine.MachineImg">
+            <summary>
+            機台圖片
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Machine.OperatorName">
+            <summary>
+            操作人員名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Machine.NotStartNum">
+            <summary>
+            未開工製程數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Machine.RunningNum">
+            <summary>
+            生產中製程數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Machine.SuspendNum">
+            <summary>
+            暫停中製程數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Machine.CompleteNum">
+            <summary>
+            完成製程數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Machine.LastUpdateOP">
+            <summary>
+            進行中工單/最新完成工單
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.LastUpdateOP.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.LastUpdateOP.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.LastUpdateOP.WIPEvent">
+            <summary>
+            工單報工狀態【0:未開工(灰色)、1:生產中(綠色)、2:暫停中(黃色)、3:已完成(灰色)】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.LastUpdateOP.Progress">
+            <summary>
+            製程進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DailyDeviceStatus.Interval">
+            <summary>
+            顯示時間區間
+            【ST:開始時間、ET:結束時間】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DailyDeviceStatus.devicestatus">
+            <summary>
+            機台狀態與時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.devicestatus.Devicesattusid">
+            <summary>
+            狀態:【0:關機:OFF、1:運轉:RUN、2:待機:IDLE、3:警報:ALARM】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.devicestatus.StartTime">
+            <summary>
+            狀態開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.devicestatus.EndTime">
+            <summary>
+            狀態結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DeviceTimeInterval.ST">
+            <summary>
+            區間開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DeviceTimeInterval.ET">
+            <summary>
+            區間結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Material.No">
+            <summary>
+            物料編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Material.ProcessNo">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Material.CPKEvaluation">
+            <summary>
+            CPK評價
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Material.ProcessName">
+            <summary>
+            製程名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Material.LastProduction">
+            <summary>
+            最後一個生產日
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.measurervalueQuery.id">
+            <summary>
+            量測設備編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.measurervalueQuery.time">
+            <summary>
+            開始量測時間點 ex:2022-04-26 15:04:14
+            </summary>
+        </member>
+        <member name="M:PMCDash.Models.Part2.OP.#ctor(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{PMCDash.Models.Part2.SubDevice})">
+            <summary>
+            製程詳細資料
+            </summary>
+            <param name="_Id">製程編號</param>
+            <param name="_Name">製程名稱</param>
+            <param name="_SettingTime">準備工時</param>
+            <param name="_StandardTime">標準工時</param>
+            <param name="_MainDeviec">主要設備</param>
+            <param name="_SubDevice">替代設備</param>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OP.Id">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OP.Name">
+            <summary>
+            製程名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OP.SettingTime">
+            <summary>
+            準備工時
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OP.StandardTime">
+            <summary>
+            標準工時
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OP.MainDeviec">
+            <summary>
+            主要設備
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OP.MainNCProgram">
+            <summary>
+            指定主程式
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OP.SubDevices">
+            <summary>
+            替代設備
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OP.cost">
+            <summary>
+            製作費用
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OP.QCRules">
+            <summary>
+            製程檢驗項目
+            </summary>
+        </member>
+        <member name="M:PMCDash.Models.Part2.SubDevice.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            替代設備
+            </summary>
+            <param name="_Id">設備編號</param>
+            <param name="_Name">設備名稱</param>
+            <param name="_Type">設備類別</param>
+            <param name="_Group">歸屬群組</param>
+            <param name="_Operator">負責人員</param>
+        </member>
+        <member name="P:PMCDash.Models.Part2.SubDevice.Id">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.SubDevice.Name">
+            <summary>
+            設備名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.SubDevice.Type">
+            <summary>
+            設備類別
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.SubDevice.Group">
+            <summary>
+            歸屬群組
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.SubDevice.Operator">
+            <summary>
+            負責人員
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QCRule.CL">
+            <summary>
+            中心值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QCRule.UCL">
+            <summary>
+            管制上限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QCRule.LCL">
+            <summary>
+            管制下限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QCRule.USL">
+            <summary>
+            規格上限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QCRule.LSL">
+            <summary>
+            規格下限
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.Part2.OPOverview">
+            <summary>
+            製程概要
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.ERPorderID">
+            <summary>
+            訂單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.OrderId">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.OPId">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.Range">
+            <summary>
+            製程順序
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.OPName">
+            <summary>
+            製程名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.ProductId">
+            <summary>
+            產品編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.ProductName">
+            <summary>
+            產品名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.StartTime">
+            <summary>
+            預計開工
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.EndTime">
+            <summary>
+            預計完工
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.wipStartTime">
+            <summary>
+            實際開工
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.wipEndTime">
+            <summary>
+            實際完工
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.OPStatus">
+            <summary>
+            開工狀態【0:未開工、1:生產中、2:暫停中、3:已完成】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.AssignDate">
+            <summary>
+            產品交期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.DeleyDays">
+            <summary>
+            延遲交期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.Days">
+            <summary>
+            延期天數，排序用
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.IsDeley">
+            <summary>
+            是否延遲
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.Deviec">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.DeviceGroup">
+            <summary>
+            機台群組
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.OperatorName">
+            <summary>
+            人員姓名
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.Progress">
+            <summary>
+            進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.RequireNum">
+            <summary>
+            需求數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.CompleteNum">
+            <summary>
+            已完成數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.DefectiveNum">
+            <summary>
+            不良品數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.IsQC">
+            <summary>
+            品質檢驗【N/A:不需檢驗、False:需檢驗、True:已經檢驗】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPList.QCman">
+            <summary>
+            品檢人員
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.ERPorderID">
+            <summary>
+            訂單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.OrderId">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.OPId">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.OPName">
+            <summary>
+            製程名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.ProductId">
+            <summary>
+            產品編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.ProductName">
+            <summary>
+            產品名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.OPStatus">
+            <summary>
+            開工狀態【0:未開工、1:生產中、2:暫停中、3:已完成】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.StartTime">
+            <summary>
+            預計開工
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.EndTime">
+            <summary>
+            預計完工
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.wipStartTime">
+            <summary>
+            實際開工
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.wipEndTime">
+            <summary>
+            實際完工
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.AssignDate">
+            <summary>
+            產品交期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.DeleyDays">
+            <summary>
+            延期交期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.Deviec">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.DeviceGroup">
+            <summary>
+            機台群組
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.OperatorName">
+            <summary>
+            人員姓名
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.Progress">
+            <summary>
+            進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.RequireNum">
+            <summary>
+            需求數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.CompleteNum">
+            <summary>
+            已完成數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.DefectiveNum">
+            <summary>
+            不良品數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.IsQC">
+            <summary>
+            品質檢驗【N/A:不需檢驗、False:需檢驗、未檢驗完成、True:已經檢驗】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.QCman">
+            <summary>
+            品檢人員
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.QtyBad">
+            <summary>
+            不良品數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.ImgPath">
+            <summary>
+            圖紙路徑
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.OPDetail.QCList">
+            <summary>
+            檢驗項目列表
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QC.QCPointName">
+            <summary>
+            量測項目
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QC.QCPointValue">
+            <summary>
+            量測數值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QC.QCResult">
+            <summary>
+            量測點狀態【合格、不合格】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QC.QCUnit">
+            <summary>
+            量測點單位
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QC.QCToolID">
+            <summary>
+            量測設備編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QC.CreateTime">
+            <summary>
+            量測時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QC.LastUpdateTime">
+            <summary>
+            最後量測時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QC.toolDiff">
+            <summary>
+            量具誤差值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Part2.QC.Enable">
+            <summary>
+            是否開放量測【Ture:可以量測、False:不可以量測】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OperationInfo.UtilizationRate">
+            <summary>
+            稼動率
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OperationInfo.Status">
+            <summary>
+            當前機台運轉狀態
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OperationInfo.ProductionProgress">
+            <summary>
+            當前生產進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OperationInfo.CustomName">
+            <summary>
+            客戶名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderDetail.OrderNum">
+            <summary>
+            訂單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderDetail.ProgressValue">
+            <summary>
+            生產進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderDetail.DueDate">
+            <summary>
+            訂單預交日
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderDetail.DueDatePM">
+            <summary>
+            生管預交日
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderDetail.CustomerInfo">
+            <summary>
+            客戶地區/名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderDetail.Status">
+            <summary>
+            訂單狀態【最緊急:"SS"，緊急:"S"，急:"N"】
+            這邊好像少了一個不急的狀態，我先加上去【0:一般、1:急、2:緊急、3:最緊急】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderDetail.ProcessProgress">
+            <summary>
+            製程進度【準時:"ONTIME"，延遲:"DELAY"】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderDetail.OrderNote">
+            <summary>
+            訂單備註
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderDetail.NeedDay">
+            <summary>
+            尚餘加工天數
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderDetail.EstimatedDate">
+            <summary>
+            排程估計交期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderDetail.UndonePart">
+            <summary>
+            未完成品項 2024.12.16新增
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.Assignment">
+            <summary>
+            取回資料庫供單用
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.BOMIteem">
+            <summary>
+            BOM物料結構
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BOMIteem.BOMNo">
+            <summary>
+            BOM編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BOMIteem.PartNo">
+            <summary>
+            物料編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BOMIteem.PartName">
+            <summary>
+            物料名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BOMIteem.QuantityOfBOM">
+            <summary>
+            BOM需求數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BOMIteem.Material">
+            <summary>
+            材質
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BOMIteem.ProcessMethod">
+            <summary>
+            處理方式
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BOMIteem.Price">
+            <summary>
+            單價
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BOMIteem.SubTotal">
+            <summary>
+            金額
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BOMIteem.Remark">
+            <summary>
+            備註
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.CustomerInformation">
+            <summary>
+            客戶資料
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.CustomerInformation.CustomerNo">
+            <summary>
+            客戶編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.CustomerInformation.CustomerName">
+            <summary>
+            客戶名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.CustomerInformation.CustomerBuyer">
+            <summary>
+            採購人員
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.CustomerInformation.TEL">
+            <summary>
+            電話
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.CustomerInformation.FAX">
+            <summary>
+            傳真
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.CustomerInformation.Payment">
+            <summary>
+            付款說明
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.CustomerInformation.BusinessTax">
+            <summary>
+            營業稅
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.CustomerInformation.Currency">
+            <summary>
+            幣別
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.CustomerInformation.InternalOrderNo">
+            <summary>
+            內部單號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.CustomerInformation.OrderDate">
+            <summary>
+            接單日期
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.WorkOrderInformation">
+            <summary>
+            工單資訊
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInformation.OrderNo">
+            <summary>
+            工單編號
+            </summary>
+            [Display(Name = "機台編號")]
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInformation.OPNo">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInformation.OPName">
+            <summary>
+            製程名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInformation.Machine">
+            <summary>
+            分發機台
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInformation.RequireCount">
+            <summary>
+            工單數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInformation.CurrentCount">
+            <summary>
+            當前數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInformation.StarTime">
+            <summary>
+            開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInformation.EndTime">
+            <summary>
+            結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInformation.Group">
+            <summary>
+            負責群組
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInformation.OperatorName">
+            <summary>
+            負責人
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInformation.WorkOrderStatus">
+            <summary>
+            工單狀態
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.WorkOrderDetailInformation">
+            <summary>
+            工單詳細資訊
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.OrderNo">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.OPNo">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.OPName">
+            <summary>
+            製程名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.ProductNo">
+            <summary>
+            產品名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.Machine">
+            <summary>
+            分發機台
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.RequireCount">
+            <summary>
+            工單數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.CurrentCount">
+            <summary>
+            當前數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.StarTime">
+            <summary>
+            開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.EndTime">
+            <summary>
+            結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.DueDate">
+            <summary>
+            預交日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.DeleyTime">
+            <summary>
+            延遲時數
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.PlanningDueDate">
+            <summary>
+            生管預交日
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.ProgressBarRate">
+            <summary>
+            生產進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.Group">
+            <summary>
+            負責群組
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.Operator">
+            <summary>
+            負責人(操作人員)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.WorkOrderStatus">
+            <summary>
+            工單狀態
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.CADFilePath">
+            <summary>
+            設計圖製路徑
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.OrderDueDate">
+            <summary>
+            訂單交付日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderDetailInformation.Remark">
+            <summary>
+            備註
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.WorkOrderBindInfo">
+            <summary>
+            綁定工單資訊
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderBindInfo.DeviceId">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderBindInfo.MachineName">
+            <summary>
+            機台名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderBindInfo.WorkOrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderBindInfo.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderBindInfo.OperatorID">
+            <summary>
+            作業人員編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderBindInfo.OperatorName">
+            <summary>
+            作業人員名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderBindInfo.CreateTime">
+            <summary>
+            建立時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderBindInfo.LastUpdateTime">
+            <summary>
+            更新時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderInfo.CustomerName">
+            <summary>
+            客戶名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderInfo.CustomerLocation">
+            <summary>
+            客戶地點
+            </summary>
+        </member>
+        <member name="M:PMCDash.Models.PasswordUtility.PasswordLength(System.String)">
+            <summary>
+            11-11 檢查密碼長度
+            1. 最少 8 碼
+            2. 最少有 1 個大寫或小寫英文
+            3. 最少包含 1 個數字
+            </summary>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Models.PasswordUtility.AESEncryptor(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            11-17 AES 對稱加密演算法 － 加密
+            </summary>
+            <param name="plainText"></param>
+            <param name="Key"></param>
+            <param name="IV"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Models.PasswordUtility.AESDecryptor(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            11-17 AES 對稱加密演算法 － 解密
+            </summary>
+            <param name="encryptedString"></param>
+            <param name="Key"></param>
+            <param name="IV"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Models.PasswordUtility.SHA256Encryptor(System.String)">
+            <summary>
+            11-19 SHA256 雜湊演算法
+            </summary>
+            <param name="plainText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Models.PasswordUtility.SHA512Encryptor(System.String)">
+            <summary>
+            11-19 SHA512 雜湊演算法
+            </summary>
+            <param name="plainText"></param>
+        </member>
+        <member name="M:PMCDash.Models.PasswordUtility.GuidwithPassword(System.Guid,System.String)">
+            <summary>
+            11-20 雜湊密碼 (SHA512 為例，利用與 GUID 的字串連接進行加密)
+            </summary>
+            <param name="plainText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Models.PasswordUtility.aesDecryptBase64(System.String,System.String)">
+            <summary>
+            字串解密(非對稱式)
+            </summary>
+            <param name="SourceStr">解密前字串</param>
+            <param name="CryptoKey">解密金鑰</param>
+            <returns>解密後字串</returns>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.OrderInfo">
+            <summary>
+            工單基本資料
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.OrderNo">
+            <summary>
+            訂單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.BOM_No">
+            <summary>
+            BOM編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.BOM_Name">
+            <summary>
+            BOM名稱(產品名稱)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.Componentname">
+            <summary>
+            物料名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.MaterialNo">
+            <summary>
+            素材編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.MaterialName">
+            <summary>
+            素材名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.CurrentCount">
+            <summary>
+            當前數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.Group">
+            <summary>
+            群組名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.Machine">
+            <summary>
+            機器設備名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.OperatorName">
+            <summary>
+            生產負責人
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.QC_OperatorName">
+            <summary>
+            檢驗負責人名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCreport.QC_Mode">
+            <summary>
+            檢驗模式
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.OrderId">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.OPId">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.OPName">
+            <summary>
+            製程名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.ProductId">
+            <summary>
+            產品編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.ProductName">
+            <summary>
+            產品名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.StartTime">
+            <summary>
+            預計開工
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.EndTime">
+            <summary>
+            預計完工
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.OPStatus">
+            <summary>
+            開工狀態【0:未開工、1:生產中、2:暫停中、3:已完成】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.AssignDate">
+            <summary>
+            產品交期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.DeleyDays">
+            <summary>
+            延遲交期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.Deviec">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.DeviceGroup">
+            <summary>
+            機台群組
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.OperatorName">
+            <summary>
+            人員姓名
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.Progress">
+            <summary>
+            進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.RequireNum">
+            <summary>
+            需求數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.CompleteNum">
+            <summary>
+            已完成數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.DefectiveNum">
+            <summary>
+            不良品數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.IsQC">
+            <summary>
+            品質檢驗【N/A:不需檢驗、False:需檢驗、未檢驗完成、True:已經檢驗】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTask.QCman">
+            <summary>
+            品檢人員
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.OrderId">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.OPId">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.OPName">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.ProductId">
+            <summary>
+            產品編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.StartTime">
+            <summary>
+            預計開工
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.EndTime">
+            <summary>
+            預計完工
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.AssignDate">
+            <summary>
+            產品交期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.DeleyDays">
+            <summary>
+            延期天數
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.Deviec">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.DeviceGroup">
+            <summary>
+            機台群組
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.OperatorName">
+            <summary>
+            人員姓名
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.Progress">
+            <summary>
+            進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.RequireNum">
+            <summary>
+            需求數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.CompleteNum">
+            <summary>
+            完成數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.RemainNum">
+            <summary>
+            剩餘數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.IsQC">
+            <summary>
+            品檢狀況
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.QCman">
+            <summary>
+            品檢人員
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.type">
+            <summary>
+            開工類別
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.QtyGood">
+            <summary>
+            良品數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.QtyBad">
+            <summary>
+            不良品數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCWorkTaskDetail.ImgPath">
+            <summary>
+            圖片位址
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureDataReport.WorkOrderNo">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureDataReport.PartNo">
+            <summary>
+            物料編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureDataReport.OPNo">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureDataReport.QC_OperatorName">
+            <summary>
+            檢驗人員
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureDataReport.QC_Quantity">
+            <summary>
+            需求檢驗數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureDataReport.QC_CurrentCount">
+            <summary>
+            已驗數數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureDataReport.QCPlaceItem">
+            <summary>
+            檢驗部位數值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureDataReport.PASSofPartCount">
+            <summary>
+            良品數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureDataReport.NotPASSofPartCount">
+            <summary>
+            不良品數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureDataReport.Remark">
+            <summary>
+            備註
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureData.QCPlaceNo">
+            <summary>
+            檢驗部位編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureData.QCPlaceNanme">
+            <summary>
+            檢驗部位名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureData.QCToolNo">
+            <summary>
+            檢驗工具編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureData.QCPlaceUnit">
+            <summary>
+            檢驗部位單位
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureData.QCRealValue">
+            <summary>
+            檢驗實際數值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCMeasureData.QCRealDateTime">
+            <summary>
+            檢驗實際時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCPlace.QCPlaceNo">
+            <summary>
+            檢驗部位編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCPlace.QCPlaceNanme">
+            <summary>
+            檢驗部位名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCPlace.QCPlaceUnit">
+            <summary>
+            檢驗部位單位
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCPlace.QCPlaceUCL">
+            <summary>
+            管制上限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCPlace.QCPlaceLCL">
+            <summary>
+            管制下限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCPlace.QCPlaceCL">
+            <summary>
+            管制中心值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCPlace.QCPlaceUSL">
+            <summary>
+            規格上限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCPlace.QCPlaceLSL">
+            <summary>
+            規格下限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.QCPlace.Remark">
+            <summary>
+            備註
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.Evaluation">
+            <summary>
+            CPK評價
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.Name">
+            <summary>
+            檢驗項目名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.Unit">
+            <summary>
+            管制圖單位 EX: nm、mm、cm、M
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.CPKValue">
+            <summary>
+            CPK值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.Cp">
+            <summary>
+            Cp值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.Ca">
+            <summary>
+            Ca值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.Total">
+            <summary>
+            總件數
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.Distance">
+            <summary>
+            移動距離(n)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.CL">
+            <summary>
+            中心值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.LSL">
+            <summary>
+            規格/管制下限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.USL">
+            <summary>
+            規格/管制上限
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.XChart">
+            <summary>
+            X管制圖資料
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.XRMChart">
+            <summary>
+            XRM管制圖資料
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.Max">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.Min">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.AVG">
+            <summary>
+            平均
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.MSE">
+            <summary>
+            標準差
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.WOInterval">
+            <summary>
+            工單區間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Quality.WorkOrders">
+            <summary>
+            每點(X管制圖)工單明細
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInfo.WONo">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInfo.Custom">
+            <summary>
+            客戶名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInfo.Require">
+            <summary>
+            工單數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrderInfo.DueDate">
+            <summary>
+            預交日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ReporterInformation.DeviceName">
+            <summary>
+            機台名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ReporterInformation.Operator">
+            <summary>
+            操作人員
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ReporterInformation.OrderID">
+            <summary>
+            工單號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ReporterInformation.Maktxt">
+            <summary>
+            料號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ReporterInformation.OringinCount">
+            <summary>
+            批號數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ReporterInformation.RepotedConut">
+            <summary>
+            報工數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ReporterInformation.OrderStatus">
+            <summary>
+            工單狀態
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BadReportInfo.BadReason">
+            <summary>
+            不良原因
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BadReportInfo.BadCount">
+            <summary>
+            不良品數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idlereason.idleReasonId">
+            <summary>
+            待機原因標號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idlereason.idleReasonType">
+            <summary>
+            待機原因種類【1:人員、2:機台】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idlereason.idleReasonTitle">
+            <summary>
+            待機原因名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList.orderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList.opId">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList.idletype">
+            <summary>
+            待機種類【1:人員、2:機台】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList.idleDevice">
+            <summary>
+            待機設備名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList.idlePerson">
+            <summary>
+            待機人員名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList.idlereson_id">
+            <summary>
+            待機原因編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList.idlereson_name">
+            <summary>
+            待機原因名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList.idle_start_time">
+            <summary>
+            待機開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList.idle_end_time">
+            <summary>
+            待機結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList.idleDuration">
+            <summary>
+            待機時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList_1.idletype">
+            <summary>
+            待機種類【1:人員、2:機台】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList_1.idlereson_id">
+            <summary>
+            待機原因編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList_1.idlereson_name">
+            <summary>
+            待機原因名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList_1.idle_start_time">
+            <summary>
+            待機開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList_1.idle_end_time">
+            <summary>
+            待機結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList_1.idle_first_report_time">
+            <summary>
+            待機結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.idleList_1.idle_scend_report_time">
+            <summary>
+            待機結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedulelist.mode">
+            <summary>
+            排程模式編號【1:交期優先-推薦權重、2:交期優先-自訂權重】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedulelist.schedules">
+            <summary>
+            排程產出資料
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.OPName">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.Important">
+            <summary>
+            是否為重要工單
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.MAKTX">
+            <summary>
+            物料編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.PartName">
+            <summary>
+            物料名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.WorkGroup">
+            <summary>
+            分發機台
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.OrderQTY">
+            <summary>
+            需求數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.StartTime">
+            <summary>
+            開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.EndTime">
+            <summary>
+            結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.AssignDate">
+            <summary>
+            預交日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.DelayDays">
+            <summary>
+            延遲天數
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.AssignDate_PM">
+            <summary>
+            生管預交日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.Progress">
+            <summary>
+            生產進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.CustomerName">
+            <summary>
+            客戶名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.CustomerLocation">
+            <summary>
+            客戶地點
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.Note">
+            <summary>
+            備註
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.HunmanOpTime">
+            <summary>
+            人工時
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.MachOpTime">
+            <summary>
+            機工時
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.WIPEvent">
+            <summary>
+            工單狀態
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.Assign">
+            <summary>
+            是否為已派工單
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedule.ProcessStatus">
+            <summary>
+            製程狀態
+            DELAY:已經延遲，WILLDELAY:即將延遲，NORMAL:進度正常
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.DelayScheduleOP">
+            <summary>
+            機台故障專用
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DelayScheduleOP.MachineName">
+            <summary>
+            報修機台名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DelayScheduleOP.BreakdownST">
+            <summary>
+            開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DelayScheduleOP.BreakdownET">
+            <summary>
+            結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedulelist_MB.mode">
+            <summary>
+            排程模式編號【1:交期優先-推薦權重、2:交期優先-自訂權重】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedulelist_MB.breakdownInfo">
+            <summary>
+            設備故障資訊
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Schedulelist_MB.schedules">
+            <summary>
+            排程產出資料
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.MachinebreakdowInfo.Machine">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.MachinebreakdowInfo.StartTime">
+            <summary>
+            機台維修開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.MachinebreakdowInfo.EndTime">
+            <summary>
+            機台維修結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Dashboard.Name">
+            <summary>
+            欄位名稱(中文)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Dashboard.Sequence">
+            <summary>
+            欄位順序
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Dashboard.Key">
+            <summary>
+            欄位名稱(英文)，可對照DashBoard API中輸出欄位名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Dashboard.Freeze">
+            <summary>
+            是否固定為左側欄位
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Dashboard.DateType">
+            <summary>
+            資料屬性
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Dashboard.IsShow">
+            <summary>
+            是否顯示
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Dashboard.IsAdvancedSearch">
+            <summary>
+            是否進階搜尋
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DashboardUpdate.Name">
+            <summary>
+            欄位名稱(中文)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DashboardUpdate.Sequence">
+            <summary>
+            欄位順序
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DashboardUpdate.Page">
+            <summary>
+            表單種類2:定單列表、3:工單列表
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.MAKTX">
+            <summary>
+            物料編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.WorkGroup">
+            <summary>
+            分發機台
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.AssignDate">
+            <summary>
+            交付日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.AssignDate_PM">
+            <summary>
+            生管預交日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.OrderQty">
+            <summary>
+            分發數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.CustomerName">
+            <summary>
+            客戶名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.CustomerLocation">
+            <summary>
+            客戶地區
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.ProductName">
+            <summary>
+            產品名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.Important">
+            <summary>
+            篩選是否為重要工單
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.Scheduled">
+            <summary>
+            篩選是否為未派工單
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.WillDelay">
+            <summary>
+            篩選是否為即將延遲
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.AlreadyDelay">
+            <summary>
+            篩選是否為已經延遲
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.StartTime">
+            <summary>
+            開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SearchParameter.EndTime">
+            <summary>
+            結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleWeight.DisplayName">
+            <summary>
+            權重名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleWeight.Key">
+            <summary>
+            權重關鍵字
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleWeight.WeightDefaultValue">
+            <summary>
+            權重值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleWeight.MiniWeight">
+            <summary>
+            權重最小值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleWeight.MaxWeight">
+            <summary>
+            權重最大值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Weight.OrderFillRate">
+            <summary>
+            準交率
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Weight.UtilizationRate">
+            <summary>
+            稼動率
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Weight.MovingDistance">
+            <summary>
+            搬移距離
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Weight.LoadBalance">
+            <summary>
+            負載平衡
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDataComparison.Item">
+            <summary>
+            比較項目
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDataComparison.WTValue">
+            <summary>
+            WT值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDataComparison.CTValue">
+            <summary>
+            CT值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDataComparison.TotalDelay">
+            <summary>
+            總延遲時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDataComparison.MovingTime">
+            <summary>
+            搬移次數
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDataComparison.UtilizationRate">
+            <summary>
+            稼動率
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDataComparison.OrderFillRate">
+            <summary>
+            準交率
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleMethodSelection.MethodId">
+            <summary>
+            排程方法的編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleMethodSelection.MethodName">
+            <summary>
+            排程方法的名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.chartTab.ModeCode">
+            <summary>
+            排程代號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.chartTab.DisplayTitle">
+            <summary>
+            標籤名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.GanttChartData.startDate">
+            <summary>
+            起始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.GanttChartData.endDate">
+            <summary>
+            結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.GanttChartData.taskName">
+            <summary>
+            機台名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.GanttChartData.status">
+            <summary>
+            製程狀態【0:未開工、1:加工中、2:暫停中、3:已完成】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.GanttChartData.op">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.GanttChartData.orderNum">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.DetailData">
+            <summary>
+            OPdetail API資料格式
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DetailData.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DetailData.Total">
+            <summary>
+            總數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DetailData.PredictST">
+            <summary>
+            預計開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DetailData.PredictET">
+            <summary>
+            預計結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DetailData.AssignDate_PM">
+            <summary>
+            生管預交日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DetailData.AssignDate">
+            <summary>
+            預交日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DetailData.Progress">
+            <summary>
+            生產完成度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DetailData.DelayDay">
+            <summary>
+            延遲天數
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DetailData.WT">
+            <summary>
+            WT值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DetailData.CT">
+            <summary>
+            CT值
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.ListWorkConditions">
+            <summary>
+            製程狀態資料格式(List)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ListWorkConditions.Endtime">
+            <summary>
+            製程結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ListWorkConditions.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ListWorkConditions.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ListWorkConditions.Message">
+            <summary>
+            提醒訊息
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ListWorkConditions.IsOPDeley">
+            <summary>
+            是否延遲(用於顏色辨認)
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.WorkInfos">
+            <summary>
+            提醒訊息格式
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.BasicChartWork">
+            <summary>
+            製程狀態資料格式(Chart-基本資訊)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWork.AssignST">
+            <summary>
+            預計開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWork.AssignET">
+            <summary>
+            預計結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWork.OPState">
+            <summary>
+            製程狀態(未開工、進行中、已暫停、已完成)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWork.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWork.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWork.Range">
+            <summary>
+            製程順序
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWork.WorkGroup">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.BasicChartWorkConditions">
+            <summary>
+            製程狀態資料格式(Chart-基本資訊)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.GroupID">
+            <summary>
+            群組編號(委外機台)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.AssignST">
+            <summary>
+            預計開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.AssignET">
+            <summary>
+            預計結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.OPSTATE">
+            <summary>
+            製程狀態(UNSTARTED:未開工、PROCESSING:進行中、FINISH:已完成)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.WorkGroup">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.GroupNumber">
+            <summary>
+            機檯群組
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.Progress">
+            <summary>
+            目前執行進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.DueDate">
+            <summary>
+            預計交期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.OPICON">
+            <summary>
+            OP狀態屬性
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.actExpCompare">
+            <summary>
+            OP實際預計的屬性
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartWorkConditions.isLock">
+            <summary>
+            是否要鎖定此區塊
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.BasicOPstates">
+            <summary>
+            OP的狀態
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicOPstates.ProcessStatus">
+            <summary>
+            製程狀態【DELAY:已延遲、WILLDELAY:即將延遲、NORMAL:進度正常】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicOPstates.IsImportant">
+            <summary>
+            重要工單icon
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicOPstates.OrderPriority">
+            <summary>
+            工單緊急程度(0:非急工單, 1:急, 2:緊急, 3:最緊急)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicOPstates.IsUnconfirmed">
+            <summary>
+            待確認製程樣式
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicOPstates.IsAffected">
+            <summary>
+            受影響製程樣式
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.ActExpCompare">
+            <summary>
+            生管預交狀態，顯示實際報工與計畫排程相比較之差值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ActExpCompare.AssignPMState">
+            <summary>
+            實際/預計延遲狀態(提早完成:0、準時:1、延遲完成:2)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ActExpCompare.PMIntervalST">
+            <summary>
+            實際報工提早/延遲開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ActExpCompare.PMIntervalET">
+            <summary>
+            實際報工提早/延遲結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.Workgroup">
+            <summary>
+            分發機台
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.GroupNumber">
+            <summary>
+            機檯群組
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.MachineState">
+            <summary>
+            機台狀態
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.AssignST">
+            <summary>
+            排程開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.AssignET">
+            <summary>
+            排程結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.Real_ST">
+             <summary>
+            實際開始時間 
+             </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.Real_ET">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.PMDate">
+            <summary>
+            生管預交日
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.ASDate">
+            <summary>
+            預交日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.WIPEvent">
+            <summary>
+            工單狀態
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.Priority">
+            <summary>
+            緊急程度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.Important">
+            <summary>
+            重要工單
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.Progress">
+            <summary>
+            執行進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.BasicChartOPData.DueDate">
+            <summary>
+            預交日期
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.ProgressChartWorkConditions">
+            <summary>
+            製程狀態資料格式(Chart-進度資訊)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ProgressChartWorkConditions.WorkGroup">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ProgressChartWorkConditions.OPConditions">
+            <summary>
+            製程進度資訊
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ProgressOPstates.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ProgressOPstates.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ProgressOPstates.ProgressState">
+            <summary>
+            進度狀態(1:進度正常、2:進度延遲)
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ProgressOPstates.ProgressST">
+            <summary>
+            進度開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ProgressOPstates.ProgressET">
+            <summary>
+            進度結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ProgressOPstates.ChooseMethod">
+            <summary>
+            是否要有選擇執行方式ICON
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.AllMachine.Machine">
+            <summary>
+            機台列表
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.EditPredictDateData">
+            <summary>
+            生管預交修改資訊
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.EditPredictDateData.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.EditPredictDateData.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.EditPredictDateData.AssignDate">
+            <summary>
+            預交日期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.EditPredictDateData.OrderQTY">
+            <summary>
+            分發數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.EditPredictDateData.HumanOpTime">
+            <summary>
+            人工時
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.EditPredictDateData.MachOpTime">
+            <summary>
+            機工時
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.ScheduleDateRangeRequest">
+            <summary>
+            交期優先排程法必要輸入
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDateRangeRequest.StartTime">
+            <summary>
+            選擇交期開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDateRangeRequest.EndTime">
+            <summary>
+            選擇交期結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDateRangeRequest.Mode">
+            <summary>
+            權重模式【A:推薦參數、B:自定參數、C:推薦參數+自定參數】
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDateRangeRequest.SelectOrders">
+            <summary>
+            勾選工單製程項目
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDateRangeRequest.weights">
+            <summary>
+            權重資料
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.ScheduleOrdersRequest">
+            <summary>
+            機台優先排程法必要輸入
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleOrdersRequest.SelectOrders">
+            <summary>
+            勾選工單製程項目
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleOneOrderRequest.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleOneOrderRequest.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleEditPredictDateRequest.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleEditPredictDateRequest.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleEditPredictDateRequest.AssignDate_PM">
+            <summary>
+            生管欲交日期
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.ScheduleEditImportantOrderRequest">
+            <summary>
+            重要工單
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleEditImportantOrderRequest.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleEditImportantOrderRequest.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleEditImportantOrderRequest.Important">
+            <summary>
+            是否重要工單【True:重要、False:不重要】
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.ScheduleDispatchWorkOrderRequest">
+            <summary>
+            派單
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDispatchWorkOrderRequest.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDispatchWorkOrderRequest.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDispatchWorkOrderRequest.Machine">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleDispatchWorkOrderRequest.SatrtTime">
+            <summary>
+            開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ManualScheduleRequest.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ManualScheduleRequest.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ManualScheduleRequest.Machine">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ManualScheduleRequest.StartTime">
+            <summary>
+            開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DispatchWorkScheduleRequest.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DispatchWorkScheduleRequest.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.GanttChartTabRequest">
+            <summary>
+            取的甘特圖tab資訊必要輸入
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.GanttChartTabRequest.Mode">
+            <summary>
+            主要排程模式
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.CancelScheduleRequest.Mode">
+            <summary>
+            排程結果代號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SelectOrder.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.SelectOrder.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ScheduleMethodSelectionRequest.Mode">
+            <summary>
+            排程結果代號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.MachineBreakdownRequest.Machine">
+            <summary>
+            機台編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.MachineBreakdownRequest.Mode">
+            <summary>
+            排程結果代號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.MachineBreakdownRequest.StartTime">
+            <summary>
+            機台報修開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.MachineBreakdownRequest.EndTime">
+            <summary>
+            機台報修預計結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DrapItem.orderid">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DrapItem.opid">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DrapItem.st">
+            <summary>
+            拖曳後的新開始時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DrapItem.et">
+            <summary>
+            拖曳厚後的新結束時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StatusDefine.ProcessDefine">
+            <summary>
+            製程進度狀態清單
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StatusDefine.OrderDefine">
+            <summary>
+            訂單狀態清單
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StatusDefine.OrderListType">
+            <summary>
+            訂單狀態清單
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ProcessStatus.Status">
+            <summary>
+            製程進度狀態 分為兩項 EX ONTIME、DELAY
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.ProcessStatus.DisplayName">
+            <summary>
+            當前狀態描述 EX 準時、延遲
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderStatus.Status">
+            <summary>
+            訂單狀態 EX: 目前是 SS、S、N
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderStatus.DisplayName">
+            <summary>
+            訂單狀態描述 EX: 目前是 最緊急、緊急、急
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderListType.Code">
+            <summary>
+            訂單狀態 EX: 目前是 SS、S、N
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.OrderListType.DisplayName">
+            <summary>
+            訂單狀態描述 EX: 目前是 最緊急、緊急、急
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StatusDistribution.Run">
+            <summary>
+            運轉比例
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StatusDistribution.Idle">
+            <summary>
+            待機比例
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StatusDistribution.Alarm">
+            <summary>
+            警報比例
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StatusDistribution.Off">
+            <summary>
+            停機比例
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StatusMpaping.WipStatus">
+            <summary>
+            WIP狀態
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StatusMpaping.WipStatusText">
+            <summary>
+            WIP狀態描述
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StatusMpaping.WipStatusColor">
+            <summary>
+            WIP狀態顏色
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.OrderNo">
+            <summary>
+            訂單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.WONo">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.ProgressValue">
+            <summary>
+            生產進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.MaterialNo">
+            <summary>
+            物料編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.PartName">
+            <summary>
+            物料名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.DrawingNname">
+            <summary>
+            客戶圖號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.ProcessMethod">
+            <summary>
+            處理方法
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.ProductMaterial">
+            <summary>
+            品項材質
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.CusDevice">
+            <summary>
+            對應機型
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.Noet">
+            <summary>
+            工單備註
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.RequireCount">
+            <summary>
+            需求數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.DueDatePM">
+            <summary>
+            生管預交日
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.DueDate">
+            <summary>
+            預交日
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.NeedDay">
+            <summary>
+            尚餘加工天數
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.ProcessInfos">
+            <summary>
+            工單製程明細
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkOrder.EstimatedDate">
+            <summary>
+            排程估計交期
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Process.No">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Process.Range">
+            <summary>
+            製程順序
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Process.Name">
+            <summary>
+            製程名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Process.ProgressValue">
+            <summary>
+            生產進度
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Process.CPKEvaluation">
+            <summary>
+            CPK評價
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Process.Remark">
+            <summary>
+            備註
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Process.ExecutionTime">
+            <summary>
+            生產時間
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.Process.IsDelay">
+            <summary>
+            生產逾時
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkReportRequest.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkReportRequest.OPId">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkReportRequest.Device">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkReporStarttRequest.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkReporStarttRequest.OPId">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkReporStarttRequest.Device">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkReporStarttRequest.OrderQTY">
+            <summary>
+            工單需求數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkPassReportRequest.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkPassReportRequest.OPId">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkPassReportRequest.Device">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkPassReportRequest.QtyTol">
+            <summary>
+            回報生產數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkPassReportRequest.Reason">
+            <summary>
+            不良品原因及數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StartIdleReportRequest.OrderId">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StartIdleReportRequest.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StartIdleReportRequest.Device">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.StartIdleReportRequest.ReasonCode">
+            <summary>
+            待機原因編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.EndIdleReportRequest.OrderId">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.EndIdleReportRequest.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.EndIdleReportRequest.Device">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.EndIdleReportRequest.ReasonCode">
+            <summary>
+            待機原因編號
+            </summary>
+        </member>
+        <member name="T:PMCDash.Models.WorkQCReportRequest">
+            <summary>
+            寫入量測資料
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkQCReportRequest.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkQCReportRequest.OPId">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkQCReportRequest.ProductId">
+            <summary>
+            物料編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkQCReportRequest.QCPointName">
+            <summary>
+            檢驗點名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkQCReportRequest.QCToolID">
+            <summary>
+            檢驗工具編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkQCReportRequest.QCValue">
+            <summary>
+            QC量測值
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.WorkQCReportRequest.QCMode">
+            <summary>
+            品檢模式:0=>自動 1=>手動
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestReportInfo.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestReportInfo.OPId">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestReportInfo.QtyTol">
+            <summary>
+            報工回報數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.RequestReportInfo.Reason">
+            <summary>
+            不良品原因及數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DefectiveReason.QCReason">
+            <summary>
+            不良原因
+            </summary>
+        </member>
+        <member name="P:PMCDash.Models.DefectiveReason.QtyNum">
+            <summary>
+            不量原因數量
+            </summary>
+        </member>
+        <member name="P:PMCDash.Services.AccountService.UserData.User_Id">
+            <summary>
+            使用者id
+            </summary>
+        </member>
+        <member name="P:PMCDash.Services.AccountService.UserData.EmpolyeeAccount">
+            <summary>
+            使用者帳號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Services.AccountService.UserData.EmpolyeeName">
+            <summary>
+            使用者姓名
+            </summary>
+        </member>
+        <member name="P:PMCDash.Services.AccountService.UserData.GroupId">
+            <summary>
+            所屬群組代號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Services.AccountService.UserData.GroupName">
+            <summary>
+            所屬群組名稱
+            </summary>
+        </member>
+        <member name="P:PMCDash.Services.AccountService.UserData.DeviceGroupId">
+            <summary>
+            所屬群組編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Services.AccountService.UserData.GroupDevices">
+            <summary>
+            所屬群組之機台
+            </summary>
+        </member>
+        <member name="P:PMCDash.Services.AccountService.UserData.FunctionAccess">
+            <summary>
+            使用者權限
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PMCDash.Services.FitnessService.LoadBalance(System.Collections.Generic.List{System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}}},System.Int32)" -->
+        <member name="M:PMCDash.Services.FitnessService.MoveFitness(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}})">
+            <summary>
+            搬運成本
+            </summary>
+            <param name="machineAssign">[n, m] n為工單、m為各工單之製程數</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Services.DelayMthod.m_IsWorkingDay(System.DateTime)">
+            <summary>
+            判断是否在工作日内
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PMCDash.Services.DelayMthod.OrderDevice.OrderID">
+            <summary>
+            工單編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Services.DelayMthod.OrderDevice.OPID">
+            <summary>
+            製程編號
+            </summary>
+        </member>
+        <member name="P:PMCDash.Services.DelayMthod.OrderDevice.DeviceName">
+            <summary>
+            機台名稱
+            </summary>
+        </member>
+        <member name="M:PMCDash.Services.DelayMthod.DispatchFitness(System.Collections.Generic.List{PMCDash.Models.Chromsome},System.Collections.Generic.List{PMCDash.Models.Chromsome})">
+            <summary>
+            計算插單排程適應度
+            </summary>
+            <param name="oridata">原排程</param>
+            <param name="newdata">新排程</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Services.DelayMthod.FindCriticalPath(System.Collections.Generic.List{PMCDash.Models.Chromsome})">
+            <summary>
+            找關鍵路徑
+            </summary>
+            <param name="Inputschedule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Services.SetupMethod.FindCriticalPath(System.Collections.Generic.List{PMCDash.Models.Chromsome})">
+            <summary>
+            找關鍵路徑
+            </summary>
+            <param name="Inputschedule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Services.RestTime.#ctor">
+            <summary>
+            預設8點開始上班，上班9小時
+            </summary>
+        </member>
+        <member name="M:PMCDash.Services.RestTime.SetWorkTimeRang(System.Int32,System.Int32)">
+            <summary>
+            設定上班工時與開始上班時間
+            </summary>
+            <param name="startHour">幾點開始上班</param>
+            <param name="hoursPerDay">上班幾小時</param>
+        </member>
+        <member name="M:PMCDash.Services.RestTime.restTimecheck(System.DateTime,System.TimeSpan)">
+            <summary>
+            計算補償休息日完工時間
+            </summary>
+            <param name="PostST">開始時間</param>
+            <param name="Duration">花費時間</param>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Services.RestTime.m_IsWorkingDay(System.DateTime)">
+            <summary>
+            判断是否在工作日内
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

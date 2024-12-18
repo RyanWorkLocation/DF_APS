@@ -1,0 +1,5640 @@
+{
+  "message": "N/A",
+  "data": [
+    {
+      "assignST": "2022-06-08 14:41",
+      "assignET": "2022-06-08 16:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601008",
+      "opid": "571",
+      "workGroup": "CNC-001",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-13 01:41",
+      "assignET": "2022-06-13 03:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601010",
+      "opid": "695",
+      "workGroup": "CNC-002",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-18 09:41",
+      "assignET": "2022-06-18 11:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601024",
+      "opid": "695",
+      "workGroup": "CNC-002",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-13 14:41",
+      "assignET": "2022-07-13 16:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "197",
+      "workGroup": "CNC-002",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 19:41",
+      "assignET": "2022-06-08 21:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601007",
+      "opid": "511",
+      "workGroup": "CNC-003",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 09:11",
+      "assignET": "2022-06-17 10:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601026",
+      "opid": "510",
+      "workGroup": "CNC-003",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 10:41",
+      "assignET": "2022-06-17 12:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601025",
+      "opid": "573",
+      "workGroup": "CNC-003",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 12:11",
+      "assignET": "2022-06-17 13:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601026",
+      "opid": "511",
+      "workGroup": "CNC-003",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 20:41",
+      "assignET": "2022-06-18 02:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "618",
+      "workGroup": "CNC-003",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-05 15:11",
+      "assignET": "2022-07-05 17:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601006",
+      "opid": "493",
+      "workGroup": "CNC-003",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-26 16:41",
+      "assignET": "2022-07-26 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601021",
+      "opid": "502",
+      "workGroup": "CNC-003",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-26 18:41",
+      "assignET": "2022-06-26 22:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "165",
+      "workGroup": "CNC-004",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 17:11",
+      "assignET": "2022-06-08 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601007",
+      "opid": "510",
+      "workGroup": "CNC-005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-09 18:41",
+      "assignET": "2022-06-09 20:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601008",
+      "opid": "574",
+      "workGroup": "CNC-005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-10 23:11",
+      "assignET": "2022-06-10 23:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601014",
+      "opid": "745",
+      "workGroup": "CNC-005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-12 23:11",
+      "assignET": "2022-06-12 23:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601015",
+      "opid": "773",
+      "workGroup": "CNC-005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-14 23:11",
+      "assignET": "2022-06-14 23:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601016",
+      "opid": "782",
+      "workGroup": "CNC-005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-14 23:41",
+      "assignET": "2022-06-15 00:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601017",
+      "opid": "766",
+      "workGroup": "CNC-005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 08:41",
+      "assignET": "2022-06-17 09:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601026",
+      "opid": "509",
+      "workGroup": "CNC-005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 09:11",
+      "assignET": "2022-06-17 09:41",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523001",
+      "opid": "24",
+      "workGroup": "CNC-005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 14:11",
+      "assignET": "2022-06-17 19:11",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523002",
+      "opid": "24",
+      "workGroup": "CNC-005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 19:11",
+      "assignET": "2022-06-17 20:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "616",
+      "workGroup": "CNC-005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-26 18:11",
+      "assignET": "2022-06-26 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "164",
+      "workGroup": "CNC-005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 16:11",
+      "assignET": "2022-06-08 16:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601007",
+      "opid": "509",
+      "workGroup": "CNC-006",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-10 14:41",
+      "assignET": "2022-06-10 16:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601013",
+      "opid": "699",
+      "workGroup": "CNC-006",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-16 23:41",
+      "assignET": "2022-06-17 01:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601018",
+      "opid": "721",
+      "workGroup": "CNC-006",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 08:11",
+      "assignET": "2022-06-17 09:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601025",
+      "opid": "571",
+      "workGroup": "CNC-006",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-18 02:41",
+      "assignET": "2022-06-19 03:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "620",
+      "workGroup": "DFC - 001",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-12 18:11",
+      "assignET": "2022-07-12 20:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601012",
+      "opid": "358",
+      "workGroup": "DFC - 001",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-26 22:41",
+      "assignET": "2022-06-27 02:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "166",
+      "workGroup": "DFC - 002",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-19 18:41",
+      "assignET": "2022-07-19 21:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601019",
+      "opid": "358",
+      "workGroup": "DFC - 002",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-09 21:41",
+      "assignET": "2022-06-09 23:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601008",
+      "opid": "578",
+      "workGroup": "DFD - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-04 02:41",
+      "assignET": "2022-07-04 04:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "345",
+      "workGroup": "DFD - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-26 18:41",
+      "assignET": "2022-07-26 20:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601021",
+      "opid": "503",
+      "workGroup": "DFD - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-03 04:41",
+      "assignET": "2022-08-03 06:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "345",
+      "workGroup": "DFD - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-21 09:41",
+      "assignET": "2022-06-21 11:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "599",
+      "workGroup": "DFD - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-30 16:31",
+      "assignET": "2022-06-30 18:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "154",
+      "workGroup": "DFD - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-04 04:11",
+      "assignET": "2022-07-04 04:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "346",
+      "workGroup": "DFD - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-05 17:11",
+      "assignET": "2022-07-05 19:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601006",
+      "opid": "496",
+      "workGroup": "DFD - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-03 06:11",
+      "assignET": "2022-08-03 06:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "346",
+      "workGroup": "DFD - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-02 11:41",
+      "assignET": "2022-07-02 14:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "603",
+      "workGroup": "DFH-001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-07 12:11",
+      "assignET": "2022-07-07 15:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "157",
+      "workGroup": "DFH-001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-18 13:11",
+      "assignET": "2022-07-18 15:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "351",
+      "workGroup": "DFH-002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-03 06:41",
+      "assignET": "2022-08-03 08:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "347",
+      "workGroup": "DFH-002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-09-01 20:21",
+      "assignET": "2022-09-01 22:51",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "351",
+      "workGroup": "DFH-002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-16 00:11",
+      "assignET": "2022-06-16 03:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "596",
+      "workGroup": "DFH-003",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-25 06:01",
+      "assignET": "2022-06-25 10:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "151",
+      "workGroup": "DFH-004",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-04 04:41",
+      "assignET": "2022-07-04 06:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "347",
+      "workGroup": "DFH-004",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-15 16:11",
+      "assignET": "2022-06-15 18:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "592",
+      "workGroup": "DFL - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-21 11:11",
+      "assignET": "2022-06-21 11:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "600",
+      "workGroup": "DFL - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-07 18:11",
+      "assignET": "2022-07-07 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "219",
+      "workGroup": "DFL - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-04 06:41",
+      "assignET": "2022-07-04 07:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "348",
+      "workGroup": "DFL - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-03 08:41",
+      "assignET": "2022-08-03 09:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "348",
+      "workGroup": "DFL - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-12 17:41",
+      "assignET": "2022-07-12 18:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601012",
+      "opid": "357",
+      "workGroup": "DFL - 003",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-19 16:11",
+      "assignET": "2022-07-19 16:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601019",
+      "opid": "355",
+      "workGroup": "DFL - 003",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-24 21:31",
+      "assignET": "2022-06-24 22:31",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "147",
+      "workGroup": "DFL - 004",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-02 19:11",
+      "assignET": "2022-08-02 21:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "340",
+      "workGroup": "DFL - 004",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-02 21:11",
+      "assignET": "2022-08-02 22:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "341",
+      "workGroup": "DFL - 004",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-09 17:11",
+      "assignET": "2022-06-09 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601008",
+      "opid": "573",
+      "workGroup": "DFL - 005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-10 18:41",
+      "assignET": "2022-06-11 20:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601009",
+      "opid": "694",
+      "workGroup": "DFL - 005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-11 20:41",
+      "assignET": "2022-06-11 21:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601014",
+      "opid": "746",
+      "workGroup": "DFL - 005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-11 23:41",
+      "assignET": "2022-06-13 01:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601010",
+      "opid": "694",
+      "workGroup": "DFL - 005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-15 00:11",
+      "assignET": "2022-06-15 00:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601017",
+      "opid": "768",
+      "workGroup": "DFL - 005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 07:41",
+      "assignET": "2022-06-18 09:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601024",
+      "opid": "694",
+      "workGroup": "DFL - 005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-18 09:41",
+      "assignET": "2022-06-18 14:41",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523002",
+      "opid": "26",
+      "workGroup": "DFL - 005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-18 14:41",
+      "assignET": "2022-06-18 15:11",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523001",
+      "opid": "26",
+      "workGroup": "DFL - 005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-18 15:11",
+      "assignET": "2022-06-18 16:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601025",
+      "opid": "574",
+      "workGroup": "DFL - 005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-26 16:11",
+      "assignET": "2022-06-26 17:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "162",
+      "workGroup": "DFL - 005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-26 17:41",
+      "assignET": "2022-06-26 18:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "163",
+      "workGroup": "DFL - 005",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 14:11",
+      "assignET": "2022-06-17 15:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "611",
+      "workGroup": "DFL - 006",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-12 16:11",
+      "assignET": "2022-07-12 17:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601012",
+      "opid": "356",
+      "workGroup": "DFL - 006",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-19 18:11",
+      "assignET": "2022-07-19 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601019",
+      "opid": "357",
+      "workGroup": "DFL - 006",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 03:41",
+      "assignET": "2022-06-18 05:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601023",
+      "opid": "694",
+      "workGroup": "DFL - 007",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-26 14:41",
+      "assignET": "2022-06-26 16:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "161",
+      "workGroup": "DFL - 007",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 15:41",
+      "assignET": "2022-06-17 17:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "612",
+      "workGroup": "DFL - 008",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 17:11",
+      "assignET": "2022-06-17 17:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "614",
+      "workGroup": "DFL - 008",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-12 15:41",
+      "assignET": "2022-07-12 16:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601012",
+      "opid": "355",
+      "workGroup": "DFL - 008",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-19 16:41",
+      "assignET": "2022-07-19 18:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601019",
+      "opid": "356",
+      "workGroup": "DFL - 008",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 13:41",
+      "assignET": "2022-06-08 16:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "51",
+      "workGroup": "DFL - 009",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-24 17:31",
+      "assignET": "2022-06-24 21:31",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "146",
+      "workGroup": "DFL - 009",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-03 17:11",
+      "assignET": "2022-07-03 19:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "340",
+      "workGroup": "DFL - 009",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-15 18:11",
+      "assignET": "2022-06-15 20:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "593",
+      "workGroup": "DFL - 010",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-03 19:11",
+      "assignET": "2022-07-03 20:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "341",
+      "workGroup": "DFL - 010",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-16 03:11",
+      "assignET": "2022-06-16 06:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "597",
+      "workGroup": "DFM - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-18 18:11",
+      "assignET": "2022-06-18 19:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601025",
+      "opid": "578",
+      "workGroup": "DFM - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-30 13:01",
+      "assignET": "2022-06-30 16:31",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "153",
+      "workGroup": "DFM - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-03 23:11",
+      "assignET": "2022-07-04 02:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "344",
+      "workGroup": "DFM - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-19 21:11",
+      "assignET": "2022-07-19 22:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601019",
+      "opid": "359",
+      "workGroup": "DFM - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-26 20:41",
+      "assignET": "2022-07-26 22:56",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601021",
+      "opid": "504",
+      "workGroup": "DFM - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-03 01:11",
+      "assignET": "2022-08-03 04:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "344",
+      "workGroup": "DFM - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 22:41",
+      "assignET": "2022-06-09 00:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601007",
+      "opid": "512",
+      "workGroup": "DFM - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-09 20:11",
+      "assignET": "2022-06-09 21:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601008",
+      "opid": "575",
+      "workGroup": "DFM - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-10 16:41",
+      "assignET": "2022-06-10 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601013",
+      "opid": "701",
+      "workGroup": "DFM - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-11 20:41",
+      "assignET": "2022-06-11 22:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601009",
+      "opid": "695",
+      "workGroup": "DFM - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 01:41",
+      "assignET": "2022-06-17 03:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601018",
+      "opid": "723",
+      "workGroup": "DFM - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 13:41",
+      "assignET": "2022-06-17 15:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601026",
+      "opid": "512",
+      "workGroup": "DFM - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-18 05:41",
+      "assignET": "2022-06-18 07:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601023",
+      "opid": "695",
+      "workGroup": "DFM - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-18 16:41",
+      "assignET": "2022-06-18 18:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601025",
+      "opid": "575",
+      "workGroup": "DFM - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-19 03:11",
+      "assignET": "2022-06-19 05:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "621",
+      "workGroup": "DFM - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-05 19:11",
+      "assignET": "2022-07-05 21:26",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601006",
+      "opid": "497",
+      "workGroup": "DFM - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-12 20:41",
+      "assignET": "2022-07-12 21:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601012",
+      "opid": "359",
+      "workGroup": "DFM - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-10 18:41",
+      "assignET": "2022-06-10 20:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601013",
+      "opid": "703",
+      "workGroup": "DFP - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 03:41",
+      "assignET": "2022-06-17 05:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601018",
+      "opid": "724",
+      "workGroup": "DFP - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-20 22:11",
+      "assignET": "2022-07-21 00:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601019",
+      "opid": "361",
+      "workGroup": "DFP - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-22 09:11",
+      "assignET": "2022-06-22 10:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "624",
+      "workGroup": "DFP - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-27 02:11",
+      "assignET": "2022-06-27 04:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "167",
+      "workGroup": "DFP - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-13 21:41",
+      "assignET": "2022-07-13 23:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601012",
+      "opid": "361",
+      "workGroup": "DFP - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-15 22:11",
+      "assignET": "2022-06-16 00:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "595",
+      "workGroup": "DFW - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-03 20:11",
+      "assignET": "2022-07-03 21:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "342",
+      "workGroup": "DFW - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-03 21:11",
+      "assignET": "2022-07-03 23:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "343",
+      "workGroup": "DFW - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-02 22:11",
+      "assignET": "2022-08-02 23:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "342",
+      "workGroup": "DFW - 001",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-15 20:11",
+      "assignET": "2022-06-15 22:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "594",
+      "workGroup": "DFW - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-24 22:31",
+      "assignET": "2022-06-24 23:31",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "149",
+      "workGroup": "DFW - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-24 23:31",
+      "assignET": "2022-06-25 02:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "150",
+      "workGroup": "DFW - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-02 23:11",
+      "assignET": "2022-08-03 01:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "343",
+      "workGroup": "DFW - 002",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 16:41",
+      "assignET": "2022-06-11 22:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601011",
+      "opid": "823",
+      "workGroup": "水套委外加工(牛杯杯)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-11 22:41",
+      "assignET": "2022-06-15 04:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601020",
+      "opid": "824",
+      "workGroup": "水套委外加工(牛杯杯)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 13:41",
+      "assignET": "2022-06-08 14:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601009",
+      "opid": "406",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 14:41",
+      "assignET": "2022-06-08 15:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601010",
+      "opid": "406",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 15:41",
+      "assignET": "2022-06-08 16:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601023",
+      "opid": "406",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 16:41",
+      "assignET": "2022-06-08 17:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601024",
+      "opid": "406",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 14:11",
+      "assignET": "2022-06-17 14:31",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601015",
+      "opid": "776",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-20 13:41",
+      "assignET": "2022-06-20 14:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601016",
+      "opid": "784",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-23 13:41",
+      "assignET": "2022-06-23 14:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601014",
+      "opid": "749",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-26 13:41",
+      "assignET": "2022-06-26 14:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601017",
+      "opid": "771",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-27 11:41",
+      "assignET": "2022-06-27 12:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "628",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-02 14:11",
+      "assignET": "2022-07-02 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "604",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-07 15:41",
+      "assignET": "2022-07-07 18:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "158",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-13 13:11",
+      "assignET": "2022-07-13 14:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "173",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-19 16:11",
+      "assignET": "2022-07-19 20:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "353",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-23 15:31",
+      "assignET": "2022-07-23 15:56",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601006",
+      "opid": "500",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-30 16:01",
+      "assignET": "2022-07-30 16:31",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601007",
+      "opid": "515",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-06 16:31",
+      "assignET": "2022-08-06 17:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601008",
+      "opid": "584",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-11 17:31",
+      "assignET": "2022-08-11 19:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601012",
+      "opid": "366",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-14 17:01",
+      "assignET": "2022-08-14 17:21",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601013",
+      "opid": "713",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-17 17:01",
+      "assignET": "2022-08-17 17:21",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601018",
+      "opid": "732",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-22 18:01",
+      "assignET": "2022-08-22 19:31",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601019",
+      "opid": "366",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-27 19:51",
+      "assignET": "2022-08-27 20:16",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601021",
+      "opid": "507",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-09-02 23:21",
+      "assignET": "2022-09-03 03:51",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "353",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-09-08 20:51",
+      "assignET": "2022-09-08 21:21",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601025",
+      "opid": "584",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-09-15 21:21",
+      "assignET": "2022-09-15 21:51",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601026",
+      "opid": "515",
+      "workGroup": "出貨前整理/品質檢驗",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-12 18:41",
+      "assignET": "2022-06-14 20:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601013",
+      "opid": "708",
+      "workGroup": "外徑研磨",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-14 20:41",
+      "assignET": "2022-06-14 21:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601014",
+      "opid": "747",
+      "workGroup": "外徑研磨",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-16 00:11",
+      "assignET": "2022-06-16 00:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601017",
+      "opid": "769",
+      "workGroup": "外徑研磨",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-18 01:11",
+      "assignET": "2022-06-20 03:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601018",
+      "opid": "726",
+      "workGroup": "外徑研磨",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-21 03:41",
+      "assignET": "2022-06-21 08:41",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523002",
+      "opid": "27",
+      "workGroup": "外徑研磨",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-21 08:41",
+      "assignET": "2022-06-21 09:11",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523001",
+      "opid": "27",
+      "workGroup": "外徑研磨",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-21 09:11",
+      "assignET": "2022-06-22 09:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "622",
+      "workGroup": "外徑研磨",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-27 04:11",
+      "assignET": "2022-06-28 04:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "168",
+      "workGroup": "外徑研磨",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-12 21:41",
+      "assignET": "2022-07-13 21:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601012",
+      "opid": "360",
+      "workGroup": "外徑研磨",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-18 15:41",
+      "assignET": "2022-07-19 16:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "352",
+      "workGroup": "外徑研磨",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-19 22:11",
+      "assignET": "2022-07-20 22:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601019",
+      "opid": "360",
+      "workGroup": "外徑研磨",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-09-01 22:51",
+      "assignET": "2022-09-02 23:21",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "352",
+      "workGroup": "外徑研磨",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 13:41",
+      "assignET": "2022-06-10 13:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "588",
+      "workGroup": "取材",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-10 13:41",
+      "assignET": "2022-06-17 14:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "610",
+      "workGroup": "取材",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 14:11",
+      "assignET": "2022-06-19 14:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "141",
+      "workGroup": "取材",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-19 14:11",
+      "assignET": "2022-06-26 14:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "159",
+      "workGroup": "取材",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-26 14:41",
+      "assignET": "2022-06-28 14:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "336",
+      "workGroup": "取材",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-28 14:41",
+      "assignET": "2022-07-05 15:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601006",
+      "opid": "492",
+      "workGroup": "取材",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-05 15:11",
+      "assignET": "2022-07-12 15:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601012",
+      "opid": "354",
+      "workGroup": "取材",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-12 15:41",
+      "assignET": "2022-07-19 16:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601019",
+      "opid": "354",
+      "workGroup": "取材",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-19 16:11",
+      "assignET": "2022-07-26 16:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601021",
+      "opid": "501",
+      "workGroup": "取材",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-26 16:41",
+      "assignET": "2022-07-28 16:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "336",
+      "workGroup": "取材",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 13:41",
+      "assignET": "2022-06-08 16:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601011",
+      "opid": "810",
+      "workGroup": "委外水套取材(祥裔)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 16:41",
+      "assignET": "2022-06-08 19:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601020",
+      "opid": "811",
+      "workGroup": "委外水套取材(祥裔)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-15 15:41",
+      "assignET": "2022-06-15 16:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "591",
+      "workGroup": "研磨碰面",
+      "groupNumber": "8",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-19 16:11",
+      "assignET": "2022-06-19 16:51",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "143",
+      "workGroup": "研磨碰面",
+      "groupNumber": "8",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-24 16:51",
+      "assignET": "2022-06-24 17:31",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "145",
+      "workGroup": "研磨碰面",
+      "groupNumber": "8",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-03 16:41",
+      "assignET": "2022-07-03 17:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "339",
+      "workGroup": "研磨碰面",
+      "groupNumber": "8",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-02 18:41",
+      "assignET": "2022-08-02 19:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "339",
+      "workGroup": "研磨碰面",
+      "groupNumber": "8",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-10 13:41",
+      "assignET": "2022-06-10 15:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "589",
+      "workGroup": "修兩端面及中心架位",
+      "groupNumber": "8",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-19 14:11",
+      "assignET": "2022-06-19 16:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "142",
+      "workGroup": "修兩端面及中心架位",
+      "groupNumber": "8",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-03 14:41",
+      "assignET": "2022-07-03 16:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "338",
+      "workGroup": "修兩端面及中心架位",
+      "groupNumber": "8",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-02 16:41",
+      "assignET": "2022-08-02 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "338",
+      "workGroup": "修兩端面及中心架位",
+      "groupNumber": "8",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 13:41",
+      "assignET": "2022-06-17 14:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601015",
+      "opid": "775",
+      "workGroup": "真空前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-20 14:01",
+      "assignET": "2022-06-20 14:21",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601016",
+      "opid": "785",
+      "workGroup": "真空前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-14 13:41",
+      "assignET": "2022-06-17 13:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601015",
+      "opid": "774",
+      "workGroup": "真空處理(龍雨)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 13:41",
+      "assignET": "2022-06-20 13:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601016",
+      "opid": "783",
+      "workGroup": "真空處理(龍雨)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-20 13:41",
+      "assignET": "2022-06-23 13:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601014",
+      "opid": "748",
+      "workGroup": "真空處理(龍雨)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-23 13:41",
+      "assignET": "2022-06-26 13:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601017",
+      "opid": "770",
+      "workGroup": "真空處理(龍雨)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-26 13:41",
+      "assignET": "2022-06-29 13:41",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523001",
+      "opid": "28",
+      "workGroup": "真空處理(龍雨)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-29 13:41",
+      "assignET": "2022-07-29 13:41",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523002",
+      "opid": "28",
+      "workGroup": "真空處理(龍雨)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 13:41",
+      "assignET": "2022-06-08 14:11",
+      "opstate": "PROCESSING",
+      "orderID": "D220601007",
+      "opid": "508",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "2022-06-08 14:41",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 14:11",
+      "assignET": "2022-06-08 14:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601008",
+      "opid": "569",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-08 14:41",
+      "assignET": "2022-06-10 14:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601013",
+      "opid": "697",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-10 14:41",
+      "assignET": "2022-06-10 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601009",
+      "opid": "693",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-10 18:41",
+      "assignET": "2022-06-10 22:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601010",
+      "opid": "693",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-10 22:41",
+      "assignET": "2022-06-10 23:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601014",
+      "opid": "744",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-10 23:11",
+      "assignET": "2022-06-12 23:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601015",
+      "opid": "772",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-12 23:11",
+      "assignET": "2022-06-14 23:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601016",
+      "opid": "781",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-14 23:11",
+      "assignET": "2022-06-14 23:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601017",
+      "opid": "765",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-14 23:41",
+      "assignET": "2022-06-16 23:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601018",
+      "opid": "720",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-16 23:41",
+      "assignET": "2022-06-17 03:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601023",
+      "opid": "693",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 03:41",
+      "assignET": "2022-06-17 07:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601024",
+      "opid": "693",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 07:41",
+      "assignET": "2022-06-17 08:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601025",
+      "opid": "569",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 08:11",
+      "assignET": "2022-06-17 08:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601026",
+      "opid": "508",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 08:41",
+      "assignET": "2022-06-17 09:11",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523001",
+      "opid": "23",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 09:11",
+      "assignET": "2022-06-17 14:11",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523002",
+      "opid": "23",
+      "workGroup": "場內-取材",
+      "groupNumber": "1",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-14 20:41",
+      "assignET": "2022-06-16 22:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601013",
+      "opid": "711",
+      "workGroup": "場內-拋光整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-20 03:11",
+      "assignET": "2022-06-22 05:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601018",
+      "opid": "728",
+      "workGroup": "場內-拋光整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-29 13:41",
+      "assignET": "2022-06-29 14:11",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523001",
+      "opid": "30",
+      "workGroup": "場內-拋光整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-29 13:41",
+      "assignET": "2022-07-29 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523002",
+      "opid": "30",
+      "workGroup": "場內-拋光整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-09 00:11",
+      "assignET": "2022-06-09 00:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601007",
+      "opid": "513",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-09 23:11",
+      "assignET": "2022-06-09 23:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601008",
+      "opid": "581",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-17 15:11",
+      "assignET": "2022-06-17 15:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601026",
+      "opid": "513",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-18 19:41",
+      "assignET": "2022-06-18 20:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601025",
+      "opid": "581",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-21 11:41",
+      "assignET": "2022-06-21 12:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "601",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-22 10:11",
+      "assignET": "2022-06-22 10:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "625",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-28 04:11",
+      "assignET": "2022-06-28 04:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "169",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-30 18:01",
+      "assignET": "2022-06-30 19:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "155",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-04 07:11",
+      "assignET": "2022-07-04 08:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "349",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-05 21:26",
+      "assignET": "2022-07-05 21:46",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601006",
+      "opid": "498",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-13 23:41",
+      "assignET": "2022-07-14 00:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601012",
+      "opid": "362",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-21 00:11",
+      "assignET": "2022-07-21 00:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601019",
+      "opid": "362",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-26 22:56",
+      "assignET": "2022-07-26 23:16",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601021",
+      "opid": "505",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-03 09:11",
+      "assignET": "2022-08-03 10:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "349",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-17 17:21",
+      "assignET": "2022-08-17 17:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601018",
+      "opid": "734",
+      "workGroup": "氮化前整理",
+      "groupNumber": "2",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-22 10:41",
+      "assignET": "2022-06-27 11:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "626",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-27 11:11",
+      "assignET": "2022-07-02 11:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "602",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-02 11:41",
+      "assignET": "2022-07-07 12:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "156",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-07 12:11",
+      "assignET": "2022-07-13 12:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "170",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-13 12:41",
+      "assignET": "2022-07-18 13:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "350",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-18 13:11",
+      "assignET": "2022-07-23 15:31",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601006",
+      "opid": "499",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-23 15:31",
+      "assignET": "2022-07-30 16:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601007",
+      "opid": "514",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-30 16:01",
+      "assignET": "2022-08-06 16:31",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601008",
+      "opid": "582",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-06 16:31",
+      "assignET": "2022-08-11 17:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601012",
+      "opid": "364",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-11 17:01",
+      "assignET": "2022-08-14 17:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601013",
+      "opid": "712",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-14 17:01",
+      "assignET": "2022-08-17 17:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601018",
+      "opid": "731",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-17 17:01",
+      "assignET": "2022-08-22 17:31",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601019",
+      "opid": "364",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-22 17:31",
+      "assignET": "2022-08-27 19:51",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601021",
+      "opid": "506",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-27 19:51",
+      "assignET": "2022-09-01 20:21",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "350",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-09-01 20:21",
+      "assignET": "2022-09-08 20:51",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601025",
+      "opid": "582",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-09-08 20:51",
+      "assignET": "2022-09-15 21:21",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601026",
+      "opid": "514",
+      "workGroup": "氮化處理(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-25 10:01",
+      "assignET": "2022-06-30 13:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "152",
+      "workGroup": "膛線加工(吉泰)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-16 06:41",
+      "assignET": "2022-06-21 09:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "598",
+      "workGroup": "膛線加工(勝昱)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-10 15:41",
+      "assignET": "2022-06-15 15:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601001",
+      "opid": "590",
+      "workGroup": "調質(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-19 16:51",
+      "assignET": "2022-06-24 16:51",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601003",
+      "opid": "144",
+      "workGroup": "調質(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "NORMAL",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-28 14:41",
+      "assignET": "2022-07-03 14:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601005",
+      "opid": "337",
+      "workGroup": "調質(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-28 16:41",
+      "assignET": "2022-08-02 16:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601022",
+      "opid": "337",
+      "workGroup": "調質(統一熱處理)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-29 18:41",
+      "assignET": "2022-10-07 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523002",
+      "opid": "33",
+      "workGroup": "鋁鈦鍍膜",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-10-07 18:41",
+      "assignET": "2022-10-14 18:41",
+      "opstate": "UNSTARTED",
+      "orderID": "J220523001",
+      "opid": "33",
+      "workGroup": "鋁鈦鍍膜",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-23 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-06-27 11:11",
+      "assignET": "2022-06-27 11:41",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601002",
+      "opid": "627",
+      "workGroup": "應力消除(委外)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-15 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-07-13 12:41",
+      "assignET": "2022-07-13 13:11",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601004",
+      "opid": "171",
+      "workGroup": "應力消除(委外)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-07-15 00:00",
+      "opicon": {
+        "processStatus": "WILLDELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-11 17:01",
+      "assignET": "2022-08-11 17:31",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601012",
+      "opid": "365",
+      "workGroup": "應力消除(委外)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    },
+    {
+      "assignST": "2022-08-22 17:31",
+      "assignET": "2022-08-22 18:01",
+      "opstate": "UNSTARTED",
+      "orderID": "D220601019",
+      "opid": "365",
+      "workGroup": "應力消除(委外)",
+      "groupNumber": "7",
+      "progress": 0,
+      "dueDate": "2022-06-27 00:00",
+      "opicon": {
+        "processStatus": "DELAY",
+        "isImportant": false,
+        "orderPriority": 0,
+        "isUnconfirmed": false,
+        "isAffected": false
+      },
+      "actExpCompare": {
+        "assignPMState": 1,
+        "pmIntervalST": "N/A",
+        "pmIntervalET": "N/A"
+      }
+    }
+  ]
+}
