@@ -383,17 +383,23 @@ namespace PMCDash.Controllers
             DateTime validValue;
 
             var result = new List<OrderOverView>();
-            //string SqlStr = $@"
-            //                    SELECT 
-            //                    a.[Id],a.[OrderID],a.[AssignDate],a.[CustomerInfo],a.[Type],a.[Note],
-            //                    b.SeriesID,b.OrderID as workOrderID,b.OPID,b.Range,b.StartTime,b.EndTime,
-            //                    b.MachOpTime,
-            //                    c.WIPEvent
-            //                    FROM [OrderOverview] as a 
-            //                    inner join Assignment as b on a.OrderID=b.ERPOrderID
-            //                    inner join WIP as c on b.SeriesID=c.SeriesID
-            //                    where a.showed=1 and a.Id>(SELECT TOP (1) [Id] FROM [OrderOverview] where OrderID like '%B{DateTime.Now.AddMonths(-3).ToString("yyMM")}%' order by id desc)
-            //                    order by OrderID";
+            
+            //string SqlStr = $@"SELECT 
+            //                a.[Id], a.[OrderID], b.OPLTXA1 ,a.[AssignDate],
+            //                (SELECT MAX(EndTime) FROM {_ConnectStr.APSDB}.[dbo].Assignment WHERE ERPOrderID = a.OrderID) AS LatestEndTime, a.[CustomerInfo], a.[Type], a.[Note],
+            //                b.SeriesID, b.OrderID as workOrderID, b.OPID, b.Range, b.StartTime, b.EndTime,
+            //                b.MachOpTime,
+            //                c.WIPEvent
+            //                FROM  
+            //                {_ConnectStr.APSDB}.[dbo].[OrderOverview] as a 
+            //                INNER JOIN {_ConnectStr.APSDB}.[dbo].Assignment as b ON a.OrderID = b.ERPOrderID
+            //                INNER JOIN {_ConnectStr.APSDB}.[dbo].WIP as c ON b.SeriesID = c.SeriesID
+            //                INNER JOIN {_ConnectStr.MRPDB}.[dbo].Part as  p ON b.MAKTX = p.Number 
+            //                WHERE 
+            //                a.showed = 1 
+            //                AND a.Id > (SELECT TOP (1) [Id] FROM {_ConnectStr.APSDB}.[dbo].[OrderOverview] WHERE OrderID LIKE '%B{DateTime.Now.AddMonths(-3).ToString("yyMM")}%' ORDER BY Id DESC)
+            //                ORDER BY 
+            //                a.OrderID";
             string SqlStr = $@"SELECT 
                             a.[Id], a.[OrderID], b.OPLTXA1 ,a.[AssignDate],
                             (SELECT MAX(EndTime) FROM {_ConnectStr.APSDB}.[dbo].Assignment WHERE ERPOrderID = a.OrderID) AS LatestEndTime, a.[CustomerInfo], a.[Type], a.[Note],
@@ -407,7 +413,7 @@ namespace PMCDash.Controllers
                             INNER JOIN {_ConnectStr.MRPDB}.[dbo].Part as  p ON b.MAKTX = p.Number 
                             WHERE 
                             a.showed = 1 
-                            AND a.Id > (SELECT TOP (1) [Id] FROM {_ConnectStr.APSDB}.[dbo].[OrderOverview] WHERE OrderID LIKE '%B{DateTime.Now.AddMonths(-3).ToString("yyMM")}%' ORDER BY Id DESC)
+                            AND a.OrderID > 'B{DateTime.Now.AddMonths(-3).ToString("yyMM")}'
                             ORDER BY 
                             a.OrderID";
             using (var conn = new SqlConnection(_ConnectStr.Local))

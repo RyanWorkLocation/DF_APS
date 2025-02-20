@@ -2705,36 +2705,34 @@ namespace PMCDash.Controllers
 
 
 
-            ////原始排程(已排程，未完工)
-            //var originSchedule = new List<ScheduleDto>();
-            //var sqlStr = $@"select a.OrderID, a.OPID, Optime = a.HumanOpTime+(a.MachOpTime)*a.OrderQTY, a.StartTime, a.EndTime, a.WorkGroup
-            //                from {_ConnectStr.APSDB}.dbo.Assignment as a 
-            //                inner join {_ConnectStr.APSDB}.dbo.WIP as b on a.SeriesID=b.SeriesID
-            //                where a.Scheduled = 1 and b.WIPEvent!=3 and a.StartTime is not NULL";
-            //using (var conn = new SqlConnection(_ConnectStr.Local))
-            //{
-            //    if (conn.State != ConnectionState.Open)
-            //        conn.Open();
-            //    using (var comm = new SqlCommand(sqlStr, conn))
-            //    {
-            //        using (var sqlData = comm.ExecuteReader())
-            //        {
-            //            if (sqlData.HasRows)
-            //            {
-            //                while (sqlData.Read())
-            //                {
-            //                    originSchedule.Add(new ScheduleDto(
-            //                        sqlData["OrderID"].ToString().Trim(),
-            //                        Convert.ToInt32(sqlData["OPID"]),
-            //                        sqlData["WorkGroup"].ToString(),
-            //                        sqlData["StartTime"].ToString(),
-            //                        sqlData["EndTime"].ToString(),
-            //                        (int)Convert.ToDouble(sqlData["Optime"].ToString())));
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
+            //工單資訊
+            var OrderList = new List<OrderList>();
+            var listsqistr = $@"SELECT OrderID,OPID,Range,StartTime,EndTime
+                              FROM {_ConnectStr.APSDB}.[dbo].[Assignment]
+                              where '{request.EndTime}'>=AssignDate and AssignDate>='{request.StartTime}'";
+            using (var conn = new SqlConnection(_ConnectStr.Local))
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                using (var comm = new SqlCommand(listsqistr, conn))
+                {
+                    using (var sqlData = comm.ExecuteReader())
+                    {
+                        if (sqlData.HasRows)
+                        {
+                            while (sqlData.Read())
+                            {
+                                OrderList.Add(new OrderList{
+                                    OrderID = sqlData["OrderID"].ToString().Trim(),
+                                    OPID = sqlData["OPID"].ToString().Trim(),
+                                    Range = Convert.ToInt32(sqlData["Range"])
+
+                                });
+                            }
+                        }
+                    }
+                }
+            }
 
             var PMC = new DelayMthod(chromosomesCount, devices);
             // 2024.05.27新增
@@ -2743,18 +2741,22 @@ namespace PMCDash.Controllers
 
             Dictionary<string, int> orderseq = new Dictionary<string, int>();
             var selectedOrders = new HashSet<string>();
-            // 创建一个新的HashSet用于存储已选择的订单和操作ID
-            foreach (var item in request.SelectOrders)
-            {
-                if(!orderseq.ContainsKey(item.OrderID))
-                {
-                    orderseq[item.OrderID] = 0;
-                }
-                selectedOrders.Add($"{item.OrderID}-{item.OPID}-{orderseq[item.OrderID]}");
-                orderseq[item.OrderID]++;
-            }
-            //var selectedOrders = new HashSet<string>(request.SelectOrders.Select(o => $"{o.OrderID}-{o.OPID}"));
-            var addedOrders = new HashSet<string>();
+            //// 创建一个新的HashSet用于存储已选择的订单和操作ID
+            //foreach (var item in request.SelectOrders)
+            //{
+            //    //取得排序最小值
+            //    if(!orderseq.ContainsKey(item.OrderID))
+            //    {
+            //        orderseq[item.OrderID] = OrderList
+            //                                .Where(x => x.OrderID == item.OrderID && x.OPID == item.OPID)
+            //                                .Select(x => x.Range)
+            //                                .Min();
+            //    }
+            //    selectedOrders.Add($"{item.OrderID}-{item.OPID}-{orderseq[item.OrderID]}");
+            //    orderseq[item.OrderID]++;
+            //}
+            ////var selectedOrders = new HashSet<string>(request.SelectOrders.Select(o => $"{o.OrderID}-{o.OPID}"));
+            //var addedOrders = new HashSet<string>();
 
 
             //挑選未開工且預交日期在所選區間的製程(可以重排的)
@@ -2772,74 +2774,17 @@ namespace PMCDash.Controllers
                         {
                             // 2024.05.27修改
                             string key = $"{item.OrderID}-{item.OPID}-{item.Range}";
-                            if (item.Scheduled == 1 || selectedOrders.Contains(key))
+                            if (item.Scheduled == 1 || request.SelectOrders.Exists(x=>x.OrderID==item.OrderID && Convert.ToDouble(x.OPID)==item.OPID))
                             {
-                                if (!addedOrders.Contains(key))
-                                {
-                                    requestOrderSets.Add(item);
-                                    addedOrders.Add(key);
-                                }
+                                requestOrderSets.Add(item);
                             }
-                            ////05.24 Ryan修改:有排程過或有在勾選名單內
-                            //if(item.Scheduled==1)
-                            //{
-                            //    requestOrderSets.Add(item);
-                            //}
-                            //else if(request.SelectOrders.Exists(x => x.OrderID == item.OrderID && x.OPID == item.OPID.ToString()))
-                            //{
-                            //    var id = FirSolution.FindIndex(x => x.OrderID == item.OrderID && x.OPID == item.OPID);
-                            //    if(!requestOrderSets.Exists(x=>x.OrderID == FirSolution[id].OrderID && x.OPID == FirSolution[id].OPID))
-                            //    {
-                            //        requestOrderSets.Add(FirSolution[id]);
-                            //    }
-
-                            //}
-
-
-                            ////原始:勾選製程納入排程運算需求列表
-                            //if (request.SelectOrders.Exists(x => x.OrderID == item.OrderID && x.OPID == item.OPID.ToString()))
-                            //{
-                            //    var id = FirSolution.FindIndex(x => x.OrderID == item.OrderID && x.OPID == item.OPID);
-                            //    requestOrderSets.Add(FirSolution[id]);
-                            //}
-                            //requestOrderSets.Add(item);
                         }
                     }
 
 
 
 
-                    ////機台故障資訊
-                    //var mcbkresult = new List<DelayScheduleOP>();
-                    //var mcbkstr = $@"
-                    //        SELECT MachineName,BreakdownET
-                    //        FROM {_ConnectStr.APSDB}.dbo.DeviceBreakdownInfo
-                    //        WHERE BreakdownET>=GETDATE() AND IsFixed=0";
 
-                    //using (var conn = new SqlConnection(_ConnectStr.Local))
-                    //{
-                    //    using (var comm = new SqlCommand(mcbkstr, conn))
-                    //    {
-                    //        if (conn.State != ConnectionState.Open)
-                    //            conn.Open();
-
-                    //        using (SqlDataReader SqlData = comm.ExecuteReader())
-                    //        {
-                    //            if (SqlData.HasRows)
-                    //            {
-                    //                while (SqlData.Read())
-                    //                {
-                    //                    mcbkresult.Add(new DelayScheduleOP
-                    //                    {
-                    //                        MachineName = SqlData["MachineName"].ToString().Trim(),
-                    //                        BreakdownET = _ChangeTimeFormat(checkNoword(SqlData["BreakdownET"].ToString())),
-                    //                    });
-
-                    //                }
-                    //            }
-                    //        }
-                    //    }
-                    //}
 
                     //取得當前機台最後時間
                     var reportedMachine = new Dictionary<string, DateTime>();
@@ -2887,14 +2832,6 @@ namespace PMCDash.Controllers
 
                     PMC.ReportedMachine = reportedMachine;
                     PMC.ReportedOrder = reportedOrder;
-
-                    ////對所有染色體產生初始解
-                    //for (int i = 0; i < PMC.Chromvalue; i++)
-                    //{
-                    //    var sequence = PMC.CreateSequence(requestOrderSets);
-                    //    var train = PMC.Scheduled(sequence);
-                    //    ChromosomeList.Add(i, train);
-                    //}
 
                     
                     // 2024.05.27 使用Parallel.For并行生成初始解和计算适应度
@@ -3010,15 +2947,16 @@ namespace PMCDash.Controllers
                     #endregion
 
                     #region 第二次調整(避免前後製程中間有空閒時間)
-                    tempResult = tempResult.OrderBy(x => x.WorkGroup).ThenBy(x => x.StartTime).ToList();
-                    for (int k = 0; k < 2; k++)
+                    //tempResult = tempResult.OrderBy(x => x.WorkGroup).ThenBy(x => x.StartTime).ToList();
+                    tempResult = tempResult.OrderBy(x => x.Range).ThenBy(x => x.StartTime).ToList();
+                    for (int k = 0; k < 3; k++)
                     {
                         foreach (var item in tempResult)
                         {
                             //同機台前面製程
-                            var samewg = tempResult.FindAll(x => x.WorkGroup == item.WorkGroup && Convert.ToDateTime(x.StartTime) < Convert.ToDateTime(item.StartTime)).OrderByDescending(x => x.StartTime).ToList();
+                            var samewg = tempResult.FindAll(x => x.WorkGroup == item.WorkGroup && Convert.ToDateTime(x.EndTime) < Convert.ToDateTime(item.EndTime)).OrderByDescending(x => x.EndTime).ToList();
                             //同工單前面製程 
-                            var sameod = tempResult.FindAll(x => x.OrderID == item.OrderID && Convert.ToInt32(x.OPID) < Convert.ToInt32(item.OPID)).OrderByDescending(x => x.OPID).ToList();
+                            var sameod = tempResult.FindAll(x => x.OrderID == item.OrderID && Convert.ToInt32(x.Range) < Convert.ToInt32(item.Range)).OrderByDescending(x => x.Range).ToList();
 
                             TimeSpan TS = item.Duration;
 
@@ -3027,15 +2965,18 @@ namespace PMCDash.Controllers
                                 //比較同工單前製程與同機台前製程結束時間
                                 if (samewg.Count() > 0 && sameod.Count() > 0)
                                 {
-                                    if (Convert.ToDateTime(samewg[0].EndTime) > Convert.ToDateTime(sameod[0].EndTime))
-                                    {
-                                        item.StartTime = samewg[0].EndTime;
-                                        item.EndTime = item.StartTime + TS;
-
-                                    }
-                                    else if (Convert.ToDateTime(samewg[0].EndTime) <= Convert.ToDateTime(sameod[0].EndTime))
+                                    //同步機台，直接看同工單即可
+                                    if (OutsourcingList.Where(x => x.remark == item.WorkGroup).First().isOutsource == "1")
                                     {
                                         item.StartTime = sameod[0].EndTime;
+                                        item.EndTime = item.StartTime + TS;
+                                    }
+                                    //非同步機台，要看同機台同工單
+                                    else
+                                    {
+                                        var time1 = Convert.ToDateTime(samewg[0].EndTime);
+                                        var time2 = Convert.ToDateTime(sameod[0].EndTime);
+                                        item.StartTime = time1 >= time2 ? time1 : time2;
                                         item.EndTime = item.StartTime + TS;
                                     }
 
@@ -3047,8 +2988,18 @@ namespace PMCDash.Controllers
                                 }
                                 else if (sameod.Count() == 0 && samewg.Count() > 0)
                                 {
-                                    item.StartTime = samewg[0].EndTime;
-                                    item.EndTime = item.StartTime + TS;
+                                    // 同步機台，直接看當前時間即可
+                                    if (OutsourcingList.Where(x => x.remark == item.WorkGroup).First().isOutsource == "1")
+                                    {
+                                        item.StartTime = current;
+                                        item.EndTime = Convert.ToDateTime(item.StartTime) + TS;
+                                    }
+                                    //非同步機台，看同機台時間
+                                    else
+                                    {
+                                        item.StartTime = samewg[0].EndTime;
+                                        item.EndTime = item.StartTime + TS;
+                                    }   
                                 }
                                 else
                                 {

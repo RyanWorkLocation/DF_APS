@@ -98,7 +98,12 @@ namespace PMCDash.Services
             var eachorderlist = data.GroupBy(x => x.OrderID);
             //打亂製程排序，避免依照工單順序排
             var randomizedOrderid = data.Select(x=>x.OrderID).OrderBy(item => rnd.Next()).ToList();
-
+            var rangeDictionary = data
+                .GroupBy(x => x.OrderID)
+                .ToDictionary(
+                    key => key.Key,
+                    value => value.Select(x => x.Range).OrderBy(x => x).ToList()
+                );
             // 記錄每個 OrderID 的出現次數，並依序分配 Range 值
             var rangeTracker = new Dictionary<string, int>();
             var randomresult = new List<GaSchedule>();
@@ -106,9 +111,10 @@ namespace PMCDash.Services
             {
                 if (!rangeTracker.ContainsKey(item))
                 {
-                    rangeTracker[item] = 0; // 初始為 0
+                    //var minrange = data.Where(x => x.OrderID == item).Select(y=> y.Range).Min();
+                    rangeTracker[item] = 0; // 初始為欲排程
                 }
-                randomresult.Add(data.Find(x => x.OrderID == item && x.Range == rangeTracker[item]));
+                randomresult.Add(data.Find(x => x.OrderID == item && x.Range == rangeDictionary[item][rangeTracker[item]]));
 
                 rangeTracker[item]++; // 增加該 OrderID 的 Range
             }
@@ -267,44 +273,345 @@ namespace PMCDash.Services
 
             var result = new List<Chromsome>();
             int Idx = 0;
-            DateTime getNow = DateTime.Now;
-            DateTime PostST = getNow;
-            DateTime PostET = getNow;
+            DateTime preserve_Now = DateTime.Now;
+            DateTime PostST = new DateTime();
+            DateTime PostET = new DateTime();
             var SortSchedule = firstSchedule.OrderBy(x => x.EachMachineSeq).ToList();//依據seq順序排每一台機台
+
+            // 建立快取，讓查找更快，並直接儲存對應的物件
+            var orderIndexCache = new Dictionary<string, Chromsome>(); 
+
+            var machineIndexCache = new Dictionary<string, Chromsome>();
+
 
             for (int i = 0; i < SortSchedule.Count; i++)
             {
-                Idx = 0;
-                PostST = getNow;
-                PostET = getNow;
-   
+
+                #region 原本的查找方式
+                //目前排程結果已有同機台製程
                 if (result.Exists(x => x.WorkGroup == SortSchedule[i].WorkGroup) && OutsourcingList.Exists(x=>x.remark== SortSchedule[i].WorkGroup))
                 {
-                    if (OutsourcingList.Where(x => x.remark == SortSchedule[i].WorkGroup).First().isOutsource == "0")//該機台已有排程且非委外機台
+                    //是同步加工機台=>只需考量前製程完成時間
+                    if (OutsourcingList.Where(x => x.remark == SortSchedule[i].WorkGroup).First().isOutsource == "1")//該機台為委外機台
                     {
-                        Idx = result.FindLastIndex(x => x.WorkGroup == SortSchedule[i].WorkGroup);
-                        PostST = result[Idx].EndTime;
-                    }
-                }
-                else
-                {
-                    //比較同機台最後一道製程&同工單最後一道製程結束時間
-                    if (ReportedMachine.Keys.Contains(SortSchedule[i].WorkGroup) && ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
-                    {
-                        PostST = ReportedMachine[SortSchedule[i].WorkGroup] >= ReportedOrder[SortSchedule[i].OrderID] ? ReportedMachine[SortSchedule[i].WorkGroup] : ReportedOrder[SortSchedule[i].OrderID];
-                    }
-                    else if (ReportedMachine.Count > 0 && ReportedMachine.Keys.Contains(SortSchedule[i].WorkGroup))
-                    {
-                        PostST = ReportedMachine[SortSchedule[i].WorkGroup];
-                    }
-                    else if (ReportedOrder.Count > 0)
-                    {
-                        if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                        //目前排程是否有同工單
+                        if(result.Exists(x=>x.OrderID== SortSchedule[i].OrderID))
                         {
-                            PostST = ReportedOrder[SortSchedule[i].OrderID];
+                            int idx = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
+                            if (idx >= 0)
+                                PostST = result[idx].EndTime;
+                            else
+                                PostST = preserve_Now;
+                            //Idx = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
+                            //PostST = result[Idx].EndTime;
+                        }
+                        //如果目前排程沒有，則確認原排程是否有同工單製程
+                        else if(ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                        {
+                            
+                            //有的話，比較當前時間
+                            PostST = preserve_Now > ReportedOrder[SortSchedule[i].OrderID] ? DateTime.Now : ReportedOrder[SortSchedule[i].OrderID];
+                        }
+                        else
+                        {
+                            //沒有的話，直接使用當前時間
+                            PostST = preserve_Now;
+                        }
+                        
+                    }
+                    //非同步加工機台=>考量同機台前製程&同工單前製程
+                    else
+                    {
+                        var Idx_order = 0;
+                        var Idx_machine = 0;
+                        //目前排程是否有同工單
+                        if (result.Exists(x => x.OrderID == SortSchedule[i].OrderID))
+                        {
+                            //比較同機台和同工單最早可開工時間
+                            // 找到最後一筆相同 OrderID 的索引
+                            Idx_order = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
+                            Idx_machine = result.FindLastIndex(x => x.WorkGroup == SortSchedule[i].WorkGroup);
+
+                            // 安全地取得 EndTime，若找不到則預設為 DateTime.MinValue
+                            DateTime EndTime_order = (Idx_order != -1) ? result[Idx_order].EndTime : preserve_Now;
+                            DateTime EndTime_machine = (Idx_machine != -1) ? result[Idx_machine].EndTime : preserve_Now;
+
+                            // 取較晚的時間
+                            PostST = (EndTime_order >= EndTime_machine) ? EndTime_order : EndTime_machine;
+
+                            //Idx_order = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
+                            //Idx_machine = result.FindLastIndex(x => x.WorkGroup == SortSchedule[i].WorkGroup);
+                            //PostST = result[Idx_order].EndTime >= result[Idx_machine].EndTime ? result[Idx_order].EndTime : result[Idx_machine].EndTime;
+                        }
+                        //如果目前排程沒有，則確認原排程是否有同工單製程
+                        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                        {
+                            //有的話，比較當前時間&同機台時間&同工單時間
+                            DateTime time1 = ReportedOrder[SortSchedule[i].OrderID];
+                            var foundMachine = result.Find(x => x.WorkGroup == SortSchedule[i].WorkGroup);
+                            DateTime time2 = foundMachine != null ? foundMachine.EndTime : preserve_Now;
+                            //DateTime time2 = result.Find(x => x.WorkGroup == SortSchedule[i].WorkGroup).EndTime;
+
+                            PostST = time1 >= time2 ? time1 : time2;
+                        }
+                        else
+                        {
+                            //沒有的話，直接使用同機台時間
+                            var foundMachine = result.Find(x => x.WorkGroup == SortSchedule[i].WorkGroup);
+                            PostST = foundMachine != null ? foundMachine.EndTime : preserve_Now;
+                            //PostST = result.Find(x => x.WorkGroup == SortSchedule[i].WorkGroup).EndTime;
                         }
                     }
                 }
+                //目前排程結果沒有同機台製程
+                else
+                {
+                    //是同步加工機台 => 只需比較前製程完成時間和當前時間
+                    if (OutsourcingList.Where(x => x.remark == SortSchedule[i].WorkGroup).First().isOutsource == "1")//該機台為委外機台
+                    {
+                        //如果目前排程有同工單，則直接使用前製程時間
+                        if (result.Exists(x => x.OrderID == SortSchedule[i].OrderID))
+                        {
+                            int idx = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
+                            if (idx >= 0)
+                                PostST = result[idx].EndTime;
+                            else
+                                PostST = preserve_Now;
+                            //Idx = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
+                            //PostST = result[Idx].EndTime;
+                        }
+                        //如果目前排程沒有，則確認原排程是否有同工單製程
+                        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                        {
+                            //有的話，比較當前時間
+                            PostST = preserve_Now > ReportedOrder[SortSchedule[i].OrderID] ? preserve_Now : ReportedOrder[SortSchedule[i].OrderID];
+                        }
+                        else
+                        {
+                            //沒有的話，直接使用當前時間
+                            PostST = preserve_Now;
+                        }
+                    }
+                    //非同步加工機台=>考量同機台前製程&同工單前製程
+                    else
+                    {
+                        //如果目前排程有同工單
+                        if (result.Exists(x => x.OrderID == SortSchedule[i].OrderID))
+                        {
+                            //如果原排程有同機台製程
+                            if (ReportedMachine.Keys.Contains(SortSchedule[i].OrderID))
+                            {
+                                //比較同機台和同工單最早可開工時間
+                                DateTime time1 = result.Find(x => x.OrderID == SortSchedule[i].OrderID).EndTime;
+                                DateTime time2 = ReportedMachine[SortSchedule[i].OrderID];
+                                PostST = time1 >= time2 ? time1 : time2;
+                            }
+                            //如果原排程沒有同機台製程
+                            else
+                            {
+                                //直接使用前製程時間
+                                PostST = result.Find(x => x.OrderID == SortSchedule[i].OrderID).EndTime;
+                            } 
+                        }
+                        //如果目前排程沒有同工單，則確認原排程是否有同工單製程
+                        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                        {
+                            //如果原排程有同機台製程
+                            if (ReportedMachine.Keys.Contains(SortSchedule[i].OrderID))
+                            {
+                                //比較同機台、同工單、當前時間
+                                DateTime time1 = preserve_Now;
+                                DateTime time2 = ReportedOrder[SortSchedule[i].OrderID];
+                                DateTime time3 = ReportedMachine[SortSchedule[i].OrderID];
+                                if (time1 >= time2 && time1 >= time3)
+                                    PostST = time1;
+                                else if (time2 >= time1 && time2 >= time3)
+                                    PostST = time2;
+                                else
+                                    PostST = time3;
+                            }
+                            //如果原排程沒有同機台製程，比較原排程同工單、當前時間
+                            else
+                            {
+                                DateTime time1 = preserve_Now;
+                                DateTime time2 = ReportedOrder[SortSchedule[i].OrderID];
+                                PostST = time1 >= time2 ? time1 : time2;
+                            }
+                        }
+                        else
+                        {
+                            //如果原排程有同機台，比較原排程同機台&當前時間
+                            if (ReportedMachine.Keys.Contains(SortSchedule[i].OrderID))
+                            {
+                                DateTime time1 = preserve_Now;
+                                DateTime time2 = ReportedMachine[SortSchedule[i].OrderID];
+                                PostST = time1 >= time2 ? time1 : time2;
+                            }
+                            //如果原排程有沒同機台，直接用當前時間
+                            else
+                            {
+                                PostST = preserve_Now;
+                            }
+                        }
+                    }
+                }
+                #endregion
+
+
+                #region 新的快取查找方式
+                // 建立快取，讓查找更快，並直接儲存對應的物件
+                orderIndexCache = result
+                    .GroupBy(item => item.OrderID)
+                    .ToDictionary(g => g.Key, g => g.OrderByDescending(x => x.EndTime).First());
+
+                machineIndexCache = result
+                    .GroupBy(item => item.WorkGroup)
+                    .ToDictionary(g => g.Key, g => g.OrderByDescending(x => x.EndTime).First());
+
+
+                //目前排程結果已有同機台製程
+                if (machineIndexCache.ContainsKey(SortSchedule[i].WorkGroup) && OutsourcingList.Exists(x => x.remark == SortSchedule[i].WorkGroup))
+                {
+                    //是同步加工機台=>只需考量前製程完成時間
+                    if (OutsourcingList.Where(x => x.remark == SortSchedule[i].WorkGroup).First().isOutsource == "1")//該機台為委外機台
+                    {
+                        //目前排程是否有同工單
+                        if (orderIndexCache.ContainsKey(SortSchedule[i].OrderID))
+                        {
+                            PostST = orderIndexCache[SortSchedule[i].OrderID].EndTime;
+                        }
+                        //如果目前排程沒有，則確認原排程是否有同工單製程
+                        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                        {
+                            //有的話，比較當前時間
+                            PostST = preserve_Now > ReportedOrder[SortSchedule[i].OrderID] ? DateTime.Now : ReportedOrder[SortSchedule[i].OrderID];
+                        }
+                        else
+                        {
+                            //沒有的話，直接使用當前時間
+                            PostST = preserve_Now;
+                        }
+                    }
+                    //非同步加工機台=>考量同機台前製程&同工單前製程
+                    else
+                    {
+                        //目前排程是否有同工單
+                        if (orderIndexCache.ContainsKey(SortSchedule[i].OrderID))
+                        {
+                            //比較同機台和同工單最早可開工時間
+                            DateTime EndTime_order = orderIndexCache[SortSchedule[i].OrderID].EndTime;
+                            DateTime EndTime_machine = machineIndexCache[SortSchedule[i].WorkGroup].EndTime;
+
+                            // 取較晚的時間
+                            PostST = (EndTime_order >= EndTime_machine) ? EndTime_order : EndTime_machine;
+                        }
+                        //如果目前排程沒有，則確認原排程是否有同工單製程
+                        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                        {
+                            //有的話，比較當前時間&同機台時間&同工單時間
+                            DateTime time1 = ReportedOrder[SortSchedule[i].OrderID];
+                            DateTime time2 = machineIndexCache.ContainsKey(SortSchedule[i].WorkGroup)
+                                ? machineIndexCache[SortSchedule[i].WorkGroup].EndTime
+                                : preserve_Now;
+
+                            PostST = time1 >= time2 ? time1 : time2;
+                        }
+                        else
+                        {
+                            //沒有的話，直接使用同機台時間
+                            PostST = machineIndexCache.ContainsKey(SortSchedule[i].WorkGroup)
+                                ? machineIndexCache[SortSchedule[i].WorkGroup].EndTime
+                                : preserve_Now;
+                        }
+                    }
+                }
+                //目前排程結果沒有同機台製程
+                else
+                {
+                    //是同步加工機台 => 只需比較前製程完成時間和當前時間
+                    if (OutsourcingList.Where(x => x.remark == SortSchedule[i].WorkGroup).First().isOutsource == "1")//該機台為委外機台
+                    {
+                        //如果目前排程有同工單，則直接使用前製程時間
+                        if (orderIndexCache.ContainsKey(SortSchedule[i].OrderID))
+                        {
+                            PostST = orderIndexCache[SortSchedule[i].OrderID].EndTime;
+                        }
+                        //如果目前排程沒有，則確認原排程是否有同工單製程
+                        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                        {
+                            //有的話，比較當前時間
+                            PostST = preserve_Now > ReportedOrder[SortSchedule[i].OrderID] ? preserve_Now : ReportedOrder[SortSchedule[i].OrderID];
+                        }
+                        else
+                        {
+                            //沒有的話，直接使用當前時間
+                            PostST = preserve_Now;
+                        }
+                    }
+                    //非同步加工機台=>考量同機台前製程&同工單前製程
+                    else
+                    {
+                        //如果目前排程有同工單
+                        if (orderIndexCache.ContainsKey(SortSchedule[i].OrderID))
+                        {
+                            //如果原排程有同機台製程
+                            if (ReportedMachine.Keys.Contains(SortSchedule[i].OrderID))
+                            {
+                                //比較同機台和同工單最早可開工時間
+                                DateTime time1 = orderIndexCache[SortSchedule[i].OrderID].EndTime;
+                                DateTime time2 = ReportedMachine[SortSchedule[i].OrderID];
+                                PostST = time1 >= time2 ? time1 : time2;
+                            }
+                            //如果原排程沒有同機台製程
+                            else
+                            {
+                                //直接使用前製程時間
+                                PostST = orderIndexCache[SortSchedule[i].OrderID].EndTime;
+                            }
+                        }
+                        //如果目前排程沒有同工單，則確認原排程是否有同工單製程
+                        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                        {
+                            //如果原排程有同機台製程
+                            if (ReportedMachine.Keys.Contains(SortSchedule[i].OrderID))
+                            {
+                                //比較同機台、同工單、當前時間
+                                DateTime time1 = preserve_Now;
+                                DateTime time2 = ReportedOrder[SortSchedule[i].OrderID];
+                                DateTime time3 = ReportedMachine[SortSchedule[i].OrderID];
+                                if (time1 >= time2 && time1 >= time3)
+                                    PostST = time1;
+                                else if (time2 >= time1 && time2 >= time3)
+                                    PostST = time2;
+                                else
+                                    PostST = time3;
+                            }
+                            //如果原排程沒有同機台製程，比較原排程同工單、當前時間
+                            else
+                            {
+                                DateTime time1 = preserve_Now;
+                                DateTime time2 = ReportedOrder[SortSchedule[i].OrderID];
+                                PostST = time1 >= time2 ? time1 : time2;
+                            }
+                        }
+                        else
+                        {
+                            //如果原排程有同機台，比較原排程同機台&當前時間
+                            if (ReportedMachine.Keys.Contains(SortSchedule[i].OrderID))
+                            {
+                                DateTime time1 = preserve_Now;
+                                DateTime time2 = ReportedMachine[SortSchedule[i].OrderID];
+                                PostST = time1 >= time2 ? time1 : time2;
+                            }
+                            //如果原排程有沒同機台，直接用當前時間
+                            else
+                            {
+                                PostST = preserve_Now;
+                            }
+                        }
+                    }
+                }
+                #endregion
 
                 //補償休息時間
                 //PostET = restTimecheck(PostST, ii.Duration);
@@ -340,6 +647,7 @@ namespace PMCDash.Services
             {
                 foreach (var one_order in orderList)
                 {
+
                     //挑選同工單製程
                     var temp = result.Where(x => x.OrderID == one_order)
                                      .OrderBy(x => x.Range)
@@ -358,9 +666,10 @@ namespace PMCDash.Services
                             temp[i].StartTime = temp[i - 1].EndTime;
                             temp[i].EndTime = temp[i - 1].EndTime + temp[i].Duration;
                         }
-                        //若非超音波清洗再調整同機台製程
+                        
                         if(OutsourcingList.Exists(x => x.remark == temp[i].WorkGroup))
                         {
+                            //如果不是同步機台再調整同機台時間
                             if (OutsourcingList.Where(x => x.remark == temp[i].WorkGroup).First().isOutsource == "0")
                             {
                                 //調整同機台製程

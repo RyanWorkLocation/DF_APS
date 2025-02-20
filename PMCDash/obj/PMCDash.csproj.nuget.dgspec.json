@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\PMC筆電備份\\廠商資料\\3. 鼎烽\\專案修改版 - 0527優化排程運算函式\\PMCDash\\PMCDash.csproj": {}
+    "C:\\PMC筆電備份\\廠商資料\\3. 鼎烽\\排程系統_最新版_優化CPU排程運算\\PMCDash\\PMCDash.csproj": {}
   },
   "projects": {
-    "C:\\PMC筆電備份\\廠商資料\\3. 鼎烽\\專案修改版 - 0527優化排程運算函式\\PMCDash\\PMCDash.csproj": {
+    "C:\\PMC筆電備份\\廠商資料\\3. 鼎烽\\排程系統_最新版_優化CPU排程運算\\PMCDash\\PMCDash.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\PMC筆電備份\\廠商資料\\3. 鼎烽\\專案修改版 - 0527優化排程運算函式\\PMCDash\\PMCDash.csproj",
+        "projectUniqueName": "C:\\PMC筆電備份\\廠商資料\\3. 鼎烽\\排程系統_最新版_優化CPU排程運算\\PMCDash\\PMCDash.csproj",
         "projectName": "PMCDash",
-        "projectPath": "C:\\PMC筆電備份\\廠商資料\\3. 鼎烽\\專案修改版 - 0527優化排程運算函式\\PMCDash\\PMCDash.csproj",
+        "projectPath": "C:\\PMC筆電備份\\廠商資料\\3. 鼎烽\\排程系統_最新版_優化CPU排程運算\\PMCDash\\PMCDash.csproj",
         "packagesPath": "C:\\Users\\e11037\\.nuget\\packages\\",
-        "outputPath": "C:\\PMC筆電備份\\廠商資料\\3. 鼎烽\\專案修改版 - 0527優化排程運算函式\\PMCDash\\obj\\",
+        "outputPath": "C:\\PMC筆電備份\\廠商資料\\3. 鼎烽\\排程系統_最新版_優化CPU排程運算\\PMCDash\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\e11037\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -42,4 +42,13 @@ namespace PMCDash.DTO
 
         public DateTime EndTime { get; set; }
     }
+
+    public class OrderList
+    {
+        public string OrderID { get; set; }
+
+        public string OPID { get; set; }
+
+        public int Range { get; set; }
+    }
 }
