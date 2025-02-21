@@ -287,175 +287,175 @@ namespace PMCDash.Services
             for (int i = 0; i < SortSchedule.Count; i++)
             {
 
-                #region 原本的查找方式
-                //目前排程結果已有同機台製程
-                if (result.Exists(x => x.WorkGroup == SortSchedule[i].WorkGroup) && OutsourcingList.Exists(x=>x.remark== SortSchedule[i].WorkGroup))
-                {
-                    //是同步加工機台=>只需考量前製程完成時間
-                    if (OutsourcingList.Where(x => x.remark == SortSchedule[i].WorkGroup).First().isOutsource == "1")//該機台為委外機台
-                    {
-                        //目前排程是否有同工單
-                        if(result.Exists(x=>x.OrderID== SortSchedule[i].OrderID))
-                        {
-                            int idx = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
-                            if (idx >= 0)
-                                PostST = result[idx].EndTime;
-                            else
-                                PostST = preserve_Now;
-                            //Idx = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
-                            //PostST = result[Idx].EndTime;
-                        }
-                        //如果目前排程沒有，則確認原排程是否有同工單製程
-                        else if(ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
-                        {
+                //#region 原本的查找方式
+                ////目前排程結果已有同機台製程
+                //if (result.Exists(x => x.WorkGroup == SortSchedule[i].WorkGroup) && OutsourcingList.Exists(x=>x.remark== SortSchedule[i].WorkGroup))
+                //{
+                //    //是同步加工機台=>只需考量前製程完成時間
+                //    if (OutsourcingList.Where(x => x.remark == SortSchedule[i].WorkGroup).First().isOutsource == "1")//該機台為委外機台
+                //    {
+                //        //目前排程是否有同工單
+                //        if(result.Exists(x=>x.OrderID== SortSchedule[i].OrderID))
+                //        {
+                //            int idx = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
+                //            if (idx >= 0)
+                //                PostST = result[idx].EndTime;
+                //            else
+                //                PostST = preserve_Now;
+                //            //Idx = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
+                //            //PostST = result[Idx].EndTime;
+                //        }
+                //        //如果目前排程沒有，則確認原排程是否有同工單製程
+                //        else if(ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                //        {
                             
-                            //有的話，比較當前時間
-                            PostST = preserve_Now > ReportedOrder[SortSchedule[i].OrderID] ? DateTime.Now : ReportedOrder[SortSchedule[i].OrderID];
-                        }
-                        else
-                        {
-                            //沒有的話，直接使用當前時間
-                            PostST = preserve_Now;
-                        }
+                //            //有的話，比較當前時間
+                //            PostST = preserve_Now > ReportedOrder[SortSchedule[i].OrderID] ? DateTime.Now : ReportedOrder[SortSchedule[i].OrderID];
+                //        }
+                //        else
+                //        {
+                //            //沒有的話，直接使用當前時間
+                //            PostST = preserve_Now;
+                //        }
                         
-                    }
-                    //非同步加工機台=>考量同機台前製程&同工單前製程
-                    else
-                    {
-                        var Idx_order = 0;
-                        var Idx_machine = 0;
-                        //目前排程是否有同工單
-                        if (result.Exists(x => x.OrderID == SortSchedule[i].OrderID))
-                        {
-                            //比較同機台和同工單最早可開工時間
-                            // 找到最後一筆相同 OrderID 的索引
-                            Idx_order = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
-                            Idx_machine = result.FindLastIndex(x => x.WorkGroup == SortSchedule[i].WorkGroup);
+                //    }
+                //    //非同步加工機台=>考量同機台前製程&同工單前製程
+                //    else
+                //    {
+                //        var Idx_order = 0;
+                //        var Idx_machine = 0;
+                //        //目前排程是否有同工單
+                //        if (result.Exists(x => x.OrderID == SortSchedule[i].OrderID))
+                //        {
+                //            //比較同機台和同工單最早可開工時間
+                //            // 找到最後一筆相同 OrderID 的索引
+                //            Idx_order = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
+                //            Idx_machine = result.FindLastIndex(x => x.WorkGroup == SortSchedule[i].WorkGroup);
 
-                            // 安全地取得 EndTime，若找不到則預設為 DateTime.MinValue
-                            DateTime EndTime_order = (Idx_order != -1) ? result[Idx_order].EndTime : preserve_Now;
-                            DateTime EndTime_machine = (Idx_machine != -1) ? result[Idx_machine].EndTime : preserve_Now;
+                //            // 安全地取得 EndTime，若找不到則預設為 DateTime.MinValue
+                //            DateTime EndTime_order = (Idx_order != -1) ? result[Idx_order].EndTime : preserve_Now;
+                //            DateTime EndTime_machine = (Idx_machine != -1) ? result[Idx_machine].EndTime : preserve_Now;
 
-                            // 取較晚的時間
-                            PostST = (EndTime_order >= EndTime_machine) ? EndTime_order : EndTime_machine;
+                //            // 取較晚的時間
+                //            PostST = (EndTime_order >= EndTime_machine) ? EndTime_order : EndTime_machine;
 
-                            //Idx_order = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
-                            //Idx_machine = result.FindLastIndex(x => x.WorkGroup == SortSchedule[i].WorkGroup);
-                            //PostST = result[Idx_order].EndTime >= result[Idx_machine].EndTime ? result[Idx_order].EndTime : result[Idx_machine].EndTime;
-                        }
-                        //如果目前排程沒有，則確認原排程是否有同工單製程
-                        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
-                        {
-                            //有的話，比較當前時間&同機台時間&同工單時間
-                            DateTime time1 = ReportedOrder[SortSchedule[i].OrderID];
-                            var foundMachine = result.Find(x => x.WorkGroup == SortSchedule[i].WorkGroup);
-                            DateTime time2 = foundMachine != null ? foundMachine.EndTime : preserve_Now;
-                            //DateTime time2 = result.Find(x => x.WorkGroup == SortSchedule[i].WorkGroup).EndTime;
+                //            //Idx_order = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
+                //            //Idx_machine = result.FindLastIndex(x => x.WorkGroup == SortSchedule[i].WorkGroup);
+                //            //PostST = result[Idx_order].EndTime >= result[Idx_machine].EndTime ? result[Idx_order].EndTime : result[Idx_machine].EndTime;
+                //        }
+                //        //如果目前排程沒有，則確認原排程是否有同工單製程
+                //        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                //        {
+                //            //有的話，比較當前時間&同機台時間&同工單時間
+                //            DateTime time1 = ReportedOrder[SortSchedule[i].OrderID];
+                //            var foundMachine = result.Find(x => x.WorkGroup == SortSchedule[i].WorkGroup);
+                //            DateTime time2 = foundMachine != null ? foundMachine.EndTime : preserve_Now;
+                //            //DateTime time2 = result.Find(x => x.WorkGroup == SortSchedule[i].WorkGroup).EndTime;
 
-                            PostST = time1 >= time2 ? time1 : time2;
-                        }
-                        else
-                        {
-                            //沒有的話，直接使用同機台時間
-                            var foundMachine = result.Find(x => x.WorkGroup == SortSchedule[i].WorkGroup);
-                            PostST = foundMachine != null ? foundMachine.EndTime : preserve_Now;
-                            //PostST = result.Find(x => x.WorkGroup == SortSchedule[i].WorkGroup).EndTime;
-                        }
-                    }
-                }
-                //目前排程結果沒有同機台製程
-                else
-                {
-                    //是同步加工機台 => 只需比較前製程完成時間和當前時間
-                    if (OutsourcingList.Where(x => x.remark == SortSchedule[i].WorkGroup).First().isOutsource == "1")//該機台為委外機台
-                    {
-                        //如果目前排程有同工單，則直接使用前製程時間
-                        if (result.Exists(x => x.OrderID == SortSchedule[i].OrderID))
-                        {
-                            int idx = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
-                            if (idx >= 0)
-                                PostST = result[idx].EndTime;
-                            else
-                                PostST = preserve_Now;
-                            //Idx = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
-                            //PostST = result[Idx].EndTime;
-                        }
-                        //如果目前排程沒有，則確認原排程是否有同工單製程
-                        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
-                        {
-                            //有的話，比較當前時間
-                            PostST = preserve_Now > ReportedOrder[SortSchedule[i].OrderID] ? preserve_Now : ReportedOrder[SortSchedule[i].OrderID];
-                        }
-                        else
-                        {
-                            //沒有的話，直接使用當前時間
-                            PostST = preserve_Now;
-                        }
-                    }
-                    //非同步加工機台=>考量同機台前製程&同工單前製程
-                    else
-                    {
-                        //如果目前排程有同工單
-                        if (result.Exists(x => x.OrderID == SortSchedule[i].OrderID))
-                        {
-                            //如果原排程有同機台製程
-                            if (ReportedMachine.Keys.Contains(SortSchedule[i].OrderID))
-                            {
-                                //比較同機台和同工單最早可開工時間
-                                DateTime time1 = result.Find(x => x.OrderID == SortSchedule[i].OrderID).EndTime;
-                                DateTime time2 = ReportedMachine[SortSchedule[i].OrderID];
-                                PostST = time1 >= time2 ? time1 : time2;
-                            }
-                            //如果原排程沒有同機台製程
-                            else
-                            {
-                                //直接使用前製程時間
-                                PostST = result.Find(x => x.OrderID == SortSchedule[i].OrderID).EndTime;
-                            } 
-                        }
-                        //如果目前排程沒有同工單，則確認原排程是否有同工單製程
-                        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
-                        {
-                            //如果原排程有同機台製程
-                            if (ReportedMachine.Keys.Contains(SortSchedule[i].OrderID))
-                            {
-                                //比較同機台、同工單、當前時間
-                                DateTime time1 = preserve_Now;
-                                DateTime time2 = ReportedOrder[SortSchedule[i].OrderID];
-                                DateTime time3 = ReportedMachine[SortSchedule[i].OrderID];
-                                if (time1 >= time2 && time1 >= time3)
-                                    PostST = time1;
-                                else if (time2 >= time1 && time2 >= time3)
-                                    PostST = time2;
-                                else
-                                    PostST = time3;
-                            }
-                            //如果原排程沒有同機台製程，比較原排程同工單、當前時間
-                            else
-                            {
-                                DateTime time1 = preserve_Now;
-                                DateTime time2 = ReportedOrder[SortSchedule[i].OrderID];
-                                PostST = time1 >= time2 ? time1 : time2;
-                            }
-                        }
-                        else
-                        {
-                            //如果原排程有同機台，比較原排程同機台&當前時間
-                            if (ReportedMachine.Keys.Contains(SortSchedule[i].OrderID))
-                            {
-                                DateTime time1 = preserve_Now;
-                                DateTime time2 = ReportedMachine[SortSchedule[i].OrderID];
-                                PostST = time1 >= time2 ? time1 : time2;
-                            }
-                            //如果原排程有沒同機台，直接用當前時間
-                            else
-                            {
-                                PostST = preserve_Now;
-                            }
-                        }
-                    }
-                }
-                #endregion
+                //            PostST = time1 >= time2 ? time1 : time2;
+                //        }
+                //        else
+                //        {
+                //            //沒有的話，直接使用同機台時間
+                //            var foundMachine = result.Find(x => x.WorkGroup == SortSchedule[i].WorkGroup);
+                //            PostST = foundMachine != null ? foundMachine.EndTime : preserve_Now;
+                //            //PostST = result.Find(x => x.WorkGroup == SortSchedule[i].WorkGroup).EndTime;
+                //        }
+                //    }
+                //}
+                ////目前排程結果沒有同機台製程
+                //else
+                //{
+                //    //是同步加工機台 => 只需比較前製程完成時間和當前時間
+                //    if (OutsourcingList.Where(x => x.remark == SortSchedule[i].WorkGroup).First().isOutsource == "1")//該機台為委外機台
+                //    {
+                //        //如果目前排程有同工單，則直接使用前製程時間
+                //        if (result.Exists(x => x.OrderID == SortSchedule[i].OrderID))
+                //        {
+                //            int idx = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
+                //            if (idx >= 0)
+                //                PostST = result[idx].EndTime;
+                //            else
+                //                PostST = preserve_Now;
+                //            //Idx = result.FindLastIndex(x => x.OrderID == SortSchedule[i].OrderID);
+                //            //PostST = result[Idx].EndTime;
+                //        }
+                //        //如果目前排程沒有，則確認原排程是否有同工單製程
+                //        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                //        {
+                //            //有的話，比較當前時間
+                //            PostST = preserve_Now > ReportedOrder[SortSchedule[i].OrderID] ? preserve_Now : ReportedOrder[SortSchedule[i].OrderID];
+                //        }
+                //        else
+                //        {
+                //            //沒有的話，直接使用當前時間
+                //            PostST = preserve_Now;
+                //        }
+                //    }
+                //    //非同步加工機台=>考量同機台前製程&同工單前製程
+                //    else
+                //    {
+                //        //如果目前排程有同工單
+                //        if (result.Exists(x => x.OrderID == SortSchedule[i].OrderID))
+                //        {
+                //            //如果原排程有同機台製程
+                //            if (ReportedMachine.Keys.Contains(SortSchedule[i].OrderID))
+                //            {
+                //                //比較同機台和同工單最早可開工時間
+                //                DateTime time1 = result.Find(x => x.OrderID == SortSchedule[i].OrderID).EndTime;
+                //                DateTime time2 = ReportedMachine[SortSchedule[i].OrderID];
+                //                PostST = time1 >= time2 ? time1 : time2;
+                //            }
+                //            //如果原排程沒有同機台製程
+                //            else
+                //            {
+                //                //直接使用前製程時間
+                //                PostST = result.Find(x => x.OrderID == SortSchedule[i].OrderID).EndTime;
+                //            } 
+                //        }
+                //        //如果目前排程沒有同工單，則確認原排程是否有同工單製程
+                //        else if (ReportedOrder.Keys.Contains(SortSchedule[i].OrderID))
+                //        {
+                //            //如果原排程有同機台製程
+                //            if (ReportedMachine.Keys.Contains(SortSchedule[i].OrderID))
+                //            {
+                //                //比較同機台、同工單、當前時間
+                //                DateTime time1 = preserve_Now;
+                //                DateTime time2 = ReportedOrder[SortSchedule[i].OrderID];
+                //                DateTime time3 = ReportedMachine[SortSchedule[i].OrderID];
+                //                if (time1 >= time2 && time1 >= time3)
+                //                    PostST = time1;
+                //                else if (time2 >= time1 && time2 >= time3)
+                //                    PostST = time2;
+                //                else
+                //                    PostST = time3;
+                //            }
+                //            //如果原排程沒有同機台製程，比較原排程同工單、當前時間
+                //            else
+                //            {
+                //                DateTime time1 = preserve_Now;
+                //                DateTime time2 = ReportedOrder[SortSchedule[i].OrderID];
+                //                PostST = time1 >= time2 ? time1 : time2;
+                //            }
+                //        }
+                //        else
+                //        {
+                //            //如果原排程有同機台，比較原排程同機台&當前時間
+                //            if (ReportedMachine.Keys.Contains(SortSchedule[i].OrderID))
+                //            {
+                //                DateTime time1 = preserve_Now;
+                //                DateTime time2 = ReportedMachine[SortSchedule[i].OrderID];
+                //                PostST = time1 >= time2 ? time1 : time2;
+                //            }
+                //            //如果原排程有沒同機台，直接用當前時間
+                //            else
+                //            {
+                //                PostST = preserve_Now;
+                //            }
+                //        }
+                //    }
+                //}
+                //#endregion
 
 
                 #region 新的快取查找方式
@@ -979,29 +979,213 @@ namespace PMCDash.Services
         //}
 
         //2024.05.27 修改
+        //public void EvaluationFitness(ref Dictionary<int, List<Chromsome>> ChromosomeList, ref int noImprovementCount)
+        //{
+        //    var fitness_idx_value = new List<Evafitnessvalue>();
+        //    var localOptChromosomeList = new Dictionary<int, List<Chromsome>>(); // 使用局部变量存储结果
+        //    var localChromosomeList = new Dictionary<int, List<Chromsome>>(ChromosomeList); // 创建局部变量
+
+        //    // 使用并行计算计算适应度
+        //    Parallel.ForEach(localChromosomeList, kvp =>
+        //    {
+        //        int sumDelay = kvp.Value.Sum(x => x.Delay);
+        //        lock (fitness_idx_value)
+        //        {
+        //            fitness_idx_value.Add(new Evafitnessvalue(kvp.Key, sumDelay));
+        //        }
+        //    });
+
+        //    // 计算适应度后排序，由小到大
+        //    fitness_idx_value.Sort((x, y) => x.Fitness.CompareTo(y.Fitness));
+
+        //    // 挑出前50%的染色体解答
+        //    int chromosomeCount = Chromvalue / 2;
+
+        //    Parallel.For(0, chromosomeCount, i =>
+        //    {
+        //        var idx = fitness_idx_value[i].Idx;
+        //        var orderedChromosomes = localChromosomeList[idx]
+        //            .OrderBy(x => x.WorkGroup)
+        //            .ThenBy(x => x.StartTime)
+        //            .Select(x => x.Clone() as Chromsome)
+        //            .ToList();
+
+        //        lock (localOptChromosomeList)
+        //        {
+        //            localOptChromosomeList[i] = orderedChromosomes;
+        //        }
+        //    });
+
+        //    // 将局部变量更新到 ChromosomeList
+        //    foreach (var item in localOptChromosomeList)
+        //    {
+        //        ChromosomeList[item.Key] = item.Value;
+        //    }
+
+        //    var random = new Random(Guid.NewGuid().GetHashCode());
+        //    var crossoverResultList = new ConcurrentDictionary<int, List<Chromsome>>();
+
+        //    var crossoverList = new List<List<Chromsome>>();
+        //    var crossoverTemp = new List<List<Chromsome>>();
+
+        //    // opt_ChromosomeList 是前50%的母体资料 选两个来做交换
+        //    for (int i = 0; i < chromosomeCount; i++)
+        //    {
+        //        int randomNum = random.Next(0, chromosomeCount);
+        //        crossoverList.Add(localOptChromosomeList[randomNum].Select(x => x.Clone() as Chromsome).ToList());
+        //        crossoverTemp.Add(localOptChromosomeList[randomNum].Select(x => x.Clone() as Chromsome).ToList());
+        //    }
+
+        //    Parallel.For(0, chromosomeCount, childItem =>
+        //    {
+        //        // crossover
+        //        int cutLine = random.Next(1, crossoverList[0].Count);
+
+        //        if (childItem < chromosomeCount - 1)
+        //        {
+        //            if (cutLine < crossoverList[childItem + 1].Count)
+        //            {
+        //                int length1 = crossoverList[childItem + 1].Count - cutLine;
+        //                if (length1 > 0)
+        //                {
+        //                    var swapData1 = crossoverList[childItem + 1].GetRange(cutLine, length1);
+
+        //                    lock (crossoverTemp)
+        //                    {
+        //                        crossoverTemp[childItem].RemoveRange(cutLine, length1);
+        //                        crossoverTemp[childItem].AddRange(swapData1);
+        //                    }
+
+        //                    int length2 = crossoverList[childItem].Count - cutLine;
+        //                    if (length2 > 0)
+        //                    {
+        //                        var swapData2 = crossoverList[childItem].GetRange(cutLine, length2);
+
+        //                        lock (crossoverTemp)
+        //                        {
+        //                            crossoverTemp[childItem + 1].RemoveRange(cutLine, length2);
+        //                            crossoverTemp[childItem + 1].AddRange(swapData2);
+        //                        }
+        //                    }
+        //                }
+        //            }
+
+        //            crossoverResultList[2 * childItem] = crossoverTemp[childItem];
+        //            crossoverResultList[2 * childItem + 1] = crossoverTemp[childItem + 1];
+        //        }
+        //        else
+        //        {
+        //            if (cutLine < crossoverList[0].Count)
+        //            {
+        //                int length1 = crossoverList[0].Count - cutLine;
+        //                if (length1 > 0)
+        //                {
+        //                    var swapData1 = crossoverList[0].GetRange(cutLine, length1);
+
+        //                    lock (crossoverTemp)
+        //                    {
+        //                        crossoverTemp[childItem].RemoveRange(cutLine, length1);
+        //                        crossoverTemp[childItem].AddRange(swapData1);
+        //                    }
+
+        //                    int length2 = crossoverList[childItem].Count - cutLine;
+        //                    if (length2 > 0)
+        //                    {
+        //                        var swapData2 = crossoverList[childItem].GetRange(cutLine, length2);
+
+        //                        lock (crossoverTemp)
+        //                        {
+        //                            crossoverTemp[0].RemoveRange(cutLine, length2);
+        //                            crossoverTemp[0].AddRange(swapData2);
+        //                        }
+        //                    }
+        //                }
+        //            }
+
+        //            crossoverResultList[2 * childItem] = crossoverTemp[childItem];
+        //            crossoverResultList[2 * childItem + 1] = crossoverTemp[0];
+        //        }
+        //    });
+
+        //    InspectJobOper(crossoverResultList, ref ChromosomeList, fitness_idx_value.GetRange(0, crossoverList.Count), ref noImprovementCount);
+        //}
+
+        //2025.02.20 修改測試
         public void EvaluationFitness(ref Dictionary<int, List<Chromsome>> ChromosomeList, ref int noImprovementCount)
         {
             var fitness_idx_value = new List<Evafitnessvalue>();
-            var localOptChromosomeList = new Dictionary<int, List<Chromsome>>(); // 使用局部变量存储结果
-            var localChromosomeList = new Dictionary<int, List<Chromsome>>(ChromosomeList); // 创建局部变量
+            var localOptChromosomeList = new Dictionary<int, List<Chromsome>>(); // 使用局部變量存儲結果
+            var localChromosomeList = new Dictionary<int, List<Chromsome>>(ChromosomeList); // 創建局部變量
 
-            // 使用并行计算计算适应度
+            // 使用並行計算計算適應度
             Parallel.ForEach(localChromosomeList, kvp =>
             {
-                int sumDelay = kvp.Value.Sum(x => x.Delay);
+
+                int sumDelay = 0;
+                int delayedProcessCount = 0; // 記錄有延遲的製程數
+                int done_too_early_orderCount = 0; // 記錄有延遲的製程數
+                int lastProcessDelay = 0; // 記錄最後一道製程的延遲天數
+
+                foreach (var process in kvp.Value)
+                {
+                    if (process.Delay > 0) // 只統計有延遲的製程
+                    {
+                        sumDelay += process.Delay;
+                        delayedProcessCount++;
+                    }
+                }
+
+                // 找到最後一道製程
+                var lastProcessList = kvp.Value
+                                    .GroupBy(x => x.OrderID)
+                                    .Select(g => g.OrderByDescending(p => p.EndTime).First())
+                                    .ToList();  // 轉為 List
+
+                // 取得第一個 OrderID 的 EndTime
+                if (lastProcessList != null)
+                {
+                    foreach (var order in lastProcessList)
+                    {
+                        if (order.AssignDate > order.EndTime)
+                        {
+                            //避免交貨日期太早完成，壓縮其他工單時間(限制需小於10天，大於5天)
+                            var daydiff = (order.AssignDate - order.EndTime).Days;
+                            if (daydiff > 10)
+                            {
+                                done_too_early_orderCount += 1;
+                                lastProcessDelay += (daydiff - 10);
+                            }
+                            else if (daydiff < 5)
+                            {
+                                done_too_early_orderCount += 1;
+                                lastProcessDelay += (5 - daydiff);
+                            }
+                        }
+                    }
+                    
+                }
+                //計算平均過度交貨冗餘或緊縮
+                double avg_overdelivery_redundancy = done_too_early_orderCount > 0 ? (double) lastProcessDelay / done_too_early_orderCount :0 ;
+
+                // 計算平均延遲
+                double avgDelay = delayedProcessCount > 0 ? (double)sumDelay / delayedProcessCount : 0;
+
+                
+                double finalFitness = avgDelay + avg_overdelivery_redundancy;
+
                 lock (fitness_idx_value)
                 {
-                    fitness_idx_value.Add(new Evafitnessvalue(kvp.Key, sumDelay));
+                    fitness_idx_value.Add(new Evafitnessvalue(kvp.Key, finalFitness));
                 }
             });
 
-            // 计算适应度后排序，由小到大
+            // 計算適應度後排序，由小到大
             fitness_idx_value.Sort((x, y) => x.Fitness.CompareTo(y.Fitness));
 
-            // 挑出前50%的染色体解答
+            // 挑出前50%的染色體解答
             int chromosomeCount = Chromvalue / 2;
 
-            Parallel.For(0, chromosomeCount, i =>
+            Parallel.For(0, Chromvalue, i =>
             {
                 var idx = fitness_idx_value[i].Idx;
                 var orderedChromosomes = localChromosomeList[idx]
@@ -1009,108 +1193,483 @@ namespace PMCDash.Services
                     .ThenBy(x => x.StartTime)
                     .Select(x => x.Clone() as Chromsome)
                     .ToList();
-
                 lock (localOptChromosomeList)
                 {
                     localOptChromosomeList[i] = orderedChromosomes;
                 }
             });
 
-            // 将局部变量更新到 ChromosomeList
+            // 將局部變量更新到 ChromosomeList
             foreach (var item in localOptChromosomeList)
             {
                 ChromosomeList[item.Key] = item.Value;
             }
 
+            // 計算當前生成的自適應突變率
+            double mutationRate = CalculateAdaptiveMutationRate(noImprovementCount, 0.05);
+
             var random = new Random(Guid.NewGuid().GetHashCode());
             var crossoverResultList = new ConcurrentDictionary<int, List<Chromsome>>();
 
-            var crossoverList = new List<List<Chromsome>>();
-            var crossoverTemp = new List<List<Chromsome>>();
+            // 選擇父本進行交叉
+            // 錦標賽選擇方式挑出一半的染色體
+            var parentIndices = TournamentSelection(fitness_idx_value, chromosomeCount, 3);
+            var parentList = new List<List<Chromsome>>();
 
-            // opt_ChromosomeList 是前50%的母体资料 选两个来做交换
-            for (int i = 0; i < chromosomeCount; i++)
+            // 獲取選中的父本
+            foreach (int idx in parentIndices)
             {
-                int randomNum = random.Next(0, chromosomeCount);
-                crossoverList.Add(localOptChromosomeList[randomNum].Select(x => x.Clone() as Chromsome).ToList());
-                crossoverTemp.Add(localOptChromosomeList[randomNum].Select(x => x.Clone() as Chromsome).ToList());
+                parentList.Add(localOptChromosomeList[idx].Select(x => x.Clone() as Chromsome).ToList());
             }
 
-            Parallel.For(0, chromosomeCount, childItem =>
+            // 執行交叉和突變操作
+            Parallel.For(0, chromosomeCount / 2, i =>
             {
-                // crossover
-                int cutLine = random.Next(1, crossoverList[0].Count);
+                // 使用基於優先權的交叉運算子
+                var offspring = PriorityBasedCrossover(
+                    parentList[i * 2],
+                    parentList[i * 2 + 1]
+                );
 
-                if (childItem < chromosomeCount - 1)
+                // 對每個後代應用突變
+                SwapMutation(offspring[0], mutationRate);
+                SwapMutation(offspring[1], mutationRate);
+
+                // 保存後代
+                crossoverResultList[i * 2] = offspring[0];
+                crossoverResultList[i * 2 + 1] = offspring[1];
+            });
+
+            InspectJobOper(crossoverResultList, ref ChromosomeList, fitness_idx_value.GetRange(0, crossoverResultList.Count), ref noImprovementCount);
+        }
+
+        // 錦標賽選擇
+        private List<int> TournamentSelection(List<Evafitnessvalue> fitness, int selectionCount, int tournamentSize)
+        {
+            var selected = new List<int>();
+            var availableIndices = Enumerable.Range(0, fitness.Count).ToList();
+            Random random = new Random(Guid.NewGuid().GetHashCode());
+
+            for (int i = 0; i < selectionCount && availableIndices.Count > 0; i++)
+            {
+                // 選取tournamentSize個個體進行比較
+                int bestIdx = -1;
+                double bestFitness = double.MaxValue;
+                List<int> tournamentIndices = new List<int>();
+
+                // 從可用的索引中隨機選取
+                for (int j = 0; j < Math.Min(tournamentSize, availableIndices.Count); j++)
                 {
-                    if (cutLine < crossoverList[childItem + 1].Count)
+                    int randomPos = random.Next(0, availableIndices.Count);
+                    int idx = availableIndices[randomPos];
+                    tournamentIndices.Add(idx);
+
+                    if (fitness[idx].Fitness < bestFitness)
                     {
-                        int length1 = crossoverList[childItem + 1].Count - cutLine;
-                        if (length1 > 0)
-                        {
-                            var swapData1 = crossoverList[childItem + 1].GetRange(cutLine, length1);
-
-                            lock (crossoverTemp)
-                            {
-                                crossoverTemp[childItem].RemoveRange(cutLine, length1);
-                                crossoverTemp[childItem].AddRange(swapData1);
-                            }
-
-                            int length2 = crossoverList[childItem].Count - cutLine;
-                            if (length2 > 0)
-                            {
-                                var swapData2 = crossoverList[childItem].GetRange(cutLine, length2);
-
-                                lock (crossoverTemp)
-                                {
-                                    crossoverTemp[childItem + 1].RemoveRange(cutLine, length2);
-                                    crossoverTemp[childItem + 1].AddRange(swapData2);
-                                }
-                            }
-                        }
+                        bestFitness = fitness[idx].Fitness;
+                        bestIdx = idx;
                     }
+                }
 
-                    crossoverResultList[2 * childItem] = crossoverTemp[childItem];
-                    crossoverResultList[2 * childItem + 1] = crossoverTemp[childItem + 1];
+                selected.Add(fitness[bestIdx].Idx);
+                availableIndices.Remove(bestIdx); // 從可用索引中移除已選擇的
+            }
+
+            return selected;
+        }
+
+        /// <summary>
+        /// 基於優先權的交叉運算子
+        /// </summary>
+        /// <param name="parent1"></param>
+        /// <param name="parent2"></param>
+        /// <returns></returns>
+        private List<List<Chromsome>> PriorityBasedCrossover(List<Chromsome> parent1, List<Chromsome> parent2)
+        {
+            Random random = new Random(Guid.NewGuid().GetHashCode());
+            double alpha = random.NextDouble() * 0.4 + 0.3; // 混合權重在0.3到0.7之間
+
+            // 1. 提取每個工序的優先權
+            var priorities1 = new Dictionary<string, double>();
+            var priorities2 = new Dictionary<string, double>();
+
+            // 用工序在染色體中的位置作為優先權
+            for (int i = 0; i < parent1.Count; i++)
+            {
+                string key = parent1[i].OrderID + "-" + parent1[i].Range;
+
+
+                // 修改優先度計算
+                TimeSpan timeDifference = parent1[i].AssignDate - parent1[i].EndTime;
+                int daysDifference = timeDifference.Days;
+                double priorityValue=0.0;
+
+                //if (daysDifference >= 0)
+                //{
+                //    // 未延遲的情況，給予最高優先級
+                //    if (daysDifference > 10)
+                //    {
+                //        // 過早完成（但仍未延遲）
+                //        priorityValue = 100 + (daysDifference - 10); // 基礎分數100，加上過早天數的懲罰
+                //    }
+                //    else if (daysDifference < 5)
+                //    {
+                //        // 接近截止日（但仍未延遲）
+                //        priorityValue = 105 + (5 - daysDifference); // 基礎分數100，加上接近截止日的懲罰
+                //    }
+                //    else
+                //    {
+                //        // 理想範圍（5-10天內完成）
+                //        priorityValue = 80; // 最理想情況，純基礎分數
+                //    }
+                //}
+                //else
+                //{
+                //    // 已延遲的情況，優先度較低
+                //    priorityValue = 200 + Math.Abs(daysDifference); // 基礎分數200（低於未延遲），加上延遲天數
+                //}
+
+                if (daysDifference < 0)
+                {
+                    priorityValue += (double)Math.Abs(daysDifference);
+                }
+
+                priorities1[key] = priorityValue;
+            }
+
+            for (int i = 0; i < parent2.Count; i++)
+            {
+                string key = parent2[i].OrderID + "-" + parent2[i].Range;
+                // 修改優先度計算
+                TimeSpan timeDifference = parent2[i].AssignDate - parent2[i].EndTime;
+                int daysDifference = timeDifference.Days;
+                double priorityValue=0.0;
+
+
+                //if (daysDifference >= 0)
+                //{
+                //    // 未延遲的情況，給予最高優先級
+                //    if (daysDifference > 10)
+                //    {
+                //        // 過早完成（但仍未延遲）
+                //        priorityValue = 100 + (daysDifference - 10); // 基礎分數100，加上過早天數的懲罰
+                //    }
+                //    else if (daysDifference < 5)
+                //    {
+                //        // 接近截止日（但仍未延遲）
+                //        priorityValue = 105 + (5 - daysDifference); // 基礎分數100，加上接近截止日的懲罰
+                //    }
+                //    else
+                //    {
+                //        // 理想範圍（5-10天內完成）
+                //        priorityValue = 80; // 最理想情況，純基礎分數
+                //    }
+                //}
+                //else
+                //{
+                //    // 已延遲的情況，優先度較低
+                //    priorityValue = 200 + Math.Abs(daysDifference); // 基礎分數200（低於未延遲），加上延遲天數
+                //}
+
+                if(daysDifference<0)
+                {
+                    priorityValue += (double)Math.Abs(daysDifference);
+                }
+
+                priorities2[key] = priorityValue;
+            }
+
+            // 2. 混合優先權生成兩個子代
+            var childPriorities1 = new Dictionary<string, double>();
+            var childPriorities2 = new Dictionary<string, double>();
+
+            foreach (var key in priorities1.Keys)
+            {
+                // 確保兩個父本都有該工序
+                if (priorities2.ContainsKey(key))
+                {
+                    //根據每個製程在父代中優先權計算子代的優先權
+                    childPriorities1[key] = alpha * priorities1[key] + (1 - alpha) * priorities2[key];
+                    childPriorities2[key] = (1 - alpha) * priorities1[key] + alpha * priorities2[key];
                 }
                 else
                 {
-                    if (cutLine < crossoverList[0].Count)
-                    {
-                        int length1 = crossoverList[0].Count - cutLine;
-                        if (length1 > 0)
-                        {
-                            var swapData1 = crossoverList[0].GetRange(cutLine, length1);
-
-                            lock (crossoverTemp)
-                            {
-                                crossoverTemp[childItem].RemoveRange(cutLine, length1);
-                                crossoverTemp[childItem].AddRange(swapData1);
-                            }
-
-                            int length2 = crossoverList[childItem].Count - cutLine;
-                            if (length2 > 0)
-                            {
-                                var swapData2 = crossoverList[childItem].GetRange(cutLine, length2);
-
-                                lock (crossoverTemp)
-                                {
-                                    crossoverTemp[0].RemoveRange(cutLine, length2);
-                                    crossoverTemp[0].AddRange(swapData2);
-                                }
-                            }
-                        }
-                    }
-
-                    crossoverResultList[2 * childItem] = crossoverTemp[childItem];
-                    crossoverResultList[2 * childItem + 1] = crossoverTemp[0];
+                    childPriorities1[key] = priorities1[key];
+                    childPriorities2[key] = priorities1[key];
                 }
-            });
+            }
 
-            InspectJobOper(crossoverResultList, ref ChromosomeList, fitness_idx_value.GetRange(0, crossoverList.Count), ref noImprovementCount);
+            // 3. 根據混合後的優先權重新排序
+            // 假設 Value 越小優先度越高
+            var child1 = childPriorities1.OrderBy(x => x.Value)
+                             .Select(x => {
+                                 var parts = x.Key.Split('-');
+                                 var orderId = parts[0];
+                                 var range = parts[1];
+
+                                 // 從 priorities1 和 priorities2 中獲取優先度
+                                 double priority1 = priorities1.TryGetValue(x.Key, out double p1) ? p1 : double.MaxValue;
+                                 double priority2 = priorities2.TryGetValue(x.Key, out double p2) ? p2 : double.MaxValue;
+
+                                 // 優先度較高（Value 較小）的那方決定來源
+                                 if (priority1 <priority2)
+                                 {
+                                     return parent1.FirstOrDefault(j =>
+                                         j.OrderID == orderId && j.Range.ToString() == range);
+                                 }
+                                 else if(priority2 < priority1)
+                                 {
+                                     return parent2.FirstOrDefault(j =>
+                                         j.OrderID == orderId && j.Range.ToString() == range);
+                                 }
+                                 else
+                                 {
+                                     // 優先度相同時隨機挑選
+                                     return random.Next(2) == 0
+                                         ? parent1.FirstOrDefault(j => j.OrderID == orderId && j.Range.ToString() == range)
+                                         : parent2.FirstOrDefault(j => j.OrderID == orderId && j.Range.ToString() == range);
+                                 }
+                             })
+                             .Where(j => j != null)
+                             .Select(j => j.Clone() as Chromsome)
+                             .ToList();
+
+            var child2 = childPriorities2.OrderBy(x => x.Value)
+                                         .Select(x => {
+                                             var parts = x.Key.Split('-');
+                                             var orderId = parts[0];
+                                             var range = parts[1];
+
+                                             // 從 priorities1 和 priorities2 中獲取優先度
+                                             double priority1 = priorities1.TryGetValue(x.Key, out double p1) ? p1 : double.MaxValue;
+                                             double priority2 = priorities2.TryGetValue(x.Key, out double p2) ? p2 : double.MaxValue;
+
+                                 // 優先度較高（Value 較小）的那方決定來源
+                                             if (priority2 <= priority1)
+                                             {
+                                                 return parent2.FirstOrDefault(j =>
+                                                     j.OrderID == orderId && j.Range.ToString() == range);
+                                             }
+                                             else if (priority2 < priority1)
+                                             {
+                                                 return parent2.FirstOrDefault(j =>
+                                                     j.OrderID == orderId && j.Range.ToString() == range);
+                                             }
+                                             else
+                                             {
+                                                 // 優先度相同時隨機挑選
+                                                 return random.Next(2) == 0
+                                                     ? parent1.FirstOrDefault(j => j.OrderID == orderId && j.Range.ToString() == range)
+                                                     : parent2.FirstOrDefault(j => j.OrderID == orderId && j.Range.ToString() == range);
+                                             }
+                                         })
+                                         .Where(j => j != null)
+                                         .Select(j => j.Clone() as Chromsome)
+                                         .ToList();
+            
+
+            // 4. 確保每個子代的工序數量與父本相同
+            EnsureJobCompleteness(child1, parent1);
+            EnsureJobCompleteness(child2, parent2);
+
+            // 5. 重新計算eachmachineseq
+            var new_schedule_solution1 = AssignSequence(child1, new Dictionary<string, int>());
+            var new_schedule_solution2 = AssignSequence(child2, new Dictionary<string, int>());
+
+
+            // 6. 重新計算時間表
+            //UpdateScheduleTimes(child1);
+            //UpdateScheduleTimes(child2);
+            var newchild1 = Scheduled(new_schedule_solution1);
+            var newchild2 = Scheduled(new_schedule_solution2);
+
+            return new List<List<Chromsome>> { newchild1, newchild2 };
         }
 
+        //交配後分配機台順序
+        private List<LocalMachineSeq> AssignSequence(List<Chromsome> child, Dictionary<string, int> eachmaclist)
+        {
+            List<LocalMachineSeq> new_seq = new List<LocalMachineSeq>();
+            foreach (var item in child)
+            {
+                // 如果 WorkGroup 不存在，初始化為 0，否則遞增
+                if (!eachmaclist.TryGetValue(item.WorkGroup, out int seq))
+                {
+                    eachmaclist[item.WorkGroup] = 0;
+                }
+                else
+                {
+                    eachmaclist[item.WorkGroup] = seq + 1;
+                }
 
+                // 分配 EachMachineSeq
+                new_seq.Add(new LocalMachineSeq
+                {
+                    SeriesID = item.SeriesID,
+                    OrderID = item.OrderID,
+                    OPID = item.OPID,
+                    Range = item.Range,
+                    Duration = item.Duration,
+                    PredictTime = item.AssignDate,
+                    Maktx = item.Maktx,
+                    PartCount = item.PartCount,
+                    WorkGroup = item.WorkGroup,
+                    EachMachineSeq = eachmaclist[item.WorkGroup],
+                });
+
+                
+            }
+            return new_seq;
+        }
+
+        // 確保子代包含所有必要的工序
+        private void EnsureJobCompleteness(List<Chromsome> child, List<Chromsome> parent)
+        {
+            // 檢查是否所有工序都存在
+            var childJobs = child.Select(j => j.OrderID + "-" + j.Range).ToHashSet();
+            var parentJobs = parent.Select(j => j.OrderID + "-" + j.Range).ToHashSet();
+
+            foreach (var job in parent)
+            {
+                string jobKey = job.OrderID + "-" + job.Range;
+                if (!childJobs.Contains(jobKey))
+                {
+                    child.Add(job.Clone() as Chromsome);
+                }
+            }
+
+            // 確保沒有重複工序
+            child = child.GroupBy(j => j.OrderID + "-" + j.Range)
+                        .Select(g => g.First())
+                        .ToList();
+        }
+        // 交換突變算法
+        private void SwapMutation(List<Chromsome> chromosome, double mutationRate)
+        {
+            Random random = new Random(Guid.NewGuid().GetHashCode());
+            
+            // 按機台分組
+            var machineGroups = chromosome.GroupBy(x => x.WorkGroup).ToDictionary(g => g.Key, g => g.ToList());
+
+            var schedule_after_mutation = new List<LocalMachineSeq>();
+
+            foreach(var item in chromosome)
+            {
+                schedule_after_mutation.Add(new LocalMachineSeq
+                {
+                    SeriesID = item.SeriesID,
+                    OrderID = item.OrderID,
+                    OPID = item.OPID,
+                    Range = item.Range,
+                    Duration = item.Duration,
+                    PredictTime = item.AssignDate,
+                    Maktx = item.Maktx,
+                    PartCount = item.PartCount,
+                    WorkGroup = item.WorkGroup,
+                    EachMachineSeq = item.EachMachineSeq
+                });
+            }
+            
+            foreach (var machine in machineGroups.Keys)
+            {
+                // 對每個機台，有mutationRate的概率執行突變
+                if (random.NextDouble() <= mutationRate && machineGroups[machine].Count >= 2)
+                {
+                    // 獲取排序後的列表，但不立即賦值回字典
+                    var sortedJobs = machineGroups[machine].OrderBy(x => x.StartTime).ToList();
+                    // 在該機台上隨機選擇兩個工序交換
+                    int jobCount = machineGroups[machine].Count;
+                    int pos1 = random.Next(jobCount);
+                    int pos2 = random.Next(jobCount);
+
+                    // 確保選擇兩個不同位置
+                    while (pos1 == pos2 && jobCount > 1)
+                    {
+                        pos2 = random.Next(jobCount);
+                    }
+
+                    if (pos1 != pos2)
+                    {
+                        // 獲取這兩個工序在染色體中的位置
+                        var job1 = sortedJobs[pos1];
+                        var job2 = sortedJobs[pos2];
+
+                        //int idx1 = chromosome.IndexOf(job1);
+                        //int idx2 = chromosome.IndexOf(job2);
+
+                        //// 交換工序
+                        //chromosome[idx1] = job2.Clone() as Chromsome;
+                        //chromosome[idx2] = job1.Clone() as Chromsome;
+
+                        //交換順序
+                        schedule_after_mutation.Find(x => x.OrderID == job1.OrderID && x.Range == job1.Range).EachMachineSeq = pos2;
+                        schedule_after_mutation.Find(x => x.OrderID == job2.OrderID && x.Range == job2.Range).EachMachineSeq = pos1;
+                    }
+
+                    
+                }
+            }
+
+            // 重新計算時間表
+            chromosome = Scheduled(schedule_after_mutation);
+        }
+        // 更新排程時間
+        private void UpdateScheduleTimes(List<Chromsome> chromosome)
+        {
+            // 按工作組和開始時間排序
+            var sortedJobs = chromosome.OrderBy(x => x.WorkGroup).ThenBy(x => x.StartTime).ToList();
+            var machineEndTimes = new Dictionary<string, DateTime>();
+
+            foreach (var job in sortedJobs)
+            {
+                if (!machineEndTimes.ContainsKey(job.WorkGroup))
+                {
+                    machineEndTimes[job.WorkGroup] = DateTime.MinValue;
+                }
+
+                // 設置新的開始時間
+                job.StartTime = machineEndTimes[job.WorkGroup] > job.AssignDate ?
+                               machineEndTimes[job.WorkGroup] :
+                               job.AssignDate;
+
+                // 計算結束時間
+                DateTime endTime = job.StartTime.Add(job.Duration);
+                machineEndTimes[job.WorkGroup] = endTime;
+
+                // 計算延遲
+                var dueDate = job.AssignDate; // 需要實現此方法來獲取截止日期
+                if (endTime > dueDate)
+                {
+                    job.Delay = (int)(endTime - dueDate).TotalMinutes;
+                }
+                else
+                {
+                    job.Delay = 0;
+                }
+            }
+        }
+        // 獲取工序的截止日期(需要根據你的數據結構實現)
+        private DateTime GetDueDate(string orderID, double opID)
+        {
+            // 實現獲取訂單工序截止日期的邏輯
+            // 這裡是示例實現，你需要根據實際情況修改
+            return DateTime.Now.AddDays(7); // 示例：假設截止日期為一周後
+        }
+
+        // 計算自適應突變率
+        private double CalculateAdaptiveMutationRate(int noImprovementCount, double baseMutationRate)
+        {
+            // 基本突變率
+            double mutationRate = baseMutationRate; // 例如0.05
+
+            // 長時間沒有改進時增加突變率
+            if (noImprovementCount > 5)
+            {
+                mutationRate = Math.Min(0.3, baseMutationRate + (noImprovementCount - 5) * 0.02);
+            }
+
+            return mutationRate;
+        }
 
 
         public void Mutation(List<Chromsome> scheduledData)
@@ -1395,12 +1954,12 @@ namespace PMCDash.Services
         {
             bool HasImproved = false;
             var parallelOptions = new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount };
-            var localChromosomeList = new Dictionary<int, List<Chromsome>>(ChromosomeList); // 创建局部变量
+            var localChromosomeList = new Dictionary<int, List<Chromsome>>(ChromosomeList); // 創建局部變量
             var updatedChromosomes = new ConcurrentDictionary<int, List<Chromsome>>(); // 使用 ConcurrentDictionary
 
             Parallel.For(0, crossoverResultList.Count, parallelOptions, i =>
             {
-                int total = localChromosomeList[i].Count; // 正确工单制程数
+                int total = localChromosomeList[i].Count; // 正確工單制程數
                 var results = new List<Tuple<string, double>>();
                 for (int j = 0; j < crossoverResultList[i].Count; j++)
                 {
@@ -1408,7 +1967,7 @@ namespace PMCDash.Services
                 }
                 List<Tuple<string, double>> distinct_2 = results.Distinct().ToList();
                 var distinct_1 = new List<Tuple<string, double, string, TimeSpan, DateTime, int, string>>();
-                // 把遗失的工单工序加回来
+                // 把遺失的工單工序加回來
                 if (distinct_2.Count != total)
                 {
                     foreach (var item in localChromosomeList[i])
@@ -1427,14 +1986,14 @@ namespace PMCDash.Services
                     distinct_1 = crossoverResultList[i].Select(x => Tuple.Create(x.OrderID, x.OPID, x.WorkGroup, x.Duration, x.AssignDate, x.Range, x.SeriesID))
                                                        .ToList();
                 }
-                // 重新给定机台排序
+                // 重新給定機台排序
                 List<LocalMachineSeq> MachineSeq = new List<LocalMachineSeq>();
-                // 获取各机台是否为委外机台
+                // 獲取各機台是否為委外機台
                 var OutsourcingList = getOutsourcings();
                 for (int machinenameseq = 0; machinenameseq < Devices.Count; machinenameseq++)
                 {
                     int seq = 0;
-                    // 排序以OPID排，避免同工单后制程放在前制程前面
+                    // 排序以OPID排，避免同工單後制程放在前制程前面
                     var ordersOnMachine = distinct_1.Where(x => x.Item3 == Devices[machinenameseq].Remark).OrderBy(x => x.Item2);
                     foreach (var item in ordersOnMachine)
                     {
@@ -1479,9 +2038,9 @@ namespace PMCDash.Services
                 }
                 // 重新排程
                 var tempOrder = Scheduled(MachineSeq);
-                // 多一个比较sumdelay
+                // 多一個比較sumdelay
                 int sum = tempOrder.Sum(x => x.Delay);
-                if (fitness_idx_value.Exists(x => x.Fitness > sum)) // 判断突变之后是否有更好的解
+                if (fitness_idx_value.Exists(x => x.Fitness > sum)) // 判斷突變之後是否有更好的解
                 {
                     int index = fitness_idx_value.FindIndex(x => x.Fitness > sum);
                     updatedChromosomes[fitness_idx_value[index].Idx] = tempOrder.Select(x => (Chromsome)x.Clone()).ToList();
@@ -1498,6 +2057,11 @@ namespace PMCDash.Services
             if (!HasImproved)
             {
                 noImprovementCount++;
+            }
+            else
+            {
+                // 發現更好解，重置計數器
+                noImprovementCount = 0;
             }
         }
 

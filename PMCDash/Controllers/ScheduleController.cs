@@ -3198,7 +3198,47 @@ namespace PMCDash.Controllers
             return new ActionResponse<List<ScheduleWeight>> { Data = result };
         }
 
+        /// <summary>
+        /// 排程資料測試
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("Filter_Order")]
+        public string Filter_Order(string assigndate)
+        {
+            string SqlStr = $@"SELECT OrderID, OPID
+                       FROM {_ConnectStr.APSDB}.[dbo].[Assignment]
+                       WHERE AssignDate > '{assigndate}'";
 
+            List<Dictionary<string, string>> orderList = new List<Dictionary<string, string>>();
+
+            using (var Conn = new SqlConnection(_ConnectStr.Local))
+            {
+                if (Conn.State != ConnectionState.Open)
+                    Conn.Open();
+
+                using (var Comm = new SqlCommand(SqlStr, Conn))
+                {
+                    using (var SqlData = Comm.ExecuteReader())
+                    {
+                        while (SqlData.Read())
+                        {
+                            var orderData = new Dictionary<string, string>
+                    {
+                        { "orderID", SqlData["OrderID"].ToString() },
+                        { "opid", SqlData["OPID"].ToString() }
+                    };
+                            orderList.Add(orderData);
+                        }
+                    }
+                }
+            }
+            string jsonResult = JsonConvert.SerializeObject(orderList);
+            //return new ActionResponse<string>
+            //{
+            //    Data = jsonResult
+            //};
+            return jsonResult;
+        }
 
         /// <summary>
         /// 數據比較(O)
@@ -3629,6 +3669,9 @@ namespace PMCDash.Controllers
             }
             return result;
         }
+
+        //---------------------------------------------------------------------------------------------------
+        //以下為機台優先排程流程相關API
         /// <summary>
         /// 機台優先排程法 (O)
         /// </summary>

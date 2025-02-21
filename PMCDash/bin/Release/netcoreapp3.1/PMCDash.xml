@@ -889,6 +889,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:PMCDash.Controllers.ScheduleController.Filter_Order(System.String)">
+            <summary>
+            排程資料測試
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:PMCDash.Controllers.ScheduleController.Comparison">
             <summary>
             數據比較(O)
@@ -4611,6 +4617,14 @@
             <summary>
             判断是否在工作日内
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PMCDash.Services.DelayMthod.PriorityBasedCrossover(System.Collections.Generic.List{PMCDash.Models.Chromsome},System.Collections.Generic.List{PMCDash.Models.Chromsome})">
+            <summary>
+            基於優先權的交叉運算子
+            </summary>
+            <param name="parent1"></param>
+            <param name="parent2"></param>
             <returns></returns>
         </member>
         <member name="P:PMCDash.Services.DelayMthod.OrderDevice.OrderID">
