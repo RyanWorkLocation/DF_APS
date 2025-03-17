@@ -614,6 +614,7 @@ namespace PMCDash.Models
         public int Range { get; set; }
         public string WorkGroup { get; set; }
         public int Delay { get; set; }
+        public double Waiting { get; set; }
         public TimeSpan Duration { get; set; }
         public DateTime AssignDate { get; set; }
         public DateTime StartTime { get; set; }

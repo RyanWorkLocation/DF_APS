@@ -169,21 +169,19 @@ namespace PMCDash.Services
             if (temp.Count != 0)
             {
                 var orderidlist = temp.Select(x => x.OrderID).Distinct().ToList();
-                //List<DateTime> real_dates = temp.OrderBy(x => x.AssignST).Select(x => x.AssignET).ToList();
-                //List<string> req_dates = temp.OrderBy(x => x.AssignST).Select(x => x.ASDate).ToList();
 
                 int count = 0;
                 double diff = 0;
+                var tempdelayorder = new List<string>();
                 for (int i = 0; i < orderidlist.Count; i++)
                 {
                     var real_date = temp.Where(x => x.OrderID == orderidlist[i]).OrderByDescending(x => x.AssignET).Select(x => x.AssignET).ToList()[0];
                     var req_date = temp.Where(x => x.OrderID == orderidlist[i]).OrderByDescending(x => x.AssignET).Select(x => x.ASDate).ToList()[0];
-                    //計算實際完工日期撿到欲交日期
-                    //TimeSpan real_date = new TimeSpan(real_dates[i].Ticks); //排程完工日期
-                    //TimeSpan req_date = new TimeSpan(DateTime.Parse(req_dates[i]).Ticks); //訂單要求日期
-                    diff = (real_date - DateTime.Parse(req_date)).TotalMinutes;
+
+                    diff = (real_date - DateTime.Parse(req_date)).Days;
                     if (diff > 0)
                     {
+                        tempdelayorder.Add(orderidlist[i]);
                         count++;
                     }
                 }

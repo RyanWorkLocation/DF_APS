@@ -122,7 +122,7 @@ namespace PMCDash
             {
                 endpoints.MapControllers();
             });
-            app.ConfigSpaHost(env, "ClientApp", 8070);
+            // app.ConfigSpaHost(env, "ClientApp", 8070);
         }       
     }
 }

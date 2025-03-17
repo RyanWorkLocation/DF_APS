@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/netcoreapp3.1/PMCDash.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "preLaunchTask": "build",
+            "launchBrowser": {
+                "enabled": true,
+                "args": "http://localhost:5000/swagger", // 或你的 Swagger 路徑，例如 "http://localhost:5000/swagger"
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start http://localhost:5000/swagger"
+                }
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+            
+        }
+    ]
+}

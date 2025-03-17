@@ -12,8 +12,7 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 
 namespace PMCDash.Controllers
-{
-    [Route("api/[controller]")]
+{    [Route("api/[controller]")]
     //[ApiController]
     //public class ScheduleController : BaseApiController
     public class ScheduleController : ControllerBase
@@ -2864,12 +2863,27 @@ namespace PMCDash.Controllers
                     List<Evafitnessvalue> fitness_idx_value = new List<Evafitnessvalue>();
                     for (int i = 0; i < ChromosomeList.Count; i++)
                     {
-                        int sumDelay = ChromosomeList[i].Sum(x => x.Delay);
-                        fitness_idx_value.Add(new Evafitnessvalue(i, sumDelay));
+                        // 找出所有 delay > 0 的元素
+                        var delayedItems = ChromosomeList[i].Where(x => x.Delay > 0);
+                        // 計算這些元素的 delay 總和
+                        double sumDelay = delayedItems.Sum(x => x.Delay);
+                        // 計算平均值 (如果沒有延遲的項目，則平均值為0)
+                        double avgDelay = delayedItems.Any() ? sumDelay / delayedItems.Count() : 0;
+
+                        // 找出所有 delay > 0 的元素
+                        var waitingItems = ChromosomeList[i].Where(x => x.Waiting > 0);
+                        // 計算這些元素的 delay 總和
+                        double waitingDelay = delayedItems.Sum(x => x.Waiting);
+                        // 計算平均值 (如果沒有延遲的項目，則平均值為0)
+                        double avgWaiting = delayedItems.Any() ? waitingDelay / waitingItems.Count() : 0;
+                        fitness_idx_value.Add(new Evafitnessvalue(i, avgDelay+ avgWaiting));
                     }
                     //calculate and sorting
                     fitness_idx_value.Sort((x, y) => { return x.Fitness.CompareTo(y.Fitness); });
                     var tempResult = ChromosomeList[fitness_idx_value[0].Idx];
+
+                    var checkpoint1 = PMC.Calculate_Combined_Fitness(tempResult);
+
 
                     # region 總排程調整
                     var OutsourcingList = PMC.getOutsourcings();
@@ -2888,9 +2902,9 @@ namespace PMCDash.Controllers
                             });
                         }
                     }
-                    var orderList = tempResult.Distinct(x => x.OrderID)
-                                  .Select(x => x.OrderID)
-                                  .ToList();
+
+                    //工單列表
+                    var orderList = tempResult.Select(x => x.OrderID).Distinct().ToList();
 
                     for (int k = 0; k < 2; k++)
                     {
@@ -3018,6 +3032,74 @@ namespace PMCDash.Controllers
                         }
                     }
                     #endregion
+
+                    var checkpoint2 = PMC.Calculate_Combined_Fitness(tempResult);
+
+
+                    # region 重新排序出貨前整理製程
+                    // 找出所有"出貨前檢驗"的項目
+                    var preShipmentInspections = tempResult.Where(x => x.WorkGroup == "出貨前整理-品質檢驗").ToList();
+
+                    // 如果有出貨前檢驗項目，則進行重新排序
+                    if (preShipmentInspections.Any())
+                    {
+                        // 從tempResult中移除所有出貨前檢驗項目(之後會重新加入排序後的項目)
+                        tempResult.RemoveAll(x => x.WorkGroup == "出貨前整理-品質檢驗");
+
+                        // 計算每個工單的最後一道製程的完工時間
+                        var orderLastProcessEndTimes = new Dictionary<string, DateTime>();
+
+                        foreach (var orderId in orderList)
+                        {
+                            // 找出該訂單的所有製程(不包含出貨前檢驗)
+                            var orderProcesses = tempResult.Where(x => x.OrderID == orderId).ToList();
+
+                            if (orderProcesses.Any())
+                            {
+                                // 找出最大完工時間
+                                var lastEndTime = orderProcesses.Max(x => x.EndTime);
+                                orderLastProcessEndTimes.Add(orderId, lastEndTime);
+                            }
+                        }
+
+                        // 按照最後製程完工時間排序訂單
+                        var sortedOrderIds = orderLastProcessEndTimes
+                            .OrderBy(x => x.Value)
+                            .Select(x => x.Key)
+                            .ToList();
+
+                        // 根據排序後的訂單ID來重新排列出貨前檢驗項目
+                        var shipmentMachineEndTime = DateTime.MinValue; // 初始化為最小值
+
+                        foreach (var orderId in sortedOrderIds)
+                        {
+                            // 取得該訂單的所有出貨前檢驗項目
+                            var orderInspections = preShipmentInspections.FirstOrDefault(x => x.OrderID == orderId);
+                            if(orderInspections!=null)
+                            {
+                                DateTime largerDateTime = (shipmentMachineEndTime > orderLastProcessEndTimes[orderId])
+                                               ? shipmentMachineEndTime
+                                               : orderLastProcessEndTimes[orderId];
+                                var newOperation = new Chromsome
+                                {
+                                    OrderID = orderInspections.OrderID,
+                                    OPID = orderInspections.OPID,
+                                    StartTime = largerDateTime,
+                                    EndTime = largerDateTime.Add(orderInspections.Duration), // 使用Add方法更清晰
+                                    WorkGroup = "出貨前整理-品質檢驗",
+                                    Duration = orderInspections.Duration
+                                };
+                                tempResult.Add(newOperation);
+                                shipmentMachineEndTime = newOperation.EndTime;
+                            }
+                            
+
+                        }
+                    }
+                    #endregion
+
+                    var checkpoint3 = PMC.Calculate_Combined_Fitness(tempResult);
+
 
                     var temp = new List<Schedule>();//甘特圖圖表資料
                     clearntemp(@$"DELETE {_ConnectStr.APSDB}.dbo.AssignmentTemp" + a.ToString());

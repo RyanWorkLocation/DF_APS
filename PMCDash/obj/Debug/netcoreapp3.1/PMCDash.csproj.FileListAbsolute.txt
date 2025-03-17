@@ -3529,7 +3529,6 @@ C:\PMC筆電備份\廠商資料\3. 鼎烽\專案修改版 - 0527優化排程運�
 C:\PMC筆電備份\廠商資料\3. 鼎烽\專案修改版 - 0527優化排程運算函式\PMCDash\obj\Debug\netcoreapp3.1\PMCDash.genruntimeconfig.cache
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\appsettings.Development.json
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\appsettings.json
-C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\PMCDash.StaticWebAssets.xml
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\PMCDash.exe
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\PMCDash.deps.json
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\PMCDash.runtimeconfig.json
@@ -3652,8 +3651,6 @@ C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\obj\Debug\netcoreapp3.1\PMCDash.csproj.AssemblyReference.cache
-C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\obj\Debug\netcoreapp3.1\PMCDash.GeneratedMSBuildEditorConfig.editorconfig
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\obj\Debug\netcoreapp3.1\PMCDash.AssemblyInfoInputs.cache
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\obj\Debug\netcoreapp3.1\PMCDash.AssemblyInfo.cs
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\obj\Debug\netcoreapp3.1\PMCDash.csproj.CoreCompileInputs.cache
@@ -3665,3 +3662,11 @@ C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\obj\Debug\netcoreapp3.1\PMCDash.dll
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\obj\Debug\netcoreapp3.1\PMCDash.pdb
 C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\obj\Debug\netcoreapp3.1\PMCDash.genruntimeconfig.cache
+C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\global.json
+C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\bin\netcoreapp3.1\omnisharp.json
+C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\obj\Debug\netcoreapp3.1\PMCDash.csproj.AssemblyReference.cache
+C:\PMC筆電備份\廠商資料\3. 鼎烽\排程系統_最新版_優化CPU排程運算\PMCDash\obj\Debug\netcoreapp3.1\PMCDash.GeneratedMSBuildEditorConfig.editorconfig

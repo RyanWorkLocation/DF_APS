@@ -4619,6 +4619,15 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:PMCDash.Services.DelayMthod.TournamentSelection(System.Collections.Generic.List{PMCDash.Models.Evafitnessvalue},System.Int32,System.Int32)">
+            <summary>
+            使用競爭選擇法從個體群中選取指定數量的個體
+            </summary>
+            <param name="fitness">包含每個個體適應度值的列表</param>
+            <param name="selectionCount">要選擇的個體數量</param>
+            <param name="tournamentSize">每次競爭中參與比較的個體數量</param>
+            <returns>被選中個體的索引列表</returns>
+        </member>
         <member name="M:PMCDash.Services.DelayMthod.PriorityBasedCrossover(System.Collections.Generic.List{PMCDash.Models.Chromsome},System.Collections.Generic.List{PMCDash.Models.Chromsome})">
             <summary>
             基於優先權的交叉運算子
@@ -4626,6 +4635,12 @@
             <param name="parent1"></param>
             <param name="parent2"></param>
             <returns></returns>
+        </member>
+        <member name="M:PMCDash.Services.DelayMthod.Delay_and_waiting(System.Collections.Generic.List{PMCDash.Models.Chromsome})">
+            <summary>
+            新增計算各工單等待時間
+            </summary>
+            <param name="Tep"></param>
         </member>
         <member name="P:PMCDash.Services.DelayMthod.OrderDevice.OrderID">
             <summary>

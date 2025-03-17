@@ -460,6 +460,7 @@ namespace PMCDash.Services
 
                 #region 新的快取查找方式
                 // 建立快取，讓查找更快，並直接儲存對應的物件
+                // 每次都根據cache找出最後一道製程時間
                 orderIndexCache = result
                     .GroupBy(item => item.OrderID)
                     .ToDictionary(g => g.Key, g => g.OrderByDescending(x => x.EndTime).First());
@@ -636,9 +637,6 @@ namespace PMCDash.Services
             }
 
             //篩選本次排程工單類別
-            //var orderList = firstSchedule.OrderBy(x => x.EachMachineSeq).Select(x => x.OrderID)
-            //                      .Distinct()
-            //                      .ToList();
             var orderList = result.Distinct(x => x.OrderID)
                                   .Select(x => x.OrderID)
                                   .ToList();
@@ -696,7 +694,8 @@ namespace PMCDash.Services
                 }
             }
 
-            CountDelay(result);
+            //CountDelay(result);
+            Delay_and_waiting(result);
             return result;
         }
 
@@ -1110,6 +1109,76 @@ namespace PMCDash.Services
         //    InspectJobOper(crossoverResultList, ref ChromosomeList, fitness_idx_value.GetRange(0, crossoverList.Count), ref noImprovementCount);
         //}
 
+
+        public double Calculate_Combined_Fitness(List<Chromsome> soulution)
+        {
+            int sumDelay = 0;
+            double sumWaiting = 0;
+            int delayedProcessCount = 0; // 記錄有延遲的製程數
+            int waitingProcessCount = 0; // 記錄有等待的製程數
+            int done_too_early_orderCount = 0; // 記錄有延遲的製程數
+            int lastProcessDelay = 0; // 記錄最後一道製程的早交天數
+
+            foreach (var process in soulution)
+            {
+                if (process.Delay > 0) // 只統計有延遲的製程
+                {
+                    sumDelay += process.Delay;
+                    delayedProcessCount++;
+                }
+                if (process.Waiting > 0)
+                {
+                    sumWaiting += process.Waiting;
+                    waitingProcessCount++;
+                }
+            }
+
+            // 找到最後一道製程
+            var lastProcessList = soulution
+                                .GroupBy(x => x.OrderID)
+                                .Select(g => g.OrderByDescending(p => p.EndTime).First())
+                                .ToList();  // 轉為 List
+
+            // 取得第一個 OrderID 的 EndTime
+            if (lastProcessList != null)
+            {
+                foreach (var order in lastProcessList)
+                {
+                    if (order.AssignDate > order.EndTime)
+                    {
+                        //避免交貨日期太早完成，壓縮其他工單時間(限制需小於10天，大於5天)
+                        var daydiff = (order.AssignDate - order.EndTime).Days;
+                        if (daydiff > 10)
+                        {
+                            done_too_early_orderCount += 1;
+                            lastProcessDelay += (daydiff - 10);
+                        }
+                        else if (daydiff < 3)
+                        {
+                            done_too_early_orderCount += 1;
+                            lastProcessDelay += (3 - daydiff);
+                        }
+                    }
+                }
+
+            }
+            ////計算平均過度交貨冗餘或緊縮
+            //double avg_overdelivery_redundancy = done_too_early_orderCount > 0 ? (double)lastProcessDelay / done_too_early_orderCount : 0;
+
+            // 計算平均延遲
+            double avgDelay = delayedProcessCount > 0 ? (double)sumDelay / delayedProcessCount : 0;
+
+            // 計算平均等待時間
+            double avgWaiting = waitingProcessCount > 0 ? (double)sumWaiting / waitingProcessCount : 0;
+
+            // 給予權重，優先看交貨日期準的
+            double finalFitness = 0.7*avgDelay + 0.3*avgWaiting;
+            return finalFitness;
+        }
+
+        
+
+
         //2025.02.20 修改測試
         public void EvaluationFitness(ref Dictionary<int, List<Chromsome>> ChromosomeList, ref int noImprovementCount)
         {
@@ -1121,57 +1190,69 @@ namespace PMCDash.Services
             Parallel.ForEach(localChromosomeList, kvp =>
             {
 
-                int sumDelay = 0;
-                int delayedProcessCount = 0; // 記錄有延遲的製程數
-                int done_too_early_orderCount = 0; // 記錄有延遲的製程數
-                int lastProcessDelay = 0; // 記錄最後一道製程的延遲天數
+                //int sumDelay = 0;
+                //double sumWaiting = 0;
+                //int delayedProcessCount = 0; // 記錄有延遲的製程數
+                //int waitingProcessCount = 0; // 記錄有延遲的製程數
+                //int done_too_early_orderCount = 0; // 記錄有延遲的製程數
+                //int lastProcessDelay = 0; // 記錄最後一道製程的延遲天數
 
-                foreach (var process in kvp.Value)
-                {
-                    if (process.Delay > 0) // 只統計有延遲的製程
-                    {
-                        sumDelay += process.Delay;
-                        delayedProcessCount++;
-                    }
-                }
+                //foreach (var process in kvp.Value)
+                //{
+                //    if (process.Delay > 0) // 只統計有延遲的製程
+                //    {
+                //        sumDelay += process.Delay;
+                //        delayedProcessCount++;
+                //    }
+                //    if(process.Waiting > 0)
+                //    {
+                //        sumWaiting += process.Waiting;
+                //        waitingProcessCount++;
+                //    }
+                //}
 
-                // 找到最後一道製程
-                var lastProcessList = kvp.Value
-                                    .GroupBy(x => x.OrderID)
-                                    .Select(g => g.OrderByDescending(p => p.EndTime).First())
-                                    .ToList();  // 轉為 List
+                //// 找到最後一道製程
+                //var lastProcessList = kvp.Value
+                //                    .GroupBy(x => x.OrderID)
+                //                    .Select(g => g.OrderByDescending(p => p.EndTime).First())
+                //                    .ToList();  // 轉為 List
 
-                // 取得第一個 OrderID 的 EndTime
-                if (lastProcessList != null)
-                {
-                    foreach (var order in lastProcessList)
-                    {
-                        if (order.AssignDate > order.EndTime)
-                        {
-                            //避免交貨日期太早完成，壓縮其他工單時間(限制需小於10天，大於5天)
-                            var daydiff = (order.AssignDate - order.EndTime).Days;
-                            if (daydiff > 10)
-                            {
-                                done_too_early_orderCount += 1;
-                                lastProcessDelay += (daydiff - 10);
-                            }
-                            else if (daydiff < 5)
-                            {
-                                done_too_early_orderCount += 1;
-                                lastProcessDelay += (5 - daydiff);
-                            }
-                        }
-                    }
-                    
-                }
-                //計算平均過度交貨冗餘或緊縮
-                double avg_overdelivery_redundancy = done_too_early_orderCount > 0 ? (double) lastProcessDelay / done_too_early_orderCount :0 ;
+                //// 取得第一個 OrderID 的 EndTime
+                //if (lastProcessList != null)
+                //{
+                //    foreach (var order in lastProcessList)
+                //    {
+                //        if (order.AssignDate > order.EndTime)
+                //        {
+                //            //避免交貨日期太早完成，壓縮其他工單時間(限制需小於10天，大於5天)
+                //            var daydiff = (order.AssignDate - order.EndTime).Days;
+                //            if (daydiff > 10)
+                //            {
+                //                done_too_early_orderCount += 1;
+                //                lastProcessDelay += (daydiff - 10);
+                //            } 
+                //            else if (daydiff < 5)
+                //            {
+                //                done_too_early_orderCount += 1;
+                //                lastProcessDelay += (5 - daydiff);
+                //            }
+                //        }
+                //    }
 
-                // 計算平均延遲
-                double avgDelay = delayedProcessCount > 0 ? (double)sumDelay / delayedProcessCount : 0;
+                //}
+                ////計算平均過度交貨冗餘或緊縮
+                //double avg_overdelivery_redundancy = done_too_early_orderCount > 0 ? (double) lastProcessDelay / done_too_early_orderCount :0 ;
 
-                
-                double finalFitness = avgDelay + avg_overdelivery_redundancy;
+                //// 計算平均延遲
+                //double avgDelay = delayedProcessCount > 0 ? (double)sumDelay / delayedProcessCount : 0;
+
+                //// 計算平均等待時間
+                //double avgWaiting = waitingProcessCount > 0 ? (double)sumWaiting / waitingProcessCount : 0;
+
+
+                //double finalFitness = avgDelay + avgWaiting + avg_overdelivery_redundancy;
+
+                double finalFitness = Calculate_Combined_Fitness(kvp.Value);
 
                 lock (fitness_idx_value)
                 {
@@ -1243,27 +1324,42 @@ namespace PMCDash.Services
             InspectJobOper(crossoverResultList, ref ChromosomeList, fitness_idx_value.GetRange(0, crossoverResultList.Count), ref noImprovementCount);
         }
 
-        // 錦標賽選擇
+        /// <summary>
+        /// 使用競爭選擇法從個體群中選取指定數量的個體
+        /// </summary>
+        /// <param name="fitness">包含每個個體適應度值的列表</param>
+        /// <param name="selectionCount">要選擇的個體數量</param>
+        /// <param name="tournamentSize">每次競爭中參與比較的個體數量</param>
+        /// <returns>被選中個體的索引列表</returns>
         private List<int> TournamentSelection(List<Evafitnessvalue> fitness, int selectionCount, int tournamentSize)
         {
+            // 初始化存儲選中個體索引的列表
             var selected = new List<int>();
+
+            // 初始化可選個體的索引範圍(0到fitness.Count-1)
             var availableIndices = Enumerable.Range(0, fitness.Count).ToList();
+
+            // 創建隨機數生成器，使用GUID確保隨機性
             Random random = new Random(Guid.NewGuid().GetHashCode());
 
+            // 循環選擇指定數量的個體，或直到沒有可用個體
             for (int i = 0; i < selectionCount && availableIndices.Count > 0; i++)
             {
-                // 選取tournamentSize個個體進行比較
+                // 用於記錄本次競爭中最佳個體
                 int bestIdx = -1;
-                double bestFitness = double.MaxValue;
-                List<int> tournamentIndices = new List<int>();
+                double bestFitness = double.MaxValue; // 假設適應度值越小越好
+                List<int> tournamentIndices = new List<int>(); // 記錄參與本次競爭的個體索引
 
-                // 從可用的索引中隨機選取
+                // 從可用索引中隨機選取tournamentSize個個體進行比較
+                // 如果可用個體數少於tournamentSize，則使用所有可用個體
                 for (int j = 0; j < Math.Min(tournamentSize, availableIndices.Count); j++)
                 {
+                    // 從剩餘可用索引中隨機選一個位置
                     int randomPos = random.Next(0, availableIndices.Count);
                     int idx = availableIndices[randomPos];
                     tournamentIndices.Add(idx);
 
+                    // 如果該個體的適應度更好(此處為值越小越好)，則更新最佳個體
                     if (fitness[idx].Fitness < bestFitness)
                     {
                         bestFitness = fitness[idx].Fitness;
@@ -1271,10 +1367,14 @@ namespace PMCDash.Services
                     }
                 }
 
+                // 將最佳個體的原始索引加入選中列表
                 selected.Add(fitness[bestIdx].Idx);
-                availableIndices.Remove(bestIdx); // 從可用索引中移除已選擇的
+
+                // 從可用索引中移除已選擇的個體，避免重複選擇
+                availableIndices.Remove(bestIdx);
             }
 
+            // 返回選中的個體索引列表
             return selected;
         }
 
@@ -1293,16 +1393,23 @@ namespace PMCDash.Services
             var priorities1 = new Dictionary<string, double>();
             var priorities2 = new Dictionary<string, double>();
 
+            // 設定延遲和等待時間的權重
+            double delayWeight = 1.5;  // 延遲權重較高
+            double waitingWeight = 1.0;  // 等待時間權重
+
             // 用工序在染色體中的位置作為優先權
             for (int i = 0; i < parent1.Count; i++)
             {
                 string key = parent1[i].OrderID + "-" + parent1[i].Range;
 
 
-                // 修改優先度計算
-                TimeSpan timeDifference = parent1[i].AssignDate - parent1[i].EndTime;
-                int daysDifference = timeDifference.Days;
-                double priorityValue=0.0;
+                // 優先度計算：延遲天數*權重 + 等待時間*權重
+                // 值越小表示優先度越高（即需要更早處理）
+                double priorityValue = parent1[i].Delay * delayWeight +
+                                     (parent1[i].Waiting > 0 ? parent1[i].Waiting * waitingWeight : 0);
+                //TimeSpan timeDifference = parent1[i].AssignDate - parent1[i].EndTime;
+                //int daysDifference = timeDifference.Days;
+
 
                 //if (daysDifference >= 0)
                 //{
@@ -1329,10 +1436,14 @@ namespace PMCDash.Services
                 //    priorityValue = 200 + Math.Abs(daysDifference); // 基礎分數200（低於未延遲），加上延遲天數
                 //}
 
-                if (daysDifference < 0)
-                {
-                    priorityValue += (double)Math.Abs(daysDifference);
-                }
+                //if (daysDifference < 0)
+                //{
+                //    priorityValue += (double)Math.Abs(daysDifference);
+                //}
+
+                // 加入小的隨機擾動，避免陷入局部最優解
+                double randomFactor = 0.98 + random.NextDouble() * 0.04;  // 0.98 到 1.02 之間
+                priorityValue *= randomFactor;
 
                 priorities1[key] = priorityValue;
             }
@@ -1340,10 +1451,13 @@ namespace PMCDash.Services
             for (int i = 0; i < parent2.Count; i++)
             {
                 string key = parent2[i].OrderID + "-" + parent2[i].Range;
-                // 修改優先度計算
-                TimeSpan timeDifference = parent2[i].AssignDate - parent2[i].EndTime;
-                int daysDifference = timeDifference.Days;
-                double priorityValue=0.0;
+                // 使用與parent1相同的優先度計算方式
+                double priorityValue = parent2[i].Delay * delayWeight +
+                                     (parent2[i].Waiting > 0 ? parent2[i].Waiting * waitingWeight : 0);
+                
+                priorityValue = parent2[i].Delay + (parent2[i].Waiting > 0 ? parent2[i].Waiting : 0);
+                //TimeSpan timeDifference = parent1[i].AssignDate - parent1[i].EndTime;
+                //int daysDifference = timeDifference.Days;
 
 
                 //if (daysDifference >= 0)
@@ -1371,10 +1485,14 @@ namespace PMCDash.Services
                 //    priorityValue = 200 + Math.Abs(daysDifference); // 基礎分數200（低於未延遲），加上延遲天數
                 //}
 
-                if(daysDifference<0)
-                {
-                    priorityValue += (double)Math.Abs(daysDifference);
-                }
+                //if (daysDifference < 0)
+                //{
+                //    priorityValue += (double)Math.Abs(daysDifference);
+                //}
+
+                // 加入小的隨機擾動
+                double randomFactor = 0.98 + random.NextDouble() * 0.04;
+                priorityValue *= randomFactor;
 
                 priorities2[key] = priorityValue;
             }
@@ -1400,7 +1518,7 @@ namespace PMCDash.Services
             }
 
             // 3. 根據混合後的優先權重新排序
-            // 假設 Value 越小優先度越高
+            // 假設 Value 越大優先度越高
             var child1 = childPriorities1.OrderBy(x => x.Value)
                              .Select(x => {
                                  var parts = x.Key.Split('-');
@@ -1412,12 +1530,12 @@ namespace PMCDash.Services
                                  double priority2 = priorities2.TryGetValue(x.Key, out double p2) ? p2 : double.MaxValue;
 
                                  // 優先度較高（Value 較小）的那方決定來源
-                                 if (priority1 <priority2)
+                                 if (priority1>priority2)
                                  {
                                      return parent1.FirstOrDefault(j =>
                                          j.OrderID == orderId && j.Range.ToString() == range);
                                  }
-                                 else if(priority2 < priority1)
+                                 else if(priority2>priority1)
                                  {
                                      return parent2.FirstOrDefault(j =>
                                          j.OrderID == orderId && j.Range.ToString() == range);
@@ -1444,15 +1562,15 @@ namespace PMCDash.Services
                                              double priority1 = priorities1.TryGetValue(x.Key, out double p1) ? p1 : double.MaxValue;
                                              double priority2 = priorities2.TryGetValue(x.Key, out double p2) ? p2 : double.MaxValue;
 
-                                 // 優先度較高（Value 較小）的那方決定來源
-                                             if (priority2 <= priority1)
+                                 // 優先度較高（Value 較大）的那方決定來源
+                                             if (priority2 > priority1)
                                              {
                                                  return parent2.FirstOrDefault(j =>
                                                      j.OrderID == orderId && j.Range.ToString() == range);
                                              }
-                                             else if (priority2 < priority1)
+                                             else if (priority1 > priority2)
                                              {
-                                                 return parent2.FirstOrDefault(j =>
+                                                 return parent1.FirstOrDefault(j =>
                                                      j.OrderID == orderId && j.Range.ToString() == range);
                                              }
                                              else
@@ -2038,11 +2156,12 @@ namespace PMCDash.Services
                 }
                 // 重新排程
                 var tempOrder = Scheduled(MachineSeq);
-                // 多一個比較sumdelay
-                int sum = tempOrder.Sum(x => x.Delay);
-                if (fitness_idx_value.Exists(x => x.Fitness > sum)) // 判斷突變之後是否有更好的解
+                double new_fitness_value = Calculate_Combined_Fitness(tempOrder);
+                //// 多一個比較sumdelay
+                //int sum = tempOrder.Sum(x => x.Delay);
+                if (fitness_idx_value.Exists(x => x.Fitness > new_fitness_value)) // 判斷突變之後是否有更好的解
                 {
-                    int index = fitness_idx_value.FindIndex(x => x.Fitness > sum);
+                    int index = fitness_idx_value.FindIndex(x => x.Fitness > new_fitness_value);
                     updatedChromosomes[fitness_idx_value[index].Idx] = tempOrder.Select(x => (Chromsome)x.Clone()).ToList();
                     HasImproved = true;
                 }
@@ -2199,6 +2318,52 @@ namespace PMCDash.Services
                     continue;
                 }
             }
+        }
+
+        /// <summary>
+        /// 新增計算各工單等待時間
+        /// </summary>
+        /// <param name="Tep"></param>
+        public void Delay_and_waiting(List<Chromsome> Tep)
+        {
+            TimeSpan temp;
+            // 計算 Delay 和 Waiting
+            foreach (var group in Tep.GroupBy(x => x.OrderID))
+            {
+                // 按 Range 排序分組內的數據
+                var orderedItems = group.OrderBy(x => x.Range).ToList();
+
+                for (int i = 0; i < orderedItems.Count; i++)
+                {
+                    var item = orderedItems[i];
+                    try
+                    {
+                        // 計算 Delay
+                        temp = item.AssignDate - item.EndTime;
+                        var process_data = Tep.Find(x => x.OrderID == item.OrderID && x.Range == item.Range);
+                        process_data.Delay = (temp.TotalDays > 0) ? 0 : Math.Abs(temp.Days);
+
+                        // 計算 Waiting
+                        if (i == 0)
+                        {
+                            process_data.Waiting = 0; // 第一筆數據無等待時間
+                        }
+                        else
+                        {
+                            var previousItem = orderedItems[i - 1];
+                            process_data.Waiting = (item.StartTime - previousItem.EndTime).TotalDays;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // 記錄異常並繼續處理下一筆
+                        Console.WriteLine($"Error processing item {item.OrderID}, Range {item.Range}: {ex.Message}");
+                        continue;
+                    }
+                }
+                
+            }
+            Tep.OrderBy(x => x.OrderID).ThenBy(x => x.Range);
         }
 
 
